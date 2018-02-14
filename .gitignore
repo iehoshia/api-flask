@@ -61,4 +61,7 @@ dkms.conf
 # Specific files #
 ##################
 app/config.py
+app/uwsgi.ini
+uwsgi.ini
+uwsgi.py
 
