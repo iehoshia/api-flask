@@ -64,4 +64,3 @@ app/config.py
 app/uwsgi.ini
 uwsgi.ini
 uwsgi.py
- 
