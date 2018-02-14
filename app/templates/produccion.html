@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid" >
+	<div class="external-course external-course-produccion">
+		<div class="internal-course">
+			<div class="box">
+				<div class="icon produccion-icon"></div>
+				<div class="title">Producción <br><strong>Musical</strong></div>
+				<a href="https://apixela.net/#contact-us-form"
+				class="call-to-action">Inscríbete HOY</a>
+			</div>
+		</div>
+	</div>
+	<div class="external-course-content">
+		<div class="content-course">
+            <div class="description">Aprende a trabajar en diferentes métodos de creación de sonidos, tipos de ritmos, uso de instrumentos (virtuales y acústicos) y una amplia introducción en mezcla y masterizacion. Adicional aprende del manejo de equipos que se necesitan para colocar un estudio profesional de grabación y de masterizacion.
+      </div>
+      <h5>Teoria Musical</h5>
+      <ul>
+      <li>Intervalos</li>
+      <li>Lectura de claves</li>
+      <li>Armaduras de clave</li>
+      <li>Escalas</li>
+      <li>Acordes</li>
+      <li>Funciones armónicas</li>
+      </ul>
+      <h5>Sintesis y Diseño Sonoro </h5>
+      <ul>
+      <li>Herramientas</li>
+      <li>Efectos de sonido aplicados</li>
+      <li>Time streching</li>
+      <li>Audio Layering</li>
+      </ul>
+      <h5>Síntesis de audio digital</h5>
+      <ul>
+      <li>Tipos de síntesis digital</li>
+      <li>Configuración general de audio y MIDI</li>
+      <li>Dinámica de muestreo</li>
+      <li>Rango dinámico</li>
+      <li>Formas de onda</li>
+      <li>Modulación</li>
+      <li>Filtros</li>
+      <li>Efectos</li>
+      <li>Arpegiadores</li>
+      <li>Configuración General de Audio y MIDI</li>
+      <li>Controladores MIDI</li>
+      <li>Secuenciadores</li>
+      </ul>
+      <h5>Compresion y Ecualizacion</h5>
+      <ul>
+      <li>La mezcla</li>
+      <li>Reproducción y monitorización </li>
+      <li>Los efectos </li>
+      <li>La compresión</li>
+      <li>La ecualización</li>
+      </ul>
+      <h5>Grabacion </h5>
+      <ul>
+      <li>Tipos de micrófonos</li>
+      <li>Microfoneo de los instrumentos</li>
+      <li>Los preamplificadores</li>
+      <li>Tipos de software para grabación</li>
+      <li>Concepto artístico</li>
+      <li>Tracking</li>
+      <li>La edición</li>
+      </ul>
+      <h5>Detalles</h5>
+      <div class="duration-container">
+        <div class="duration">
+          <h4 class="title">Calendario</h4>
+          <span class="date">Inicio: <strong></strong>05 julio</span>
+          <span class="time">Duración: <strong>36 horas</strong></span>
+        </div>
+        <div class="user-profile">
+          <span class="title">Los profesores</span>
+          <div class="image"><img src="{{url_for('.static', filename='img/gerson.jpg')}}"></div>
+          <span class="name">Gerson López</span>
+          <span class="description">Productor y Compositor Musical</span>
+          <div class="clear"></div>
+          
+          
+        </div>
+      </div>
+      <h5>Perfil de salida</h5>
+    
+      <div class="profile_info">
+        <ul>
+              <li>Productor musical.</li>
+              <li>Compositor musical.</li>
+              <li>Especialista en masterización.</li>
+        </ul>
+      </div>    
+        {% include "whatsapp.html" %}     
+			
+		</div>
+	</div>
+{% include "courses.html" %}
+</div>
+{% include "footer.html" %}
+{% endblock %}

@@ -50,3 +50,15 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# File types #
+##############
+*.pyc
+*.swo
+*.swp
+*.swn
+
+# Specific files #
+##################
+app/config.py
+

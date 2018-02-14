@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid" >
+	<div class="external-course external-course-cine">
+		<div class="internal-course">
+			<div class="box">
+				<div class="icon cine-icon"></div>
+				<div class="title">Comunicador y <strong>Productor</strong> <br> Cinematográfico</div>
+				<a href="https://apixela.net/#contact-us-form"
+				class="call-to-action">Inscríbete HOY</a>
+			</div>
+		</div>
+	</div>
+	<div class="external-course-content">
+		<div class="content-course">
+			<div class="description">Este curso está  elaborado para que juntamente con el alumno se pueda trabajar de una manera práctica y teórica el lenguaje audiovisual y la creación de cortometrajes. Se estarán impartiendo los contenidos teóricos básicos con el objetivo de que el alumno se vayan familiarizando desde los puntos mas importantes y esenciales en las diferentes áreas de trabajo en una producción audiovisual: Pre-producción, producción y post-producción. 
+	        </div>
+		      <h5>Módulo 1: Guión - Prepoducción</h5>
+		      <ul>
+		      <li>Sinopsis</li>
+		      <li>Tratamiento</li>
+		      <li>Guión literario</li>
+		      <li>Guión técnico</li>
+		      <li>La estructura del guión</li>
+		      <li>El storyboard</li>
+		      <li>Desglose de guión</li>
+		      </ul>
+		      <h5>Módulo 2: Rodaje</h5>
+		      <ul>
+		      <li>Fases de preparación</li>
+		      <li>Contratación de equipo técnico</li>
+		      <li>Rodaje</li>
+		      </ul>
+		      <h5>Módulo 3: Post Producción</h5>
+		      <ul>
+		      <li>Montaje, Edición y Postproducción </li>
+		      <li>Sonorización </li>
+		      <li>Presentación del Producto </li>
+		      <li>Balance final de la producción </li>
+		      <li>Explotación y comercialización</li>
+		      </ul>
+		      <h5>Detalles</h5>
+		      <div class="duration-container">
+		        <div class="duration">
+		          <h4 class="title">Calendario</h4>
+		          <span class="time">Duración: <strong>10 meses</strong></span>
+		        </div>
+		        <div class="user-profile">
+		          <span class="title">Los profesores</span>
+		          <div class="image"><img src="{{url_for('.static', filename='img/jeanette.jpg')}}"></div>
+		          <span class="name">Jeanette Mejía</span>
+		          <span class="description"> Licenciada en Cinematografía </span>
+		        </div>
+		      </div>
+		      <h5>Perfil de salida</h5>
+		      <div class="profile_info">
+		        <ul>
+		          <li>Productor de Audio y Video Publicitario.</li>
+		          <li>Comunicador audiovisual para agencias de medios y marketing.</li>
+		          <li>Productor de mensajes corporativos y campañas audiovisuales de alto impacto.</li>
+		          <li>Productor de cortometrajes cinematográficos.</li>
+		        </ul>
+		      </div>
+	      
+		    {% include "whatsapp.html" %}			
+			
+		</div>
+	</div>
+{% include "courses.html" %}
+</div>
+{% include "footer.html" %}
+{% endblock %}

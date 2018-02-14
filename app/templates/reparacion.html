@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid" >
+	<div class="external-course external-course-reparacion">
+		<div class="internal-course">
+			<div class="box">
+				<div class="icon reparacion-icon"></div>
+				<div class="title">Reparación de Computadoras y  <br><strong>Celulares</strong></div>
+				<a href="https://apixela.net/#contact-us-form"
+				class="call-to-action">Inscríbete HOY</a>
+			</div>
+		</div>
+	</div>
+	<div class="external-course-content">
+		<div class="content-course">
+			<div class="description">
+			      ¿Cuántos celulares y computadoras se venden anualmente en nuestro país? Millones. 
+			      ¿Y quiénes los reparan? Con este curso aprenderás los fundamentos de reparación de celulares y computadoras de diferentes modelos, manejando conceptos técnicos, mediciones, herramientas y procedimientos para obtener una buena base de conocimiento para iniciarse en la profesión. Un curso ideal para el iniciante como para quien trabaja en la electrónica.
+			      </div>
+			      <h5>MÓDULO 0: Electrónica</h5>
+			        <ul>
+			          <li>Conceptos generales de telefonía electrónica digital</li>
+			          <li>Soldadura y desoldadura</li>
+			          <li>Armado de una fuente: conceptos de resistencia, conductividad</li>
+			        </ul>
+			      <h5>MÓDULO 1: Computadoras</h5>
+			        <ul>
+			          <li>Introducción a Sistemas Operativos</li>
+			          <li>Herramientas de taller</li>
+			          <li>Armado y desarmado de equipo</li>
+			          <li>Revisiones técnicas general: diagnostico preventivo y correctivo</li>
+			          <li>Formateo y actualización de software </li>
+			        </ul>
+
+			      <h5>MÓDULO 3: Celulares</h5>
+			        <ul>
+			          <li>Conceptos generales de telefonía celular</li>
+			          <li>Herramientas de taller</li>
+			          <li>Introducción a la electrónica</li>
+			          <li>Armado de una fuente</li>
+			          <li>Componentes de un celular</li>
+			        </ul>
+
+			      <h5>MÓDULO 4: Celulares</h5>
+			        <ul>
+			          <li>Reparación de audio</li>
+			          <li>Cambio de pantalla táctil</li>
+			          <li>Rearmado y prueba</li>
+			        </ul>
+
+			      <h5>MÓDULO 5: Celulares</h5>
+			        <ul>
+			          <li>Reparación de teléfono mojado</li>
+			          <li>Bandeja para limpiar placas</li>
+			          <li>Parlante falso contacto</li>
+			        </ul>
+
+			      <h5>MÓDULO 6: Celulares</h5>
+			        <ul>
+			          <li>Soldar y desoldar puertos</li>
+			          <li>Limpieza de teclado</li>
+			        </ul>
+
+			      <h5>MÓDULO 7: Celulares</h5>
+			      <ul>
+			      <li>Cambio de Roms</li>
+			      <li>Actualización de Sistemas Operativos</li>
+			      <li>Recuperación de Sistema</li>
+			      </ul> 
+			      <h5>MÓDULO 8: Celulares</h5>
+			      <ul>
+			      <li>Cambio de Placa</li>
+			      <li>Resoldado</li>
+			      <li>Liberación de IMEI</li>
+			      </ul> 
+			      <h5>Pensúm de Estudio</h5>
+			      <ul>
+			        <li>Visualiza en el pensúm en el siguiente <a href="https://apixela.net/wp-content/uploads/2015/01/ct.pdf" target="_blank">link</a></li>
+			      </ul> 
+			 
+
+			      <h5>Detalles</h5>
+			      <div class="duration-container">
+			        <div class="duration">
+			          <h4 class="title">Calendario</h4>
+			          
+			          <span class="time">Duración: <strong>11 meses</strong></span>
+			        </div>
+			        <div class="user-profile">
+			          <span class="title">Los profesores</span>
+			          <div class="image"><img src="{{url_for('.static', filename='img/douglas.jpg')}}"></div>
+			          <span class="name">Douglas Ixcot</span>
+			          <span class="description"> Especialista en Telefonía Android </span>
+			          <div class="clear"></div>
+			          <div class="image"><img src="{{url_for('.static', filename='img/gmaniel.jpg')}}"></div>
+			          <span class="name">Aniel Pérez</span>
+			          <span class="description"> Ingeniero en Telecomunicaciones</span>
+			        </div>
+			      </div>
+			      <h5>Perfil de salida</h5>
+			      <div class="profile_info">
+			        <ul>
+			          <li>Especialista en diagnósticos y soluciones de problemas de computadoras y celulares</li>
+			          <li>Asesor tecnológica en compra y venta de equipo.</li>
+			          <li>Emprendedor de negocios en repación y distribución de productos de tecnología</li>
+			        </ul>
+			      </div>
+	      
+		    {% include "whatsapp.html" %}			
+			
+		</div>
+	</div>
+{% include "courses.html" %}
+</div>
+{% include "footer.html" %}
+{% endblock %}

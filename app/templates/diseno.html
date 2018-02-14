@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid" >
+	<div class="external-course external-course-diseno">
+		<div class="internal-course">
+			<div class="box">
+				<div class="icon diseno-icon"></div>
+				<div class="title">Diseño Publicitario y <br><strong>Marketing Digital</strong></div>
+				<a href="https://apixela.net/#contact-us-form"
+				class="call-to-action">Inscríbete HOY</a>
+			</div>
+		</div>
+	</div>
+	<div class="external-course-content">
+		<div class="content-course">
+      <div class="description">
+      Aprende las herramientas necesarias para trabajar en agencias de publicidad y/o agencias de medios. Desarrolla tu creatividad y aumenta tus ingresos en trabajos como webmaster y social media manager, diseñador o ilustrador.
+      </div>
+      <h5>Photoshop</h5>
+      <ul>
+      <li>¿Para qué (y para qué no) sirve photoshop? Qué es un mapa de bits</li>
+      <li>Creación de documentos, Impreso vs. Digital</li>
+      <li>Perfiles de color, Espacio de trabajo, paneles y artboards</li>
+      <li>Herramientas de creación, Pinceles, Degradados, Textos</li>
+      <li>Herramientas de selección</li>
+      <li>Marquees, lazos</li>
+      <li>Selecciones “inteligentes” (brush y wand)</li>
+      <li>Herramientas de manipulación</li>
+      <li>Layers, Mascaras, Capas de ajuste</li>
+      <li>Estilos de capa</li>
+      <li>Guardado y exportado</li>
+      <li>Interfaz básica, Retoque básico</li>
+      </ul>
+      <h5>Illustrator</h5>
+      <ul>
+      <li>Introducción a la ilustración véctorial</li>
+      <li>Interfaz y herramientas de Illustrator</li>
+      <li>Curvas Bézier y Nodos</li>
+      <li>Diseño a través de polígonos</li>
+      <li>Pathfinder (buscatrazos)</li>
+      <li>Efectos vectoriales en objetos</li>
+      <li>Uso de tipografías en interfaces</li>
+      <li>Tipografías en Illustrator</li>
+      <li>Perfiles de color y calibración</li>
+      <li>Paletas autogeneradas</li>
+      <li>Técnicas avanzadas de ilustración</li>
+      <li>Formatos de archivo y exportación</li>
+      <li>Add Comment Collapse</li>
+      </ul>
+      <h5>Frontend: HTML5 y CSS3</h5>
+      <ul>
+      <li>Diferencias entre Backend y Front-end</li>
+      <li>Qué es HTML y CSS?</li>
+      <li>Semántica en HTML5</li>
+      <li>Developer Tools en navegador</li>
+      <li>Introducción a CSS</li>
+      <li>Unidades de medida</li>
+      <li>Selectores en CSS</li>
+      <li>Pseudo selectores</li>
+      <li>Float y Display</li>
+      <li>Preprocesadores CSS</li>
+      <li>Fuentes web</li>
+      </ul>
+      <h5>Marketing </h5>
+      <ul>
+      <li>Facebook Ads e Twitterd Ads Inversión en Display Networks</li>
+      <li>Twitter Ads</li>
+      <li>Display Network </li>
+      <li>Pixel Facebook and Google Analytics </li>
+      </ul>
+      <h5>Detalles</h5>
+      <div class="duration-container">
+        <div class="duration">
+          <h4 class="title">Calendario</h4>
+          <span class="date">Inicio: <strong></strong>15 de julio</span>
+          <span class="time">Duración: <strong>10 meses</strong></span>
+        </div>
+        <div class="user-profile">
+          <span class="title">Los profesores</span>
+          <div class="image"><img src="{{url_for('.static', filename='img/anakaren.jpg')}}"></div>
+          <span class="name">Ana Karen Serrano</span>
+          <span class="description">Licenciada en Diseño Gráfico</span>
+          <div class="clear"></div>
+          <div class="image"><img src="{{url_for('.static', filename='img/ramon.jpg')}}"></div>
+          <span class="name">Ramón García</span>
+          <span class="description"> Licenciado en Diseño Gráfico</span>
+          
+        </div>
+      </div>
+      <h5>Perfil de salida</h5>
+      <div class="profile_info">
+        <ul>
+              <li>Publicista creativo, diseñador freelance y/o editorial.</li>
+              <li>Ilustrador y diseñador gráfico.</li>
+              <li>Creador de Campañas de Adwords y Facebooks Ads.</li>
+        </ul>
+      </div>
+        {% include "whatsapp.html" %}     
+			
+		</div>
+	</div>
+{% include "courses.html" %}
+</div>
+{% include "footer.html" %}
+{% endblock %}

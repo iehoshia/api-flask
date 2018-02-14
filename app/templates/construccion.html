@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid" >
+	<div class="external-course external-course-construccion">
+		<div class="internal-course">
+			<div class="box">
+				<div class="icon construccion-icon"></div>
+				<div class="title">Construcción Digital en <br><strong>Arquitectura</strong></div>
+				<a href="https://apixela.net/#contact-us-form"
+				class="call-to-action">Inscríbete HOY</a>
+			</div>
+		</div>
+	</div>
+	<div class="external-course-content">
+		<div class="content-course">
+<div class="description">Aprende sobre las posibilidades creativas que la proyección digital ofrece al ámbito de la arquitectura, con toda la variedad de tecnologías y técnicas que existen hoy para la producción de diseños holísticos y componenciales a través de CAD (diseño asistido por computadora).
+      </div>
+      <br>
+      <h5>MÓDULO 1</h5>
+
+<li>Lenguaje Arquitectónico</li>
+<li>Unidades, líneas, escalas</li>
+<li>Alfabeto de Geometría Básica</li>
+</ul>
+
+
+
+
+<h5>MÓDULO 2</h5>
+
+<li>Relación Entre Dibujo Técnico Y Digital</li>
+<li>Desarrollo De Isométricos</li>
+<li>Principios De Diseño Arquitectónico</li>
+<li>Navegación</li>
+<li>Vistas Y Caras</li>
+<li>Proyecciones</li>
+<li>Comandos Mas Usados</li>
+<li>Machote (Planos). </li>
+<li> Tecnicas De Creación.</li>
+<li>Planta Arquitectonica. </li>
+<li>Creación De Muebles - Bloques</li>
+<li>Uso De Layers </li>
+<li>Planta Acotada</li>
+<li>Edición Y Creación De Cotas</li>
+<li>Ejes Y Cotas</li>
+</ul>
+
+<h5>Módulo 3</h5>
+
+<li>Plano De Acabados</li>
+<li>Bloques Editables</li>
+<li>Ventanas Y Puerta</li>
+<li>Plano De Cimientos - Losas</li>
+<li>Edición De Simbología</li>
+<li>Edición De Hatch</li>
+<li>Plano De Ins. Hidraulica</li>
+<li>Plano De Ins. Aguas Negras</li>
+<li>Aplicativos Y  Tips</li>
+<li>Plano De Electricidad Fuerza</li>
+<li>Plano De Electricidad Iluminación</li>
+<li>Aplicativos Y  Tips</li>
+</ul>
+
+<h5>Módulo 4</h5>
+
+<li>Topografia</li>
+<li>Edición De Curvas</li>
+<li>Aplicativos -  Tips</li>
+<li>Impresión Cajetin Y Formatos</li>
+<li>Exportaciones</li>
+<li>Planos De Registro</li>
+<li>Manejo 3D</li>
+<li>Navegación - Vistas</li>
+<li>Geometria Basica</li>
+<li>Herramientas 3D</li>
+</ul>
+    <h5>Detalles</h5>
+      <div class="duration-container">
+        <div class="duration">
+          <h4 class="title">Calendario</h4>
+          <span class="date">Inicio: <strong></strong>15 julio</span>
+          <span class="time">Duración: <strong>6 meses</strong></span>
+        </div>
+        <div class="user-profile">
+          <span class="title">Los profesores</span>
+          <div class="image"><img src="{{url_for('.static', filename='img/beto.jpg')}}"></div>
+          <span class="name">Betuel Pérez</span>
+          <span class="description">Diseñador de interiores y Estudiante Arquitectura</span>
+          
+          
+        </div>
+      </div>
+      <h5>Perfil de salida</h5>
+      <div class="profile_info">
+        <ul>
+          <li>Diseñador de ambientes interiores y exteriores, bajo nomenclaturas ANSI.</li>
+          <li>Maquetador digital 3D para arquitectura.</li>
+        </ul>
+      </div>
+	      
+		    {% include "whatsapp.html" %}     
+			
+		</div>
+	</div>
+{% include "courses.html" %}
+</div>
+{% include "footer.html" %}
+{% endblock %}
