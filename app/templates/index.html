@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
 
 {% block content %}
 <div class="container-fluid" >
@@ -6,7 +7,7 @@
 		<div class="internal row">
 			<div class="col-md-8">
 				<div class="general-title">
-				En el 2018 tu ÉXITO empieza HOY
+				<!--¡No MÁS excusas!-->
 				<a href="whatsapp://send?text=&amp;Hola, necesito información acerca de los cursos:&amp;&phone=+50230050240&abid=+50230050240" style="text-decoration:none;" class="mobile" target="_blank">
 		      	<div class="call-to-action">WhatsAppea</div>
 				</div>
@@ -15,6 +16,7 @@
 			<div class="col-md-4">
 				<div class="formulario" >
 					<div class="titulo_form">EMPIEZA A <strong>APRENDER</strong> HOY</div>
+					<!--
 					<form role="form" method="post">
 						{{ form.hidden_tag() }}
 						<div class="form-group">
@@ -54,43 +56,45 @@
       					</div>
       					{{ form.recaptcha }}
       					<div class="send">{{ form.submit() }}</div>
-						
 					</form>
+					-->
+					{{ wtf.quick_form(form) }}
 				</div>
 			</div>
 		</div>
 	</div>
 
-<!-- EVENTOS -->
-<a href="/cine" style="text-decoration:none;" class="aevent">
-	<div class="events row">
+<!-- EVENTOS --> 
+<a href="/powerpivot" style="text-decoration:none;" class="aevent">
+	<div class="events row"> 
 		<div class="internal-events">
-			<div class="container">
+			<div class="container"> 
 				<div class="course-icon-mini"></div>
 				<div class="date">
-					<div class="date_number">01</div> 
-					<div class="date_month">Marzo</div>
+					<div class="date_number">09</div> 
+					<div class="date_month">Junio</div>
 				</div> 
 				<div class="course-icon">
-				</div>
+				</div> 
 				<div class="info"> 
 					<span class="title">Próximo Evento</span>
-					<div class="text_title">Comunicación y Producción <strong>Cinematográfica</strong>
+					<div class="text_title">Curso de Inteligencia de <strong>negocios.</strong>
 						<!--<div class="clock"></div>-->
 					</div>  
-					<span class="text_tablet">Curso <strong>ESTUDIANTIL</strong></span> 
+					<span class="text_tablet">Inteligencia de <strong>NEGOCIOS.</strong></span> 
 	        	</div>
-	        	<span class="text_tablet_mini">Inscripción <strong>GRATIS</strong>!</span> 
+	        	<span class="text_tablet_mini">Inteligencia de<strong>NEGOCIOS.</strong></span> 
 			</div>
 		</div>
-	</div>
+	</div> 
 </a>
 
 	<div class="courses row">
 		<div class="internal-courses">
 			<h2 class="title-course">
-					¿Qué cursos te ofrecemos? 
-				</h2>
+				¿Qué cursos te ofrecemos? 
+			</h2>
+			<!--
 			<div class="row-eq-height col-md-4">
 				<div class="cine col-md-12">
 	        		<div class="img">
@@ -107,6 +111,7 @@
 					</p>
 				</div>
 			</div>
+		-->
 			<div class="row-eq-height col-md-4">
 				<div class="reparacion col-md-12">
 					<div class="img">
@@ -127,13 +132,13 @@
 						
 					</div>
 					<h2>
-						Idioma Inglés 
+						PowerPivot: Inteligencia de Negocios
 					</h2>
 					<p>
-						Aprender inglés es tan necesario como saber leer, escribir y utilizar una computadora. Saber inglés te permitirá encontrar mejores oportunidades laborales.
+						Análisis de datos eficaz y modelado de datos en Excel. 
 					</p>
 					<p>
-						<a class="btn" href="/ingles">Ver más...</a>
+						<a class="btn" href="/powerpivot">Ver más...</a>
 					</p>
 				</div>
 			</div>
@@ -167,6 +172,7 @@
 					</p>
 				</div>
 			</div>
+			<!--
 			<div class="row-eq-height col-md-4">
 				<div class="produccion col-md-12">
 					<div class="img">
@@ -183,6 +189,7 @@
 					</p>
 				</div>
 			</div>
+		-->
 
 			<div class="row-eq-height col-md-4">
 				<div class="redes col-md-12">
@@ -217,6 +224,7 @@
 					</p>
 				</div>
 			</div>
+			<!--
 			<div class="row-eq-height col-md-4">
 				<div class="construccion col-md-12">
 					<div class="img">
@@ -233,6 +241,23 @@
 					</p>
 				</div>
 			</div>
+		-->
+		</div>
+	</div>
+
+	<div class="internal-courses">
+		<h2 class="title-course">
+			¿Quieres conocer algunos de los proyectos que podrás realizar?
+			<div id="fb-root" style="margin-top:20px;"></div> 
+	        <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
+
+	        <!-- Your embedded video player code -->
+	        
+	        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fapixela%2Fvideos%2F10153885783491991%2F&show_text=0&width=560" class="iframein" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+ 
+		</h2>
+		<div style="margin:auto 0;">
+			
 		</div>
 	</div>
 
@@ -241,11 +266,42 @@
 			<div class="title">
 				¿Dónde nos puedes ubicar?
 			</div>
-			<span class="content">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d482.08365707520204!2d-91.5212067766167!3d14.843809340904931!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x7d6bedb7bdda3abd!2sAPI!5e0!3m2!1ses-419!2sgt!4v1464313640502&z=15" width="1100" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-			</span>
+			<div class="content-places">
+
+			<!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d681.7692025542751!2d-91.52159995608282!3d14.843823128204566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858e98008458db63%3A0x7d6bedb7bdda3abd!2sAPI!5e0!3m2!1ses-419!2sgt!4v1518714526211" width="1100" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+			</div>
 		</div>
 	</div>
+	<div class="why-external row">
+		<div class="why-internal ">
+			<div class="title">
+				¿Por qué API?
+			</div>
+
+			<h5>¿Qué es API?</h5>
+			<ul>
+				<li>Excelencia académica.</li>
+				<li>Cursos 100% prácticos y aplicables</li>
+				<li>Experiencia comprobada de más de 6 años</li>
+				<li>Cursos 100% prácticos y aplicables</li>
+			</ul>
+		</div>
+
+		<!-- Hourly -->
+		<div class="hourly-container">
+			<div class="title">
+				Horarios de atención 
+			</div>
+			<div class="hourly">
+				<ul>
+					<li>Domingo 		07.00 - 14.00 horas</li>
+					<li>Lunes a jueves 	08.00 - 18.30 horas</li>
+					<li>Viernes 		08.00 - 13.00 horas</li>
+					<li>Sábado			<strong>CERRADO</strong></li>
+				</ul>
+			</div>
+		</div>
+	</div> 
 </div>
 {% include "footer.html" %}
 {% endblock %}

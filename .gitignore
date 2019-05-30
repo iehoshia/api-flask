@@ -59,7 +59,7 @@ dkms.conf
 *.swn
 
 # Specific files #
-##################
+################## 
 app/config.py
 app/uwsgi.ini
 uwsgi.ini

@@ -14,6 +14,14 @@
 	</div>
 	<div class="external-course-content">
 		<div class="content-course">
+      <div  style="margin-top:10px;">
+        <!-- Load Facebook SDK for JavaScript -->
+        <div id="fb-root"></div> 
+        <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
+
+        <!-- Your embedded video player code -->
+        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fapixela%2Fvideos%2F10153885783491991%2F&show_text=0&width=560" class="iframein" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+      </div>
       <div class="description">
       Aprende las herramientas necesarias para trabajar en agencias de publicidad y/o agencias de medios. Desarrolla tu creatividad y aumenta tus ingresos en trabajos como webmaster y social media manager, diseñador o ilustrador.
       </div>
@@ -73,16 +81,16 @@
       <div class="duration-container">
         <div class="duration">
           <h4 class="title">Calendario</h4>
-          <span class="date">Inicio: <strong></strong>15 de julio</span>
-          <span class="time">Duración: <strong>10 meses</strong></span>
+          
+          
         </div>
         <div class="user-profile">
           <span class="title">Los profesores</span>
-          <div class="image"><img src="{{url_for('.static', filename='img/anakaren.jpg')}}"></div>
+          <div class="image"><img src="{{url_for('static', filename='img/anakaren.jpg')}}"></div>
           <span class="name">Ana Karen Serrano</span>
           <span class="description">Licenciada en Diseño Gráfico</span>
           <div class="clear"></div>
-          <div class="image"><img src="{{url_for('.static', filename='img/ramon.jpg')}}"></div>
+          <div class="image"><img src="{{url_for('static', filename='img/ramon.jpg')}}"></div>
           <span class="name">Ramón García</span>
           <span class="description"> Licenciado en Diseño Gráfico</span>
           

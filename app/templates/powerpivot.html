@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid" >
+	<div class="external-course external-course-ingles">
+		<div class="internal-course">
+			<div class="box">
+				<div class="icon ingles-icon"></div>
+				<div class="title"><strong>PowerPivot </strong> en <br><strong>Excel</strong></div>
+				<a href="https://apixela.net/#contact-us-form"
+				class="call-to-action">Inscríbete HOY</a>
+			</div>
+		</div>
+	</div>
+	<div class="external-course-content">
+		<div class="content-course">
+      <span class="description">PowerPivot es un complemento de Excel que puede usar para realizar análisis de datos y crear sofisticados modelos de datos. PowerPivot, puede mezclar grandes volúmenes de datos de varios orígenes, realizar análisis de información rápidamente y compartir información con facilidad.
+      </span>
+      <span class="description"></span>
+      <h5>Orígenes de Datos</h5>
+          <ul>
+            <li>Importe datos de orígenes diferentes, como bases de datos corporativas grandes,fuentes de distribución de datos públicas, hojas de cálculo y archivos de texto en el equipo.</li>
+            <li><strong>Módulos 1 - 2</strong></li>
+          </ul>
+        <h5>Optimización de Modelos</h5>
+          <ul>
+            <li>Pueden resolver muchos análisis de datos y problemas de modelado en Power Pivot mediante cálculos. Existen dos tipos de cálculos en Power Pivot, columnas calculadas y medidas. Ambos tipos de cálculos usan fórmulas. En muchos casos, por ejemplo, al crear una medida mediante la característica Autosuma con una función de agregación estándar como suma o promedio, no tiene que crear una fórmula en absoluto. La fórmula se creará automáticamente por Power Pivot. En otros casos, es posible que tenga que crear una fórmula personalizada usted. En Power Pivot, se crear fórmulas de cálculo personalizado mediante expresiones de análisis de datos (DAX).</li>
+            <li><strong>Módulos 3 - 6</strong></li>
+          </ul>
+        <h5>Introducción a DAX</h5>
+          <ul>
+            <li>Las fórmulas de DAX en Power Pivot son muy similares a las fórmulas de Excel. De hecho, DAX usa muchas de las mismas funciones, operadores y sintaxis que las fórmulas de Excel. Sin embargo, DAX también tiene características adicionales diseñadas para trabajar con datos relacionales y realizar cálculos más dinámicos.</li>
+            <li><strong>Módulos 7 - 10 </strong> </li>
+            
+          </ul>
+        <h5>Jerarquías en DAX</h5>
+          <ul>
+            <li>Una forma puede modificar un modelo de datos de PowerPivot consiste en Agregar una jerarquía. Por ejemplo, si tiene datos geográficos, puede agregar una jerarquía que tiene el país en la parte superior y taladros hacia abajo hasta la región, estado y ciudad.</li>
+            <li>Una jerarquía es una lista de columnas que se resumen hasta un solo elemento en un informe de tabla dinámica o de Power View. Una jerarquía aparece como un único objeto en la lista de campos. Jerarquías que sea más fácil para los usuarios seleccionar y desplácese comunes rutas de acceso de datos al crear los informes y tablas dinámicas.</li>
+          </ul>
+          <li><strong>Módulos 11 - 12 </strong> </li>
+        <h5>Módulo adicionales</h5>
+          <ul>
+            <li>DAX para minería de Datos</li>
+            <li>Introducción a Power BI</li>
+            <li>Introducción a Google Data Studio</li>
+          </ul>
+
+      <!--<h5>Detalles</h5>
+
+      <div class="duration-container">  
+        <div class="duration">
+          <h4 class="title">Calendario</h4>
+          
+          <span class="time">Duración de módulo: <strong>3 meses</strong></span>
+        </div> -->
+        <!--<div class="user-profile"> 
+          <span class="title">Los profesores</span>
+          <div class="image"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/hugo.jpg"></div>
+          <span class="name">Carlos Hugo Cardenas</span>
+          <span class="description">TOELF Certified Instructor</span>
+          <div class="clear"></div>
+
+        </div>-->
+      <!--</div>-->
+      <h5>Perfil de salida</h5>
+      <div class="profile_info">
+        <ul>
+          <li>Analista de datos de gran tamaño con información relevante.</li>
+          <li>Minero de datos e inteligencia de datos.</li>
+          <li>Analista financiero avanzado.</li>
+        </ul>
+      </div>
+	      
+        {% include "whatsapp.html" %}     
+			
+		</div>
+	</div>
+{% include "courses.html" %}
+</div>
+{% include "footer.html" %}
+{% endblock %}

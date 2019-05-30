@@ -3,12 +3,14 @@
 	margin-right 0
 body 
 	padding-top 0px
-	font-family 
 	font-family 'Roboto', sans-serif
+
+#control-label
+	margin-top 5px 
 
 .contactanos
 	margin-top 2px 
-	background-color #ff4842 !important 
+	background-color #98ca3f !important 
 	font-size 15px !important
 	border 0 !important 
 	font-weight bold 
@@ -17,11 +19,75 @@ body
 	height 38px 
 	
 .contactanos:hover 
-	background-color #b2c83e !important 
+	background-color #6c9128 !important 
+
+.control-label
+	margin-top 5px
+
+.iframein 
+	width 864px
+	height 486px
+
+.send 
+	background-color #ff6600
+	width 90% 
+	height 40px 
+	margin 0 auto 
+	border-radius 5px 
+	margin-bottom 5px
+	padding 0 
+	line-height 10px
+
+.fa-facebook
+	background url('../img/facebook.svg') !important
+	background-size auto 
+	background-repeat no-repeat
+	width 35px
+	height 35px
+	z-index 999
+	margin 0 
+	padding 0 
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form
+	height: 50px !important;
+
+#submit
+	width 95% 
+	height 38px
+	margin 0 auto
+	margin-left 8px  
+	color #fff
+	background-color #0d3c70 !important
+	border 0 
+	border-radius 8px 
+	//margin-top 5px 
+	margin-bottom 12px 
+	font-weight bold 
+
+html input[type=submit]:hover 
+	background-color #D88635
+
+.places
+	.internal-places
+		max-width auto 
+		.title 
+			color #3e9a46
+			font-size 25px 
+			text-align center 
+		iframe 
+			max-width: 100%;
+			height: 300px;
+		.content-places
+			background-image url('../img/mapa.png')
+			width 1080px 
+			height 300px 
+			background-position center center 
+			background-repeat no-repeat
+			
 
 .logo-nav
 	width 200px
-	height 55px
+	height 45px
 	background-image url('../img/logo-api.png')
 	background-size cover
 
@@ -33,8 +99,8 @@ body
 	background-repeat no-repeat 
 
 .navbar-brand
-	padding 5px 15px
-	min-height 60px
+	padding 0px 15px
+	min-height 50px
 	
 .navbar-brand>img
 	width 200px 
@@ -151,7 +217,7 @@ body
 	display block 
 .external-course 
 	background-color #f3ffaa
-	padding-top 60px 	
+	padding-top 50px 	
 	background-repeat no-repeat	
 	background-size 100% auto  
 	.internal-course 
@@ -307,6 +373,32 @@ body
 			font-size 14px 
 			font-size normal
 
+.hourly-container
+	max-width 600px
+	height 165px 
+	background-image url('../img/hourly.png') !important
+	background-size 49%
+	background-repeat no-repeat
+	background-position top left
+	margin 0 auto 
+	.title
+		width 100%
+		font-weight bold
+		font-size 21px 
+		padding-top 10px
+		padding-bottom 0
+		background transparent
+		margin 0 
+		padding-left 350px
+	.hourly
+		width 100%
+		margin 0 
+		padding 0 
+		padding-left 350px 
+		font-size 18px 
+		background transparent
+
+
 .inferior
 	width 100%
 	height 70px
@@ -349,11 +441,11 @@ body
 			float left
 			left 0 
 			padding-top 20px
-			color #fff
+			color #535995
 			font-size 16px 
 			font-weight bold
 .external-welcome
-	margin-top 60px 
+	margin-top 50px 
 	background-image url('../img/fondo_welcome.jpg') 
 	background-size cover 
 	//background-position center bottom
@@ -400,9 +492,74 @@ body
 			margin 0 
 			text-align left 
 			margin-top 250px 
-			text-align center 
+			text-align center
+
 			
 @media (max-width: 768px)
+	.iframein 
+		width 100%
+		height auto
+	.hourly-container
+		width auto  
+		height 310px
+		clear both
+		overflow hidden
+		background-size 80%
+		background-image url('../img/hourly.png') !important
+		background-repeat no-repeat
+		background-position top center
+		.title
+			width 100% 
+			height auto
+			font-weight bold
+			font-size 21px 
+			background transparent
+			margin 0  
+			padding-top 180px
+			padding-left 5px
+			padding-right 5px
+			clear both
+			overflow hidden
+		.hourly
+			width 100%
+			height auto 
+			margin 0 
+			padding 0 
+			padding-left 5px 
+			padding-right 5px
+			padding-bottom 5px 
+			margin-bottom 5px 
+			font-size 18px 
+			background transparent
+			clear both
+			overflow hidden
+	.why-external
+		max-width auto 
+		.why-internal
+			width auto 
+			margin 0 auto 
+			padding-top 12px 
+			.title 
+				color #3e9a46
+				font-size 25px 
+				text-align center 
+			.content
+				background-image url('../img/mapa.png')
+				width 1080px 
+				height 300px 			
+			h5 
+				font-size: 18px;
+				font-weight: 700;
+				border: 1px solid #99be19;
+				padding: 15px 20px;
+				border-radius: 3px;
+				color: #99be19;
+				margin: 30px 3px 20px 3px;
+				font-size 2em
+			ul 
+				margin-left 40px 
+			ul li
+				font-size 1.5em 
 	.external-welcome
 		background-size 100% auto 
 		background-repeat no-repeat
@@ -471,7 +628,7 @@ body
 					font-size 30px 
 					text-align center 
 					margin 0 auto 
-					color #fff 
+					color #535995 
 				.icon
 					width 90px 
 					height 90px 
@@ -514,12 +671,12 @@ body
 		padding-left 2px
 		padding-right 2px
 	.external
-		margin-top 60px
+		margin-top 50px
 		background-image url('../img/slide02.jpg')
 		background-repeat no-repeat
 		background-size 100% auto
 		border 0 !important
-		background-color #cbebce
+		background-color #e4e6e6
 	.footer-distributed .footer-company-name
 		padding-left 0px !important 
 		text-align center !important  
@@ -537,7 +694,7 @@ body
 			height 100px 
 			margin-left 80px 
 			margin-top 10px
-			background-image url('../img/cine-01.png')
+			background-image url('../img/repair-01.png')
 			background-size 100% 100% 
 			float left 
 			display inline-block
@@ -555,7 +712,7 @@ body
 				font-size 40px
 				text-align center 
 				font-weight bold 
-				color #fff
+				color #535995
 				padding-top 20px  
 		  	.date_month
 				border-top 2px solid #7c7c7c
@@ -565,7 +722,7 @@ body
 				font-size 15px
 				font-weight bold 
 				text-align center
-				color #fff 
+				color #535995 
 				display block
 		.info
 			float left 
@@ -581,7 +738,7 @@ body
 				color #fff
 			.text_title
 				font-size 15px 
-				color #fff
+				color #535995
 				margin-top 10px 
 				margin-bottom 10px 
 			.text_tablet
@@ -589,15 +746,16 @@ body
 
 		.text_tablet_mini
 			display block
-			width 90%
+			width auto 
 			margin 10px auto 
-			font-size 16px 
+			font-size 12px 
 			padding-left 30px 
 			background-image url('../img/api-gift.png')
 			background-size 25px 25px
 			background-position left bottom 
 			background-repeat no-repeat
 			color #ff5f00
+			display none 
 				
 
 
@@ -623,7 +781,7 @@ body
 		float right
 		//box-shadow 0px 0px 25px 0px rgba(0, 108, 205, .5)
 		//padding 10px  
-		background-color #3E9A46
+		background-color #fff
 	
 	.titulo_form
 		font-size 17px 
@@ -692,7 +850,8 @@ body
 		background-color #D88635
 	
 	.events
-		background-color #454692
+		background-color #ffffff
+		color #454692
 		max-width 100% 
 		margin-right 0 
 		margin-left 0
@@ -706,15 +865,20 @@ body
 		padding-right 3px 
 	.places
 		max-width 100%
-	.internal-places
-		max-width auto 
-		.title 
-			color #3e9a46
-			font-size 25px 
-			text-align center 
-		iframe 
-			max-width: 100%;
-			height: 300px ;
+		width 100% 
+		.internal-places
+			max-width auto 
+			.title 
+				color #3e9a46
+				font-size 25px 
+				text-align center 
+			iframe 
+				max-width: 100%;
+				height: 300px ;
+			.content-places
+				background-image url('../img/mapa.png')
+				width auto !important
+				height 300px 
 	.city 
 		margin-left 7px !important
 		margin-top 15px
@@ -724,10 +888,39 @@ body
 	#rc-imageselect, .g-recaptcha
 		transform:scale(1);
 		-webkit-transform:scale(1);
-			
-		
+
+
+	
 
 @media (min-width 1100px)
+	.why-external
+		max-width auto 
+		.why-internal
+			width 1080px 
+			margin 0 auto 
+			padding-top 12px 
+			.title 
+				color #3e9a46
+				font-size 25px 
+				text-align center 
+			.content
+				background-image url('../img/mapa.png')
+				width 1080px 
+				height 300px 			
+			h5 
+				font-size: 18px;
+				font-weight: 700;
+				border: 1px solid #99be19;
+				padding: 15px 20px;
+				border-radius: 3px;
+				color: #99be19;
+				margin: 30px 3px 20px 3px;
+				font-size 2em
+			ul 
+				margin-left 40px 
+			ul li
+				font-size 1.5em  
+					
 	.navbar-nav
 		margin 0 
 	.navbar-default
@@ -740,8 +933,9 @@ body
 		border-radius 0
 		background-color #273b47
 		margin-bottom 0 
+		height 50px 
 	.btn-success
-		margin-top 12px 
+		margin-top 7px 
 		padding 7px
 		
 	.container-fluid
@@ -754,9 +948,9 @@ body
 		max-width 100% 
 		margin-right 0 
 		margin-left 0
-		margin-top 60px 
-		background-image url('../img/slide01.jpg') 
-		background-size cover 	
+		margin-top 50px 
+		background-image url('../img/slide05.jpg') 
+		background-size 100% 	
 		min-height 450px 
 	.courses
 		background-color #f0f0f0
@@ -777,7 +971,8 @@ body
 			padding-top: 10px;
 			padding-bottom: 10px;
 	.events
-		background-color #454692
+		background-color #ffffff
+		color #454692
 		max-width 100% 
 		margin-right 0 
 		margin-left 0
@@ -820,12 +1015,12 @@ body
 		float right
 		//box-shadow 0px 0px 25px 0px rgba(0, 108, 205, .5)
 		//padding 10px  
-		background-color #3E9A46
+		background-color #fff
 	
 	.titulo_form
 		font-size 17px 
-		background-color #273b47
-		color #fff
+		//background-color #273b47
+		color #273b47
 		width 100%
 		height 40px 
 		padding 0 
@@ -907,7 +1102,7 @@ body
 				font-size 40px
 				text-align center 
 				font-weight bold 
-				color #fff
+				color #454692
 				padding-top 20px  
 		  	.date_month
 				border-top 2px solid #7c7c7c
@@ -917,16 +1112,17 @@ body
 				font-size 15px
 				font-weight bold 
 				text-align center
-				color #fff 
+				color #454692
 				display block
 		.course-icon, .course-icon-mini
 			width 100px
 			height 100px
 			//border 1px solid #000
 			float left
-			background-image url('../img/cine-01.png')
+			background-image url('../img/repair-01.png')
 			background-size cover
 			display inline-block
+			color #535995
 		.course-icon-mini
 			display none
 		.info
@@ -942,11 +1138,11 @@ body
 				margin-left 10px 
 				padding 5px 
 				font-size 18px
-				color #fff
+				color #535995
 				font-weight bold
 			.title
 				display inline-block
-				color #fff
+				color #535995
 				background-color #ff4842
 				font-size 14px 
 				max-width 400px 

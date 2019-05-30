@@ -1,0 +1,374 @@
+# Spanish translations for PROJECT.
+# Copyright (C) 2019 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2019-05-27 15:56-0600\n"
+"PO-Revision-Date: 2019-05-27 15:03-0600\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: app/__init__.py:24
+msgid "Please log in to access this page."
+msgstr ""
+
+#: app/auth/forms.py:25 app/forms.py:21
+msgid "Course"
+msgstr ""
+
+#: app/translate.py:10
+msgid "Error: the translation service is not configured."
+msgstr ""
+
+#: app/translate.py:18
+msgid "Error: the translation service failed."
+msgstr ""
+
+#: app/auth/email.py:8
+msgid "[Microblog] Reset Your Password"
+msgstr "Restable tu contraseña"
+
+#: app/auth/forms.py:9 app/auth/forms.py:16 app/auth/forms.py:66
+msgid "Email"
+msgstr "Email"
+
+#: app/auth/forms.py:10 app/auth/forms.py:19 app/auth/forms.py:71
+msgid "Password"
+msgstr "Contraseña"
+
+#: app/auth/forms.py:11
+msgid "Remember Me"
+msgstr "Recuérdame"
+
+#: app/auth/forms.py:12 app/auth/routes.py:63 app/templates/auth/login.html:5
+msgid "Sign In"
+msgstr "Ingresa"
+
+#: app/auth/forms.py:15
+msgid "Name"
+msgstr "Nombre"
+
+#: app/auth/forms.py:17 app/auth/forms.py:60
+msgid "Phone Number"
+msgstr "Número de Teléfono"
+
+#: app/auth/forms.py:18 app/auth/forms.py:61
+msgid "City"
+msgstr "Ciudad"
+
+#: app/auth/forms.py:21 app/auth/forms.py:73
+msgid "Repeat Password"
+msgstr "Repetir Contraseña"
+
+#: app/auth/forms.py:27
+msgid "Repair"
+msgstr "Reparación de Celulares"
+
+#: app/auth/forms.py:28
+msgid "Design"
+msgstr "Diseño Publicitario"
+
+#: app/auth/forms.py:29
+msgid "English"
+msgstr "Idioma Inglés"
+
+#: app/auth/forms.py:30
+msgid "Mikrotik"
+msgstr "Mikrotik y Ubiquiti"
+
+#: app/auth/forms.py:31
+msgid "Computing"
+msgstr "Computación, Ofimática y Cloud Apss"
+
+#: app/auth/forms.py:32
+msgid "Programming"
+msgstr "Programación Básica y Web"
+
+#: app/auth/forms.py:33
+msgid "PowerPivot"
+msgstr "Inteligencia de Negocios: PowerPivot"
+
+#: app/auth/forms.py:38 app/auth/forms.py:62 app/auth/routes.py:112
+#: app/templates/auth/register.html:5 app/templates/blog/register.html:5
+msgid "Register"
+msgstr "Regístrate"
+
+#: app/auth/forms.py:43
+msgid "Password must contain special characters, number and uppercase letters."
+msgstr ""
+
+#: app/auth/forms.py:48
+msgid "Email already used. Please use a different email."
+msgstr ""
+
+#: app/auth/forms.py:67 app/auth/forms.py:75
+msgid "Request Password Reset"
+msgstr ""
+
+#: app/auth/routes.py:48
+msgid "Invalid username or password"
+msgstr ""
+
+#: app/auth/routes.py:109
+msgid "Congratulations, you are now a registered user!"
+msgstr ""
+
+#: app/auth/routes.py:146
+msgid "Congratulations, you are now a finished the register!"
+msgstr ""
+
+#: app/auth/routes.py:147
+msgid "Complete Register"
+msgstr "Completa tu registro"
+
+#: app/auth/routes.py:165
+msgid "Check your email for the instructions to reset your password"
+msgstr "Revisa tu correo por instrucciones para restablecer tu contraseña"
+
+#: app/auth/routes.py:168 app/templates/auth/reset_password_request.html:5
+#: app/templates/blog/reset_password_request.html:5
+msgid "Reset Password"
+msgstr "Restablecer contraseña"
+
+#: app/auth/routes.py:185
+msgid "Your password has been reset."
+msgstr "Tu contraseña ha sido restablecida"
+
+#: app/auth/routes.py:202
+msgid "Your email has not been validated"
+msgstr "Tu correo no ha sido validado"
+
+#: app/auth/routes.py:205
+msgid "Your email has been validated"
+msgstr "Tu correo ha sido validado"
+
+#: app/blog/routes.py:13 app/templates/blog/post.html:5
+msgid "Blog"
+msgstr "Blog"
+
+#: app/main/forms.py:10
+msgid "Username"
+msgstr "Nombre"
+
+#: app/main/forms.py:11
+msgid "About me"
+msgstr ""
+
+#: app/main/forms.py:13 app/main/forms.py:28 app/main/forms.py:45
+msgid "Submit"
+msgstr "Enviar"
+
+#: app/main/forms.py:23
+msgid "Please use a different username."
+msgstr ""
+
+#: app/main/forms.py:27
+msgid "Say something"
+msgstr ""
+
+#: app/main/forms.py:32 app/main/routes.py:172
+msgid "Search"
+msgstr ""
+
+#: app/main/forms.py:43
+msgid "Message"
+msgstr ""
+
+#: app/main/routes.py:76
+msgid "Explore"
+msgstr ""
+
+#: app/main/routes.py:111
+msgid "Your changes have been saved."
+msgstr ""
+
+#: app/main/routes.py:116 app/templates/edit_profile.html:5
+msgid "Edit Profile"
+msgstr ""
+
+#: app/main/routes.py:125 app/main/routes.py:141
+#, python-format
+msgid "User %(username)s not found."
+msgstr ""
+
+#: app/main/routes.py:128
+msgid "You cannot follow yourself!"
+msgstr ""
+
+#: app/main/routes.py:132
+#, python-format
+msgid "You are following %(username)s!"
+msgstr ""
+
+#: app/main/routes.py:144
+msgid "You cannot unfollow yourself!"
+msgstr ""
+
+#: app/main/routes.py:148
+#, python-format
+msgid "You are not following %(username)s."
+msgstr ""
+
+#: app/main/routes.py:215
+msgid "An export task is currently in progress"
+msgstr ""
+
+#: app/main/routes.py:217
+msgid "Exporting posts..."
+msgstr ""
+
+#: app/templates/404.html:4
+msgid "Not found"
+msgstr ""
+
+#: app/templates/_post.html:16
+#, python-format
+msgid "%(username)s said %(when)s"
+msgstr ""
+
+#: app/templates/_post.html:27
+msgid "Translate"
+msgstr ""
+
+#: app/templates/messages.html:4
+msgid "Messages"
+msgstr ""
+
+#: app/templates/messages.html:12
+msgid "Newer messages"
+msgstr ""
+
+#: app/templates/messages.html:17
+msgid "Older messages"
+msgstr ""
+
+#: app/templates/search.html:4
+msgid "Search Results"
+msgstr ""
+
+#: app/templates/search.html:12
+msgid "Previous results"
+msgstr ""
+
+#: app/templates/search.html:17
+msgid "Next results"
+msgstr ""
+
+#: app/templates/send_message.html:5
+#, python-format
+msgid "Send Message to %(recipient)s"
+msgstr ""
+
+#: app/templates/user.html:8
+msgid "User"
+msgstr ""
+
+#: app/templates/user.html:11 app/templates/user_popup.html:9
+msgid "Last seen on"
+msgstr ""
+
+#: app/templates/user.html:13 app/templates/user_popup.html:11
+#, python-format
+msgid "%(count)d followers"
+msgstr ""
+
+#: app/templates/user.html:13 app/templates/user_popup.html:11
+#, python-format
+msgid "%(count)d following"
+msgstr ""
+
+#: app/templates/user.html:15
+msgid "Edit your profile"
+msgstr ""
+
+#: app/templates/user.html:17
+msgid "Export your posts"
+msgstr ""
+
+#: app/templates/user.html:20 app/templates/user_popup.html:14
+msgid "Follow"
+msgstr ""
+
+#: app/templates/user.html:22 app/templates/user_popup.html:16
+msgid "Unfollow"
+msgstr ""
+
+#: app/templates/user.html:25
+msgid "Send private message"
+msgstr ""
+
+#: app/templates/user.html:37
+msgid "Newer posts"
+msgstr ""
+
+#: app/templates/user.html:42
+msgid "Older posts"
+msgstr ""
+
+#: app/templates/auth/complete.html:5
+msgid "Complete"
+msgstr ""
+
+#: app/templates/auth/login.html:8
+msgid "Login with Facebook."
+msgstr "Ingresa con Facebook."
+
+#: app/templates/auth/login.html:16
+msgid "New User?"
+msgstr "¿Eres nuevo?"
+
+#: app/templates/auth/login.html:16
+msgid "Click to Register!"
+msgstr "¡Haz click para Registrarte!"
+
+#: app/templates/auth/login.html:18
+msgid "Forgot Your Password?"
+msgstr "¿Olvidaste tu Contraseña?"
+
+#: app/templates/auth/login.html:19
+msgid "Click to Reset It"
+msgstr "Click para Restablecerla"
+
+#: app/templates/auth/reset_password.html:5
+#: app/templates/blog/reset_password.html:5
+msgid "Reset Your Password"
+msgstr "Restable tu contraseña"
+
+#: app/templates/auth/validated_email.html:5
+msgid "Validate email"
+msgstr "Valida tu Corre"
+
+#: app/templates/auth/validated_email.html:15
+msgid "Main Page"
+msgstr "Página Principal"
+
+#: app/templates/blog/detail.html:13
+msgid "Index Blog"
+msgstr "Índice"
+
+#: app/templates/errors/404.html:4
+msgid "Not Found"
+msgstr "Página No Encontrada"
+
+#: app/templates/errors/404.html:5 app/templates/errors/500.html:6
+msgid "Back"
+msgstr "Regresa"
+
+#: app/templates/errors/500.html:4
+msgid "An unexpected error has occurred"
+msgstr "Un error inesperado ha ocurrido"
+
+#: app/templates/errors/500.html:5
+msgid "The administrator has been notified. Sorry for the inconvenience!"
+msgstr ""
+
