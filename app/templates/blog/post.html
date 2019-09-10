@@ -1,24 +1,30 @@
 {% extends 'base.html' %}
 {% import 'bootstrap/wtf.html' as wtf %}
 
-{% block app_content %}
-<div class="courses row">
-  <div class="internal-courses">
-
-    <h1>{{ _('Blog') }}</h1>
-    <div class="row">
-        <div class="col-md-4">
-            {% for entry in entries %}
-            <p>
-                <a href="{{base_url}}/blog/{{entry.slug}}/">
-                    <strong> {{ entry.name }} </strong>
-                </a> 
-            <br>
-                {{ entry.summary }}
-            </p>
-            {% endfor %}
-        </div>
-    </div>
-  </div>
-</div>
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet"
+      href="{{url_for('static', filename='css-minified/blog.css')}}">
 {% endblock %}
+
+{% block app_content %}
+<div class="external-blog row">
+  <div class="internal-blog">
+    <h1>{{ _('Blog') }}</h1>
+
+    {% for entry in entries %}
+    <div class="entry">
+        <a href="{{base_url}}/blog/{{entry.slug}}/">
+            <div class="image"><img class="image-blog" src="{{ entry.image|safe }}"></div>
+            <div class="title"><strong> {{ entry.name }} </strong></div>
+        </a>
+        {{ entry.summary }}
+    </div>
+    <div class="line"></div>
+    {% endfor %}
+  </div>
+{% include "courses.html" %}
+</div>
+{% include "footer.html" %}
+{% endblock %}
+

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet"
+      href="{{url_for('static', filename='css-minified/course.css')}}">
+{% endblock %}
+
+{% block app_content %}
+<div class="courses row">
+  <div class="internal-enroll">
+    <h1>{{ _('Cancel enroll') }}</h1>
+    <div class="invoices">
+    	<table class="table">
+		  <tr>
+		    <th>{{ _('Date') }}</th>
+		    <th>{{ _('Service')}}</th>
+		    <th>{{ _('Description') }}</th>
+		    <th>{{ _('Amount') }}</th>
+		  </tr>
+		  	{% for invoice in invoices %}
+		  	<tr>
+	    		<td>{{ invoice.invoice_date }}</td>
+		  		{% for line in invoice.lines %}
+	    		<td>{{ line.product.name }}</td>
+		  		{% endfor %}
+	    		<td>{{ invoice.description }}</td>
+	    		<td>{{ invoice.total_amount }}</td>
+	    	</tr>
+	    	{% endfor %}
+		</table>
+    </div>
+    <div id="cc_form" class="form">
+    	{{ wtf.quick_form(cancel_form) }}
+
+    </div>
+    <div class="buttons">
+    	<a href="{{ url_for('course.payment') }}" id="enroll_button" class="button"> {{ _('Pay with Card') }}</a>
+    </div>
+    <div>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="messages">
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    </div>
+
+  </div>
+</div>
+{% endblock %}
+

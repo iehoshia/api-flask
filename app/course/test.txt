@@ -1,0 +1,53 @@
+        defaults = {}
+        defaults['sessionid'] = uniqid()
+        defaults['orgid'] = '1snn5n9w' #'k8vif92e'  TEST OR PRODUCTION
+        defaults['merchantid'] = 'visanetgt_qpay' #credentials['merchantid']
+        defaults['user'] = user
+        defaults['cc_form'] = cc_form
+        defaults['invoices'] = invoices
+        defaults['subscriptions'] = subscriptions
+        url_test = 'https://sandbox.qpaypro.com/payment/api_v1'
+        url_production = 'https://payments.qpaypro.com/checkout/api_v1'
+
+        if cc_form.validate_on_submit():
+            credit_card = str(cc_form.card_number.data)
+            credit_card.replace(' ','')
+            invoice, = invoices
+
+            params = {}
+            params['x_login'] = 'visanetgt_qpay' # credentials['x_login']
+            params['x_private_key'] = '88888888888' # credentials['x_private_key']
+            params['x_api_secret'] = '99999999999'  #credentials['x_api_secret']
+            params['x_product_id'] = 6 #invoice.lines[0].product.id
+            params['x_audit_number'] = random.randint(1,999999)
+            params['x_fp_sequence'] = 1988679099 #INVOICE SEQUENCE NUMBER
+            params['x_invoice_num'] = random.randint(1,999999) #INVOICE SEQUENCE NUMBER
+            params['x_fp_timestamp'] = time()
+            params['x_currency_code'] = 'GTQ'
+            params['x_amount'] = 1.00 #invoice.total_amount
+            params['x_line_item'] = 'T SHIRT' #invoice.lines[0].product.name
+            params['x_freight'] = 0.00
+            params['x_email'] = 'admin@demo.com' #'jperez@apixela.net'
+            params['cc_name'] = 'john doe' # cc_form.name.data
+            params['cc_number'] = '4111111111111111' #credit_card
+            params['cc_exp'] =  '01/21' #str(cc_form.expiration_date.data)
+            params['cc_cvv2'] =  '4567' # cc_form.code.data
+            params['cc_type'] = 'visa'
+            params['x_first_name'] =  'john' #user.party.name
+            params['x_last_name'] =  'doe'#user.party.name
+            params['x_company'] = 'Company'
+            params['x_address'] = '711-2880 Nulla'
+            params['x_city'] = 'Guatemala'#user.party.city
+            params['x_state'] = 'Guatemala' # user.party.city
+            params['x_country'] = 'Guatemala' # user.party.country
+            params['x_zip'] = '09001'
+            params['x_relay_response'] = 'none'
+            params['x_relay_url'] = 'none'
+            params['x_type'] = 'AUTH_ONLY'
+            params['x_method'] = 'CC'
+            params['http_origin'] = 'http://local.test.com' # 'https://www.apixela.net'
+            params['visaencuotas'] = 0
+            params['device_fingerprint_id'] = defaults['sessionid']
+
+            response = requests.post( url=url_test,
+                params=params)

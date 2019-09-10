@@ -26,7 +26,6 @@ class ContactForm(FlaskForm):
                   ('5', 'Computacion, Ofimatica y Cloud Computing'),
                   ('6', 'Programacion Basica y Web'),
                   ('7', 'Power Pivot: Inteligencia de Negocios'),
-                  #('10', 'Produccion Musical'),
         		  ],
     	validators=[DataRequired()],
     	render_kw={"placeholder": "Curso *"} )

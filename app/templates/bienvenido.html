@@ -7,10 +7,14 @@
 			<div class="box-inner">
         <span class="title">¡Hola <strong>{{ firstname }}</strong>!</span>
         <br>
-        <span class="subtitle"> ¡Gracias por escribirnos! </span> 
+        <span class="subtitle">¡Tu solicitud ha sido procesada!</span>
         <br>
         <span class="description">
-        Nosotros nos pondremos en contacto en breve con noticias (muy) emocionantes de nuestros cursos. 
+        Nos pondremos en contacto en breve con noticias (muy) emocionantes de nuestros cursos.
+        {% if flash_message is not none %}
+            La respuesta de tu solicitud fue la siguiente:
+            <strong> {{ flash_message }} </strong>
+        {% endif %}
         </span>
         <div class="share">
         <!-- AddToAny BEGIN -->
@@ -24,11 +28,11 @@
         <script async src="https://static.addtoany.com/menu/page.js"></script>
         <!-- AddToAny END -->
       </div>
-    
+
 
 			</div>
       <div class="redirect">
-        Serás redirigid@ en 
+        Serás redirigid@ en
         <br>
         <p id="time"></p>
 
@@ -47,20 +51,20 @@
 
             // Get todays date and time
             var now = new Date().getTime();
-            
+
             // Find the distance between now an the count down date
             var distance = countDownDate - now;
-            
+
             // Time calculations for days, hours, minutes and seconds
             var days = Math.floor(distance / (1000 * 60 * 60 * 24));
             var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
+
             // Output the result in an element with id="time"
             document.getElementById("time").innerHTML = seconds + "s ";
-            
-            // If the count down is over, write some text 
+
+            // If the count down is over, write some text
             if (distance < 0) {
                 clearInterval(x);
                 document.getElementById("time").innerHTML = "EXPIRED";

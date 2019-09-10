@@ -1,6 +1,21 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-    <h1>{{ _('Not found') }}</h1>
-    
+<div class="container-fluid row" >
+
+	<div class="not-found-external">
+		<div class="not-found-internal">
+		    <h1>_l('404 ERROR')</h1>
+			<h3>Subestimaste el poder del lado oscuro</h3>
+		    <a href="{{ url_for('main.index') }}">
+		    	<div class="index">
+		    	 	REGRESA
+		    	</div>
+		    </a>
+		</div>
+	</div>
+	{% include "courses.html" %}
+</div>
+{% include "footer.html" %}
 {% endblock %}

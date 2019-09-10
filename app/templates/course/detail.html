@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet"
+      href="{{url_for('static', filename='css-minified/course.css')}}">
+{% endblock %}
+
+{% block app_content %}
+<div class="courses row">
+  <div class="internal-courses-detail">
+    {% for course in courses %}
+        <h5>{{ course.name }}</h5>
+        <h6>{{ _('Available from') }} {{ course.start_date }} {% if course.end_date is not none %} {{ _('To') }} {{ course.end_date }} {% endif %} </h6>
+        <div class="embed-responsive embed-responsive-16by9">
+            {{ course.video|safe  }}
+        </div>
+        <div class="summary">
+            {{ course.content | safe }}
+        </div>
+        {% if course.lessons %}
+        <ul class="item-container">
+        {% for lesson in course.lessons %}
+            {% if lesson.membership_type == 'free' %}
+            <a href="{{base_url}}/cursos/{{course.slug}}/{{lesson.slug}}/"><li class="free">{{lesson.name}}</li></a>
+            {% else %}
+            <a href="{{base_url}}/cursos/{{course.slug}}/{{lesson.slug}}/"><li class="premium">{{lesson.name}}</li></a>
+            {% endif %}
+        {% endfor %}
+        </ul>
+        {% endif %}
+        <a href="{{base_url}}/cursos/">
+            <p class="index"> Índice de cursos
+            </p>
+        </a>
+    {% endfor %}
+
+  </div>
+</div>
+</div>
+{% include "footer.html" %}
+{% endblock %}
+

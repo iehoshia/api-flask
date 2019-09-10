@@ -1,125 +1,87 @@
 {% extends "base.html" %}
 {% import 'bootstrap/wtf.html' as wtf %}
 
+
+{% block metas %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta property="og:url" content="https://www.apixela.net" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="API Centro de Capacitación" />
+<meta property="og:description" content="Curso en Línea " />
+<meta property="og:image" itemprop="image primaryImageOfPage" content="https://www.apixela.net/static/img/slide02.jpg" />
+
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet"
+      href="{{url_for('static', filename='css-minified/index.css')}}">
+{% endblock %}
+
 {% block content %}
 <div class="container-fluid" >
 	<div class="external row" id="contact-us-form">
 		<div class="internal row">
-			<div class="col-md-8">
+			<!--
+				<div class="link-courses">
+				</div>
+			-->
+			<a href="/cursos">
 				<div class="general-title">
-				<!--¡No MÁS excusas!-->
-				<a href="whatsapp://send?text=&amp;Hola, necesito información acerca de los cursos:&amp;&phone=+50230050240&abid=+50230050240" style="text-decoration:none;" class="mobile" target="_blank">
-		      	<div class="call-to-action">WhatsAppea</div>
+				¡Cursos en línea!
 				</div>
-		  	</a>
-			</div>
-			<div class="col-md-4">
-				<div class="formulario" >
-					<div class="titulo_form">EMPIEZA A <strong>APRENDER</strong> HOY</div>
-					<!--
-					<form role="form" method="post">
-						{{ form.hidden_tag() }}
-						<div class="form-group">
-							{{ form.firstname(size=40, class_="firstname") }}
-							{% for error in form.firstname.errors %}
-				            	<span style="color: red;">*</span>
-				            {% endfor %}
-						</div>
-						<div class="form-group">
-							{{ form.email(size=40, class_="email") }}
-							{% for error in form.email.errors %}
-				            	<span style="color: red;">*</span>
-				            {% endfor %}
-						</div>
-						<div class="city_phone form-group">
-							<div class="row">
-								<div class="phone-col col-md-6">
-									{{ form.phone(size=15, class_="phone") }}
-									{% for error in form.phone.errors %}
-						            	<span style="color: red;">*</span>
-						            {% endfor %}
-								</div>
-								<div class="city-col col-md-6">
-									{{ form.city(size=15, class_="city") }}
-									{% for error in form.city.errors %}
-						            	<span style="color: red;">*</span>
-						            {% endfor %}
-								</div>
-							</div>
-						</div>
+			</a>
+			<div class="formulario" >
+				<div class="titulo_form">EMPIEZA A <strong>APRENDER</strong> HOY</div>
 
-						<div class="form-group">
-							<label class="labelCourse" for="labelCourse">
-									Curso de interés
-						 	</label>
-						 	{{ form.course(class_="course") }}
-      					</div>
-      					{{ form.recaptcha }}
-      					<div class="send">{{ form.submit() }}</div>
-					</form>
-					-->
-					{{ wtf.quick_form(form) }}
-				</div>
+				{{ wtf.quick_form(form) }}
+			</div>
+			<div class="line">
+				<a href="whatsapp://send?text=&amp;Hola, necesito información acerca de los cursos:&amp;&phone=+50230050240&abid=+50230050240" style="text-decoration:none;" class="mobile" target="_blank">
+				  	<div class="call-to-action">WhatsAppea</div>
+				</a>
 			</div>
 		</div>
 	</div>
-
-<!-- EVENTOS --> 
-<a href="/powerpivot" style="text-decoration:none;" class="aevent">
-	<div class="events row"> 
-		<div class="internal-events">
-			<div class="container"> 
-				<div class="course-icon-mini"></div>
-				<div class="date">
-					<div class="date_number">09</div> 
-					<div class="date_month">Junio</div>
-				</div> 
-				<div class="course-icon">
-				</div> 
-				<div class="info"> 
-					<span class="title">Próximo Evento</span>
-					<div class="text_title">Curso de Inteligencia de <strong>negocios.</strong>
-						<!--<div class="clock"></div>-->
-					</div>  
-					<span class="text_tablet">Inteligencia de <strong>NEGOCIOS.</strong></span> 
-	        	</div>
-	        	<span class="text_tablet_mini">Inteligencia de<strong>NEGOCIOS.</strong></span> 
-			</div>
-		</div>
-	</div> 
-</a>
-
-	<div class="courses row">
-		<div class="internal-courses">
-			<h2 class="title-course">
-				¿Qué cursos te ofrecemos? 
-			</h2>
-			<!--
-			<div class="row-eq-height col-md-4">
-				<div class="cine col-md-12">
-	        		<div class="img">
-						
+	<!-- EVENTOS -->
+	<a href="/cursos" style="text-decoration:none;" class="aevent">
+		<div class="events row">
+			<div class="internal-events">
+				<div class="container">
+					<div class="course-icon-mini"></div>
+					<div class="date">
+						<div class="date_number">29</div>
+						<div class="date_month">Agosto</div>
 					</div>
-					<h2>
-						Comunicación y Producción Cinematográfica 
-					</h2>
-					<p>
-						¿Te gusta el cine? Aprende sobre la construcción de un guion, fotografía, sonido, rodaje, edición y producción general de un cortometraje.
-					</p>
-					<p>
-						<a class="btn" href="/cine">Ver más »</a>
-					</p>
+					<div class="course-icon">
+					</div>
+					<div class="info">
+						<span class="title">Próximo Evento</span>
+						<div class="text_title">Network Administration Specialist <strong>MIKROTIK</strong>
+							<!--<div class="clock"></div>-->
+						</div>
+						<span class="text_tablet">Regístrate y descrubre promociones especiales.</span>
+		        	</div>
+		        	<span class="text_tablet_mini">Regístrate y descrubre promociones especiales.</span>
 				</div>
 			</div>
-		-->
+		</div>
+	</a>
+
+	<div class="courses row">
+		<div class="internal-courses index">
+			<h5 class="index-title">
+				¿Qué cursos te ofrecemos?
+			</h5>
 			<div class="row-eq-height col-md-4">
 				<div class="reparacion col-md-12">
 					<div class="img">
-						
+
 					</div>
 					<h2>Reparación de Computadoras y Celulares</h2>
 					<p>
-						Aprende a reparar computadoras y laptops. También aprende a reparar celulares, desde cero, sin requisitos. Inicia tu propio negocio. Solicita más información..
+						Aprende a reparar computadoras y laptops. También aprende a reparar celulares, desde cero, sin requisitos.
 					</p>
 					<p>
 						<a class="btn" href="/reparacion">Ver más »</a>
@@ -129,13 +91,13 @@
 			<div class="row-eq-height col-md-4">
 				<div class="ingles col-md-12">
 					<div class="img">
-						
+
 					</div>
 					<h2>
 						PowerPivot: Inteligencia de Negocios
 					</h2>
 					<p>
-						Análisis de datos eficaz y modelado de datos en Excel. 
+						Análisis de datos eficaz y modelado de datos en Excel. Gráficas dinámicas en tiempo real y accesibles.
 					</p>
 					<p>
 						<a class="btn" href="/powerpivot">Ver más...</a>
@@ -145,13 +107,13 @@
 			<div class="row-eq-height col-md-4">
 				<div class="diseno col-md-12">
 	        		<div class="img">
-						
+
 					</div>
 					<h2>
-						Diseño Publicitario y Marketing Digital 
+						Diseño Publicitario y Marketing Digital
 					</h2>
 					<p>
-						Aprende las herramientas necesarias para trabajar en agencias de publicidad y/o agencias de medios. Desarrolla tu creatividad y aumenta tus ingresos en trabajos como webmaster y social media manager, diseñador o ilustrador.
+						Aprende las herramientas necesarias para trabajar en agencias de publicidad y/o agencias de medios.
 					</p>
 					<p>
 						<a class="btn" href="/diseno">Ver más...</a>
@@ -161,46 +123,28 @@
 			<div class="row-eq-height col-md-4">
 				<div class="computacion col-md-12">
 					<div class="img">
-						
+
 					</div>
 					<h2>Computación, Ofimática y Cloud Computing</h2>
 					<p>
-						Aprende a operar y utilizar tu computadora. Aprovecha al máximo las facilidades que brinda el uso correcto de la tecnología. Aprende a trabajar también con las tecnologías en la nube y todos sus beneficios. Además aprender a sincronizar PC, tablet y teléfono. 
+						Aprende a operar y utilizar tu computadora. Aprovecha al máximo las facilidades que brinda el uso correcto de la tecnología. Aprende a trabajar también con las tecnologías en la nube y todos sus beneficios. Además aprender a sincronizar PC, tablet y teléfono. Da un salto cualitativo en tus conocimientos. Aprende, comprende, emprende.
 					</p>
 					<p>
 						<a class="btn" href="/computacion">Ver más...</a>
 					</p>
 				</div>
 			</div>
-			<!--
-			<div class="row-eq-height col-md-4">
-				<div class="produccion col-md-12">
-					<div class="img">
-						
-					</div>
-					<h2>
-						Producción Musical
-					</h2>
-					<p>
-						El curso de producción Musical está enfocado a personas que ya tienen experiencia o desean iniciar en el mundo de la música. Se aprenderán diferentes métodos de creación de sonidos, además de conocer mezclas y masterización.
-					</p>
-					<p>
-						<a class="btn" href="/produccion">Ver más...</a>
-					</p>
-				</div>
-			</div>
-		-->
 
 			<div class="row-eq-height col-md-4">
 				<div class="redes col-md-12">
 	        		<div class="img">
-						
+
 					</div>
 					<h2>
 						Mikrotik y Ubiquiti
 					</h2>
 					<p>
-						MikroTik proporciona routers y software para la conectividad a Internet, utilizando el sistema de software RouterOS. 
+						MikroTik proporciona routers y software para la conectividad a Internet, utilizando el sistema de software RouterOS.
 						Ubiquiti provee de tecnología disruptiva para la creación de redes inalámbricas, tanto para la comunicación a largas distancias, como para el despliegue de pequeñas redes Wi-Fi. Ideal para proveedores WISP.
 
 					</p>
@@ -212,11 +156,11 @@
 			<div class="row-eq-height col-md-4">
 				<div class="programacion col-md-12">
 					<div class="img">
-						
+
 					</div>
 					<h2>Programación Básica y Web</h2>
 					<p>
-						Programar es tan esencial como leer. Te enseñamos desde cero a entender, leer y escribir código. A pensar como desarrollador, y ser también un programador. Aprenderás los elementos clásicos de programación, a la vez usando la Programación Orientada a Objetos (POO), entre otros paradigmas modernos de programación. Programar es una nueva forma de pensar. 
+						Programar es tan esencial como leer. Te enseñamos desde cero a entender, leer y escribir código. A pensar como desarrollador, y ser también un programador. Aprenderás los elementos clásicos de programación, a la vez usando la Programación Orientada a Objetos (POO), entre otros paradigmas modernos de programación. Programar es una nueva forma de pensar.
 
 					</p>
 					<p>
@@ -224,84 +168,59 @@
 					</p>
 				</div>
 			</div>
-			<!--
-			<div class="row-eq-height col-md-4">
-				<div class="construccion col-md-12">
-					<div class="img">
-						
-					</div>
-					<h2>
-						Construcción Digital en Arquitectura: AutoCAD
-					</h2>
-					<p>
-						Aprende sobre las posibilidades creativas que la proyección digital ofrece al ámbito de la arquitectura, con toda la variedad de tecnologías y técnicas que existen hoy para la producción de diseños holísticos y componenciales a través de CAD (diseño asistido por computadora). El sistema CAD permite también la impresión en 3D. 
-					</p>
-					<p>
-						<a class="btn" href="/construccion">Ver más...</a>
-					</p>
-				</div>
-			</div>
-		-->
 		</div>
 	</div>
 
-	<div class="internal-courses">
-		<h2 class="title-course">
-			¿Quieres conocer algunos de los proyectos que podrás realizar?
-			<div id="fb-root" style="margin-top:20px;"></div> 
-	        <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
-
+	<div class="projects">
+		<div class="internal-projects">
+			<h5 class="index-title">¿Quieres conocer algunos de los proyectos que podrás realizar?</h5>
 	        <!-- Your embedded video player code -->
-	        
-	        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fapixela%2Fvideos%2F10153885783491991%2F&show_text=0&width=560" class="iframein" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
- 
-		</h2>
-		<div style="margin:auto 0;">
-			
+	        <div class="video bbfb-video" id="10153885783491991" data-link="https://business.facebook.com/apixela/videos/10153885783491991/">
+			    <img class="bbfb-thumb" src="https://apixela.net/static/img/course-9.jpg"/>
+			</div>
+			<div class="play-button"></div>
 		</div>
 	</div>
-
 	<div class="places row">
 		<div class="internal-places ">
-			<div class="title">
+			<h5 class="index-title">
 				¿Dónde nos puedes ubicar?
-			</div>
+			</h5>
 			<div class="content-places">
-
-			<!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d681.7692025542751!2d-91.52159995608282!3d14.843823128204566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858e98008458db63%3A0x7d6bedb7bdda3abd!2sAPI!5e0!3m2!1ses-419!2sgt!4v1518714526211" width="1100" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>-->
 			</div>
 		</div>
 	</div>
 	<div class="why-external row">
-		<div class="why-internal ">
-			<div class="title">
-				¿Por qué API?
-			</div>
-
-			<h5>¿Qué es API?</h5>
-			<ul>
-				<li>Excelencia académica.</li>
-				<li>Cursos 100% prácticos y aplicables</li>
-				<li>Experiencia comprobada de más de 6 años</li>
-				<li>Cursos 100% prácticos y aplicables</li>
-			</ul>
-		</div>
-
 		<!-- Hourly -->
 		<div class="hourly-container">
 			<div class="title">
-				Horarios de atención 
+				Horarios de atención
 			</div>
 			<div class="hourly">
 				<ul>
 					<li>Domingo 		07.00 - 14.00 horas</li>
 					<li>Lunes a jueves 	08.00 - 18.30 horas</li>
 					<li>Viernes 		08.00 - 13.00 horas</li>
-					<li>Sábado			<strong>CERRADO</strong></li>
+					<li>Sábado			CERRADO</li>
 				</ul>
 			</div>
 		</div>
-	</div> 
+		<!-- Hourly -->
+		<div class="why-internal ">
+			<h5>¿Dudas?, ¡platiquemos!</h5>
+			<a href="https://m.me/apixela" style="" class="a-messenger" target="_blank">
+		    	<div class="messenger">Escríbemos en Messenger</div>
+			</a>
+		</div>
+		<div class="why-internal">
+			<div class="line-mobile"></div>
+			<a href="whatsapp://send?text=&amp;Hola, necesito información acerca de los cursos:&amp;&phone=+50230050240&abid=+50230050240" style="text-decoration:none;" class="mobile" target="_blank">
+	      		<div class="call-to-action">WhatsAppea</div>
+			</a>
+			<div class="line mobile"></div>
+		</div>
+	</div>
 </div>
 {% include "footer.html" %}
 {% endblock %}
+

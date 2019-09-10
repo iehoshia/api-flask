@@ -22,8 +22,9 @@ class OAuthSignIn(object):
         pass
 
     def get_callback_url(self):
-        return url_for('auth.oauth_callback', provider=self.provider_name,
+        url = url_for('auth.oauth_callback', provider=self.provider_name,
                        _external=True)
+        return url
 
     @classmethod
     def get_provider(self, provider_name):
@@ -44,39 +45,54 @@ class FacebookSignIn(OAuthSignIn):
             client_secret=self.consumer_secret,
             authorize_url='https://graph.facebook.com/oauth/authorize',
             access_token_url='https://graph.facebook.com/oauth/access_token',
-            base_url='https://graph.facebook.com/'
+            base_url='https://graph.facebook.com/',
+            #state='https://www.apixela.net/welcome',
         )
 
-    def authorize(self):
-        return redirect(self.service.get_authorize_url(
-            scope='email',
-            response_type='code',
-            redirect_uri=self.get_callback_url())
-        )
+    def authorize(self, next=None):
+        if next is not None:
+            params = {
+                'scope': 'email',
+                'response_type': 'code',
+                'redirect_uri': self.get_callback_url(),
+                'state': next,
+            }
+        else:
+            params = {
+                'scope': 'email',
+                'response_type': 'code',
+                'redirect_uri': self.get_callback_url(),
+            }
 
-    def callback(self):
+        redirect_uri = self.service.get_authorize_url(
+            **params)
+
+        return redirect(redirect_uri)
+
+    def callback(self, next=None):
         def decode_json(payload):
             return json.loads(payload.decode('utf-8'))
 
         if 'code' not in request.args:
             return None, None, None
+
         oauth_session = self.service.get_auth_session(
             data={'code': request.args['code'],
                   'grant_type': 'authorization_code',
-                  'redirect_uri': self.get_callback_url()},
+                  'redirect_uri': self.get_callback_url(),
+                  },
             decoder=decode_json
         )
-        #me = oauth_session.get('me?fields=id,email').json()
-        me = oauth_session.get('me?fields=id,name,email').json()
-        #print ("ME ", str(me))
+
+        me = oauth_session.get('me?fields=id,name,email,picture').json()
 
         return (
             'facebook$' + me['id'],
-            #me.get('name').split('@')[0],  # Facebook does not provide
             me.get('name'),                 # Facebook does not provide
                                             # username, so the email's user
                                             # is used instead
-            me.get('email')
+            me.get('email'),
+            me.get('picture'),
         )
 
 

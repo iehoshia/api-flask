@@ -2,15 +2,16 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-<div class="courses row">
-  <div class="internal-courses">
-	
+<div class="login row">
+  <div class="internal-login">
     <h1>{{ _('Complete') }}</h1>
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-12">
             {{ wtf.quick_form(form) }}
         </div>
     </div>
   </div>
 </div>
+{% include "footer.html" %}
 {% endblock %}
+

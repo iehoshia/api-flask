@@ -2,9 +2,9 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
-<div class="courses row">
-  <div class="internal-courses">
-    <h1>{{ _('Validate email') }}</h1>
+<div class="login row">
+  <div class="internal-login">
+    <h1>Valida tu correo</h1>
     {% with messages = get_flashed_messages() %}
 	  {% if messages %}
 	    <ul class=flashes>
@@ -14,7 +14,10 @@
 	    </ul>
 	  {% endif %}
 	{% endwith %}
+
   </div>
 </div>
+{% include "footer.html" %}
 
 {% endblock %}
+

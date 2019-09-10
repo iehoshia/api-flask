@@ -1,16 +1,14 @@
 .footer-distributed{
-	background-color: #292c2f;
+	background-color: #224961;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 	width: 100%;
 	text-align: left;
 	font: bold 16px sans-serif;
-
 	padding: 55px 50px;
-	padding-bottom: 20px; 
+	padding-bottom: 20px;
 	margin-top: 0px;
 }
-
 .footer-distributed .footer-left,
 .footer-distributed .footer-center,
 .footer-distributed .footer-right{
@@ -19,7 +17,6 @@
 }
 
 /* Footer left */
-
 .footer-distributed .footer-left{
 	width: 40%;
 }
@@ -52,11 +49,11 @@
 }
 
 .footer-distributed .footer-company-name{
-	color:  #8f9296;
+	color:  #fff;
 	font-size: 14px;
-	font-weight: normal;
+	font-weight: bold;
 	margin: 0;
-	padding-left: 75px; 
+	padding-left: 75px;
 }
 
 /* Footer Center */
@@ -66,8 +63,6 @@
 }
 
 .footer-distributed .footer-center i{
-	background-color:  #33383b;
-	color: #ffffff;
 	font-size: 25px;
 	width: 38px;
 	height: 38px;
@@ -111,7 +106,7 @@
 
 .footer-distributed .footer-company-about{
 	line-height: 20px;
-	color:  #92999f;
+	color:  #fff;
 	font-size: 13px;
 	font-weight: normal;
 	margin: 0;

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-05-27 15:56-0600\n"
+"POT-Creation-Date: 2019-08-13 18:31-0600\n"
 "PO-Revision-Date: 2019-05-27 15:03-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -20,43 +20,37 @@ msgstr ""
 
 #: app/__init__.py:24
 msgid "Please log in to access this page."
-msgstr ""
-
-#: app/auth/forms.py:25 app/forms.py:21
-msgid "Course"
-msgstr ""
+msgstr "Por favor ingresa para acceder a está página"
 
 #: app/translate.py:10
 msgid "Error: the translation service is not configured."
-msgstr ""
+msgstr "Error: el servicio de traducción no está instalado"
 
 #: app/translate.py:18
 msgid "Error: the translation service failed."
-msgstr ""
+msgstr "Error: el servicio de traducción falló."
 
 #: app/auth/email.py:8
 msgid "[Microblog] Reset Your Password"
 msgstr "Restable tu contraseña"
 
-#: app/auth/forms.py:9 app/auth/forms.py:16 app/auth/forms.py:66
-msgid "Email"
-msgstr "Email"
-
-#: app/auth/forms.py:10 app/auth/forms.py:19 app/auth/forms.py:71
+#: app/auth/forms.py:10 app/auth/forms.py:19 app/auth/forms.py:86
 msgid "Password"
 msgstr "Contraseña"
 
-#: app/auth/forms.py:11
-msgid "Remember Me"
-msgstr "Recuérdame"
+#: app/auth/forms.py:12 app/course/forms.py:29 app/course/forms.py:48
+#: app/course/forms.py:52 app/course/forms.py:60 app/main/forms.py:64
+#: app/main/forms.py:79 app/main/forms.py:96
+msgid "Submit"
+msgstr "Enviar"
 
-#: app/auth/forms.py:12 app/auth/routes.py:63 app/templates/auth/login.html:5
-msgid "Sign In"
-msgstr "Ingresa"
-
-#: app/auth/forms.py:15
+#: app/auth/forms.py:15 app/main/forms.py:59
 msgid "Name"
 msgstr "Nombre"
+
+#: app/auth/forms.py:16 app/auth/forms.py:81 app/main/forms.py:55
+msgid "Email"
+msgstr "Email"
 
 #: app/auth/forms.py:17 app/auth/forms.py:60
 msgid "Phone Number"
@@ -66,170 +60,652 @@ msgstr "Número de Teléfono"
 msgid "City"
 msgstr "Ciudad"
 
-#: app/auth/forms.py:21 app/auth/forms.py:73
+#: app/auth/forms.py:22 app/auth/forms.py:89
 msgid "Repeat Password"
 msgstr "Repetir Contraseña"
 
-#: app/auth/forms.py:27
-msgid "Repair"
-msgstr "Reparación de Celulares"
-
-#: app/auth/forms.py:28
-msgid "Design"
-msgstr "Diseño Publicitario"
-
-#: app/auth/forms.py:29
-msgid "English"
-msgstr "Idioma Inglés"
-
-#: app/auth/forms.py:30
-msgid "Mikrotik"
-msgstr "Mikrotik y Ubiquiti"
-
-#: app/auth/forms.py:31
-msgid "Computing"
-msgstr "Computación, Ofimática y Cloud Apss"
-
-#: app/auth/forms.py:32
-msgid "Programming"
-msgstr "Programación Básica y Web"
-
-#: app/auth/forms.py:33
-msgid "PowerPivot"
-msgstr "Inteligencia de Negocios: PowerPivot"
-
-#: app/auth/forms.py:38 app/auth/forms.py:62 app/auth/routes.py:112
-#: app/templates/auth/register.html:5 app/templates/blog/register.html:5
+#: app/auth/forms.py:38 app/auth/forms.py:77 app/auth/routes.py:146
+#: app/templates/auth/register.html:9 app/templates/blog/register.html:5
+#: app/templates/course/register.html:5
 msgid "Register"
 msgstr "Regístrate"
 
 #: app/auth/forms.py:43
 msgid "Password must contain special characters, number and uppercase letters."
 msgstr ""
+"La contraseña debe contener caracteres especiales(@,# ú otros), números y"
+" letras mayúsculas."
 
 #: app/auth/forms.py:48
 msgid "Email already used. Please use a different email."
-msgstr ""
+msgstr "Este correo ya está registrado. Por favor usa uno diferente."
 
-#: app/auth/forms.py:67 app/auth/forms.py:75
+#: app/auth/forms.py:82 app/auth/forms.py:90
 msgid "Request Password Reset"
-msgstr ""
+msgstr "Reiniciar Contraseña"
 
-#: app/auth/routes.py:48
+#: app/auth/routes.py:54
 msgid "Invalid username or password"
-msgstr ""
+msgstr "Correo electrónico o contraseña incorrecta"
 
-#: app/auth/routes.py:109
-msgid "Congratulations, you are now a registered user!"
-msgstr ""
+#: app/auth/routes.py:62 app/auth/routes.py:63
+msgid "Sign In"
+msgstr "Ingresa"
 
-#: app/auth/routes.py:146
+#: app/auth/routes.py:205
 msgid "Congratulations, you are now a finished the register!"
-msgstr ""
+msgstr "Felicitacion, te has registrado exitosamente!"
 
-#: app/auth/routes.py:147
+#: app/auth/routes.py:209
 msgid "Complete Register"
 msgstr "Completa tu registro"
 
-#: app/auth/routes.py:165
+#: app/auth/routes.py:226
 msgid "Check your email for the instructions to reset your password"
 msgstr "Revisa tu correo por instrucciones para restablecer tu contraseña"
 
-#: app/auth/routes.py:168 app/templates/auth/reset_password_request.html:5
+#: app/auth/routes.py:229 app/templates/auth/reset_password_request.html:9
 #: app/templates/blog/reset_password_request.html:5
+#: app/templates/course/reset_password_request.html:5
 msgid "Reset Password"
 msgstr "Restablecer contraseña"
 
-#: app/auth/routes.py:185
+#: app/auth/routes.py:242
 msgid "Your password has been reset."
 msgstr "Tu contraseña ha sido restablecida"
 
-#: app/auth/routes.py:202
+#: app/auth/routes.py:254
 msgid "Your email has not been validated"
 msgstr "Tu correo no ha sido validado"
 
-#: app/auth/routes.py:205
+#: app/auth/routes.py:256
 msgid "Your email has been validated"
 msgstr "Tu correo ha sido validado"
 
-#: app/blog/routes.py:13 app/templates/blog/post.html:5
+#: - app/blog/routes.py:17 app/blog/routes.py:18 app/templates/blog/post.html:7
+#: app/templates/course/post app/templates/course/post.html:8 copia.html:8
 msgid "Blog"
 msgstr "Blog"
 
-#: app/main/forms.py:10
-msgid "Username"
-msgstr "Nombre"
+#: app/course/codes.py:5
+msgid ""
+"Your transaction was aproved. Please go to the course section and enjoy "
+"your training."
+msgstr "Bienvenido. Tu transacción fue aprobada. Por favor ve a la sección de cursos y "
+"disfruta tu aprendizaje."
 
-#: app/main/forms.py:11
-msgid "About me"
+#: app/course/codes.py:6 app/course/codes.py:7
+msgid "Denied, please refer to the bank"
+msgstr "Denegado, por favor refiérase al banco"
+
+#: app/course/codes.py:8
+msgid "Invalid Merchant"
+msgstr "Proveedor de cobros inválido"
+
+#: app/course/codes.py:9
+msgid "Denied, call to the bank"
+msgstr "Denegado, llame al banco"
+
+#: app/course/codes.py:10
+msgid "Denied, transaction not accepted"
+msgstr "Denegado, transacción no aceptada"
+
+#: app/course/codes.py:11
+msgid "Keep Card"
+msgstr "Mantenga la tarjeta"
+
+#: app/course/codes.py:12 app/course/codes.py:30
+msgid "Invalid Transaction"
+msgstr "Transacción inválida"
+
+#: app/course/codes.py:13
+msgid "Insufficient funds"
+msgstr "Fondos insuficientes"
+
+#: app/course/codes.py:14
+msgid "Invalid Cards"
+msgstr "Tarjeta inválida"
+
+#: app/course/codes.py:15
+msgid "Merchant Invalid"
+msgstr "Proveedor de cobros inválido"
+
+#: app/course/codes.py:16
+msgid "Please try again"
+msgstr "Por favor intenta de nuevo"
+
+#: app/course/codes.py:17
+msgid "Register not found"
+msgstr "Registro no encontrado"
+
+#: app/course/codes.py:18
+msgid "Format Error"
+msgstr "Error de formato"
+
+#: app/course/codes.py:19
+msgid "Credit card not supported"
+msgstr "Tarjeta de crédito no soportada"
+
+#: app/course/codes.py:20
+msgid "Credit card lost"
+msgstr "Tarjeta de crédito declarada como perdida"
+
+#: app/course/codes.py:21
+msgid "Credit card stolen"
+msgstr "Tarjeta de crédito declarada como robada"
+
+#: app/course/codes.py:22
+msgid "Denied, Insufficient founds"
+msgstr "Denegada, foundos insuficientes"
+
+#: app/course/codes.py:23
+msgid "Denied, Credit card expired"
+msgstr "Denegada, tarjeta de crédito expirada"
+
+#: app/course/codes.py:24
+msgid "Denied, Transaction not permited"
+msgstr "Denegado, transacción no permitida"
+
+#: app/course/codes.py:25
+msgid "Denied, Invalid transaction"
+msgstr "Denegada, transacción inválida"
+
+#: app/course/codes.py:26
+msgid "Denied, Exceeded ammount"
+msgstr "Denegado, monto excede al permitido"
+
+#: app/course/codes.py:27
+msgid "Denied, Credit card restricted"
+msgstr "Denegado, tarjeta de crédito restringida"
+
+#: app/course/codes.py:28
+msgid "Denied, number of transactions exceeded"
+msgstr "Denegada, número de transacciones excedido"
+
+#: app/course/codes.py:29
+msgid "Invalid account"
+msgstr "Tarjeta inválida"
+
+#: app/course/codes.py:31
+msgid "Invalid terminal"
+msgstr "Terminal inválida"
+
+#: app/course/codes.py:32
+msgid "Issuer not available, please try again"
+msgstr "Proveedor de tarjeta no disponible, por favor prueba de nuevo"
+
+#: app/course/codes.py:33
+msgid "System Malfunction"
+msgstr "Error de sistema"
+
+#: app/course/codes.py:34
+msgid "Aproved"
+msgstr "Aprobado"
+
+#: app/course/codes.py:35
+msgid "Declined - The request is missing one or more fields"
+msgstr "Declinada - La petición carece de uno o más campos solicitados"
+
+#: app/course/codes.py:36
+msgid "Declined - One or more fields in the request contains invalid data"
+msgstr "Declinada - Uno o más campos de la solicitud contienen datos inválidos"
+
+#: app/course/codes.py:37
+msgid ""
+"Declined - The merchantReferenceCode sent with this authorization request"
+" matches the merchantReferenceCode of another authorization request that "
+"you sent in the last 15 minutes."
+msgstr "Declinada - La transacción se duplíca con otra de hace 15 minutos"
+
+#: app/course/codes.py:38
+msgid "Partial amount was approved"
+msgstr "Pago parcial aprovado"
+
+#: app/course/codes.py:39
+msgid "Error - General system failure."
+msgstr "Error - Falla general de sistema"
+
+#: app/course/codes.py:40
+msgid ""
+"Error - The request was received but there was a server timeout. This "
+"error does not include timeouts between the client and the server."
+msgstr ""
+"El tiempo de respuesta ha excedido. Falla de conexión entre cliente y "
+"servidor."
+
+#: app/course/codes.py:41
+msgid ""
+"Error: The request was received, but a service did not finish running in "
+"time."
+msgstr "La respuesta fue recibida, but no se termino de procesar."
+
+#: app/course/codes.py:42
+msgid ""
+"Soft Decline - The authorization request was approved by the issuing bank"
+" but declined by CyberSource because it did not pass the Address "
+"Verification Service (AVS) check."
+msgstr ""
+"La respuesta fue autorizada por el banco pero declinada por "
+"CyberSourceporque no paso la revisión AVS."
+
+#: app/course/codes.py:43
+msgid ""
+"Decline - The issuing bank has questions about the request. You do not "
+"receive an authorization code programmatically, but you might receive one"
+" verbally by calling the processor."
 msgstr ""
 
-#: app/main/forms.py:13 app/main/forms.py:28 app/main/forms.py:45
-msgid "Submit"
-msgstr "Enviar"
-
-#: app/main/forms.py:23
-msgid "Please use a different username."
+#: app/course/codes.py:44
+msgid ""
+"Decline - Expired card. You might also receive this if the expiration "
+"date you provided does not match the date the issuing bank has on file. "
+"Note: The ccCreditService does not check the expiration date; instead, it"
+" passes the request to the payment processor. If the payment processor "
+"allows issuance of credits to expired cards, CyberSource does not limit "
+"this functionality."
 msgstr ""
 
-#: app/main/forms.py:27
-msgid "Say something"
+#: app/course/codes.py:45
+msgid ""
+"DO NOT HONOR. Decline - General decline of the card. No other information"
+" provided by the issuing bank."
 msgstr ""
 
-#: app/main/forms.py:32 app/main/routes.py:172
-msgid "Search"
+#: app/course/codes.py:46
+msgid "Decline - Insufficient funds in the account."
 msgstr ""
+
+#: app/course/codes.py:47
+msgid "Decline - Stolen or lost card."
+msgstr ""
+
+#: app/course/codes.py:48
+msgid "Decline - Issuing bank unavailable."
+msgstr ""
+
+#: app/course/codes.py:49
+msgid ""
+"Decline - Inactive card or card not authorized for card-not-present "
+"transactions."
+msgstr ""
+
+#: app/course/codes.py:50
+msgid "Decline - card verification number (CVN) did not match."
+msgstr ""
+
+#: app/course/codes.py:51
+msgid "Decline - The card has reached the credit limit."
+msgstr ""
+
+#: app/course/codes.py:52
+msgid "Decline - Invalid Card Verification Number (CVN)."
+msgstr ""
+
+#: app/course/codes.py:53
+msgid "Decline - Generic Decline."
+msgstr ""
+
+#: app/course/codes.py:54
+msgid "Decline - The customer matched an entry on the processor's negative file."
+msgstr ""
+
+#: app/course/codes.py:55
+msgid "Decline - customer's account is frozen"
+msgstr ""
+
+#: app/course/codes.py:56
+msgid ""
+"Soft Decline - The authorization request was approved by the issuing bank"
+" but declined by CyberSource because it did not pass the card "
+"verification number (CVN) check."
+msgstr ""
+
+#: app/course/codes.py:57
+msgid "Decline - Invalid account number"
+msgstr ""
+
+#: app/course/codes.py:58
+msgid "Decline - The card type is not accepted by the payment processor."
+msgstr ""
+
+#: app/course/codes.py:59
+msgid "Decline - General decline by the processor."
+msgstr ""
+
+#: app/course/codes.py:60
+msgid "Decline - There is a problem with your CyberSource merchant configuration."
+msgstr ""
+
+#: app/course/codes.py:61
+msgid ""
+"Decline - The requested amount exceeds the originally authorized amount. "
+"Occurs, for example, if you try to capture an amount larger than the "
+"original authorization amount."
+msgstr ""
+
+#: app/course/codes.py:62
+msgid "Decline - Processor failure."
+msgstr ""
+
+#: app/course/codes.py:63
+msgid "Decline - The authorization has already been reversed."
+msgstr ""
+
+#: app/course/codes.py:64
+msgid "Decline - The transaction has already been settled."
+msgstr ""
+
+#: app/course/codes.py:65
+msgid ""
+"Decline - The requested transaction amount must match the previous "
+"transaction amount."
+msgstr ""
+
+#: app/course/codes.py:66
+msgid ""
+"Decline - The card type sent is invalid or does not correlate with the "
+"credit card number."
+msgstr ""
+
+#: app/course/codes.py:67
+msgid ""
+"Decline - The referenced request id is invalid for all follow-on "
+"transactions."
+msgstr ""
+
+#: app/course/codes.py:68
+msgid ""
+"Decline - The request ID is invalid. You requested a capture, but there "
+"is no corresponding, unused authorization record. Occurs if there was not"
+" a previously successful authorization request or if the previously "
+"successful authorization has already been used in another capture "
+"request."
+msgstr ""
+
+#: app/course/codes.py:69
+msgid "Decline - The transaction has already been settled or reversed."
+msgstr ""
+
+#: app/course/codes.py:70
+msgid ""
+"Decline - The capture or credit is not voidable because the capture or "
+"credit information has already been submitted to your processor. Or, you "
+"requested a void for a type of transaction that cannot be voided."
+msgstr ""
+
+#: app/course/codes.py:71
+msgid "Decline - You requested a credit for a capture that was previously voided."
+msgstr ""
+
+#: app/course/codes.py:72
+msgid "Decline - The boleto request was declined by your processor."
+msgstr ""
+
+#: app/course/codes.py:73
+msgid ""
+"Error - The request was received, but there was a timeout at the payment "
+"processor."
+msgstr ""
+
+#: app/course/codes.py:74
+msgid ""
+"Decline - The Pinless Debit card's use frequency or maximum amount per "
+"use has been exceeded."
+msgstr ""
+
+#: app/course/codes.py:75
+msgid "Decline - Account is prohibited from processing stand-alone refunds"
+msgstr ""
+
+#: app/course/codes.py:76
+msgid "Soft Decline - Fraud score exceeds threshold."
+msgstr ""
+
+#: app/course/codes.py:77
+msgid "Apartment number missing or not found."
+msgstr ""
+
+#: app/course/codes.py:78
+msgid "Insufficient address information."
+msgstr ""
+
+#: app/course/codes.py:79
+msgid "House/Box number not found on street."
+msgstr ""
+
+#: app/course/codes.py:80
+msgid "Multiple address matches were found."
+msgstr ""
+
+#: app/course/codes.py:81
+msgid "P.O. Box identifier not found or out of range."
+msgstr ""
+
+#: app/course/codes.py:82
+msgid "Route service identifier not found or out of range."
+msgstr ""
+
+#: app/course/codes.py:83
+msgid "Street name not found in Postal code."
+msgstr ""
+
+#: app/course/codes.py:84
+msgid "Postal code not found in database."
+msgstr ""
+
+#: app/course/codes.py:85
+msgid "Unable to verify or correct address."
+msgstr ""
+
+#: app/course/codes.py:86
+msgid "Multiple addres matches were found (international)"
+msgstr ""
+
+#: app/course/codes.py:87
+msgid "Address match not found (no reason given)"
+msgstr ""
+
+#: app/course/codes.py:88
+msgid "Unsupported character set"
+msgstr ""
+
+#: app/course/codes.py:89
+msgid ""
+"The cardholder is enrolled in Payer Authentication. Please authenticate "
+"the cardholder before continuing with the transaction."
+msgstr ""
+
+#: app/course/codes.py:90
+msgid ""
+"Encountered a Payer Authentication problem. Payer could not be "
+"authenticated."
+msgstr ""
+
+#: app/course/codes.py:91
+msgid ""
+"The order is marked for review by Decision Manager, please contact "
+"soporte@qpaypro.com to review the transaction."
+msgstr ""
+
+#: app/course/codes.py:92
+msgid "The order has been rejected by Decision Manager"
+msgstr ""
+
+#: app/course/codes.py:93
+msgid ""
+"Soft Decline - The authorization request was approved by the issuing bank"
+" but declined by CyberSource based on your Smart Authorization settings."
+msgstr ""
+
+#: app/course/codes.py:94
+msgid "The customer matched the Denied Parties List"
+msgstr ""
+
+#: app/course/codes.py:95
+msgid "Export bill_country/ship_country match"
+msgstr ""
+
+#: app/course/codes.py:96
+msgid "Export email_country match"
+msgstr ""
+
+#: app/course/codes.py:97
+msgid "Export hostname_country/ip_country match"
+msgstr ""
+
+#: app/course/forms.py:13
+msgid "Membership"
+msgstr "Membresía"
+
+#: app/course/forms.py:15 app/templates/course/enroll.html:18
+msgid "Monthly"
+msgstr "Mensual"
+
+#: app/course/forms.py:16 app/templates/course/enroll.html:52
+msgid "Yearly"
+msgstr "Anual"
+
+#: app/course/forms.py:20
+msgid "Activate"
+msgstr "Activar membresía"
+
+#: app/course/forms.py:23
+msgid "Invoice"
+msgstr "Cobro de"
+
+#: app/course/forms.py:24 app/templates/course/cancel_enroll.html:15
+#: app/templates/course/pay_enroll.html:53
+#: app/templates/course/pay_enroll_with_bank.html:18
+msgid "Amount"
+msgstr "Monto"
+
+#: app/course/forms.py:25
+msgid "Bank"
+msgstr "Banco"
+
+#: app/course/forms.py:25
+msgid "BANRURAL"
+msgstr "BANRURAL"
+
+#: app/course/forms.py:26
+msgid "Account Name"
+msgstr "Nombre de la Cuenta"
+
+#: app/course/forms.py:26
+msgid "API CENTRO DE CAPACITACION"
+msgstr ""
+
+#: app/course/forms.py:27
+msgid "Account"
+msgstr "Número de Cuenta"
+
+#: app/course/forms.py:27
+msgid "3313010396"
+msgstr "3313 0103 96"
+
+#: app/course/forms.py:28
+msgid "Ticket"
+msgstr "# de Boleta"
+
+#: app/course/forms.py:32
+msgid "Credit Card Name"
+msgstr "Nombre que aparece en la tarjeta"
+
+#: app/course/forms.py:33
+msgid "JUAN RAMOS"
+msgstr "JUAN RAMOS"
+
+#: app/course/forms.py:36
+msgid "Credit Card Number"
+msgstr "Número de Tarjeta"
+
+#: app/course/forms.py:37
+msgid "4000 0000 0000 0002"
+msgstr "4000 0000 0000 0002"
+
+#: app/course/forms.py:40
+msgid "Expiry Date"
+msgstr "Fecha de Vencimiento"
+
+#: app/course/forms.py:41
+msgid "mm/aa"
+msgstr "MM/AA"
+
+#: app/course/forms.py:44
+msgid "CVV"
+msgstr "CVV (3 últimos dígitos)"
+
+#: app/course/forms.py:45
+msgid "123"
+msgstr "123"
+
+#: app/course/forms.py:51
+msgid "Do you want to cancel"
+msgstr "¿Desea cancelar su suscripción?"
+
+#: app/course/forms.py:56
+msgid "Comment content"
+msgstr "Comentarios o dudas"
+
+#: app/course/forms.py:57
+msgid "Write question here!"
+msgstr ""
+
+#: app/course/routes.py:32 app/course/routes.py:33
+msgid "Course"
+msgstr "Regístrate (es gratis) y conoce nuestros cursos"
+
+#: app/main/forms.py:39
+msgid "Reparacion de Computadoras y Celulares"
+msgstr "Reparación de Computadoras y Celulares"
+
+#: app/main/forms.py:40
+msgid "Diseno Publicitario"
+msgstr "Diseño Publicitario"
+
+#: app/main/forms.py:41
+msgid "Ingles"
+msgstr "Idioma Inglés"
+
+#: app/main/forms.py:42
+msgid "Mikrotik y Ubiquiti"
+msgstr "Mikrotik y Ubiquiti"
 
 #: app/main/forms.py:43
+msgid "Computacion, Ofimatica y Cloud Computing"
+msgstr "Computación, Ofimática y Cloud Computing"
+
+#: app/main/forms.py:44
+msgid "Programacion Basica y Web"
+msgstr "Programación Básica y Web"
+
+#: app/main/forms.py:45
+msgid "Power Pivot: Inteligencia de Negocios"
+msgstr "Power Pivot: Inteligencia de Negocios"
+
+#: app/main/forms.py:62
+msgid "About me"
+msgstr "Sobre mí"
+
+#: app/main/forms.py:78
+msgid "Say something"
+msgstr "Dí algo"
+
+#: app/main/forms.py:83
+msgid "Search"
+msgstr "Búsqueda"
+
+#: app/main/forms.py:94
 msgid "Message"
-msgstr ""
+msgstr "Mensaje"
 
-#: app/main/routes.py:76
-msgid "Explore"
-msgstr ""
-
-#: app/main/routes.py:111
+#: app/main/routes.py:51
 msgid "Your changes have been saved."
-msgstr ""
+msgstr "Tus cambios han sido guardados."
 
-#: app/main/routes.py:116 app/templates/edit_profile.html:5
+#: app/main/routes.py:57 app/templates/edit_profile.html:14
 msgid "Edit Profile"
-msgstr ""
-
-#: app/main/routes.py:125 app/main/routes.py:141
-#, python-format
-msgid "User %(username)s not found."
-msgstr ""
-
-#: app/main/routes.py:128
-msgid "You cannot follow yourself!"
-msgstr ""
-
-#: app/main/routes.py:132
-#, python-format
-msgid "You are following %(username)s!"
-msgstr ""
-
-#: app/main/routes.py:144
-msgid "You cannot unfollow yourself!"
-msgstr ""
-
-#: app/main/routes.py:148
-#, python-format
-msgid "You are not following %(username)s."
-msgstr ""
-
-#: app/main/routes.py:215
-msgid "An export task is currently in progress"
-msgstr ""
-
-#: app/main/routes.py:217
-msgid "Exporting posts..."
-msgstr ""
-
-#: app/templates/404.html:4
-msgid "Not found"
-msgstr ""
+msgstr "Editar Perfil"
 
 #: app/templates/_post.html:16
 #, python-format
@@ -240,13 +716,21 @@ msgstr ""
 msgid "Translate"
 msgstr ""
 
+#: app/templates/edit_profile.html:18
+msgid "Logout"
+msgstr "Cerrar sesión"
+
+#: app/templates/course/cancel_enroll.html:8 app/templates/edit_profile.html:21
+msgid "Cancel enroll"
+msgstr "Cancelar membresía"
+
 #: app/templates/messages.html:4
 msgid "Messages"
-msgstr ""
+msgstr "Mensajes"
 
 #: app/templates/messages.html:12
 msgid "Newer messages"
-msgstr ""
+msgstr "Mensajes nuevos"
 
 #: app/templates/messages.html:17
 msgid "Older messages"
@@ -315,54 +799,146 @@ msgstr ""
 msgid "Older posts"
 msgstr ""
 
-#: app/templates/auth/complete.html:5
+#: app/templates/auth/complete.html:7
 msgid "Complete"
+msgstr "Por favor, completa tu registro"
+
+#: app/templates/auth/login.html:10
+msgid "INGRESA CON"
 msgstr ""
 
-#: app/templates/auth/login.html:8
-msgid "Login with Facebook."
-msgstr "Ingresa con Facebook."
+#: app/templates/auth/login.html:20
+msgid "Login with Facebook"
+msgstr "Ingresa con Facebook"
 
-#: app/templates/auth/login.html:16
-msgid "New User?"
-msgstr "¿Eres nuevo?"
+#: app/templates/auth/login.html:26
+msgid "Formulario de ingreso"
+msgstr ""
 
-#: app/templates/auth/login.html:16
-msgid "Click to Register!"
-msgstr "¡Haz click para Registrarte!"
-
-#: app/templates/auth/login.html:18
+#: app/templates/auth/login.html:44
 msgid "Forgot Your Password?"
 msgstr "¿Olvidaste tu Contraseña?"
 
-#: app/templates/auth/login.html:19
-msgid "Click to Reset It"
-msgstr "Click para Restablecerla"
+#: app/templates/auth/login.html:45
+msgid "New User?"
+msgstr "¿Eres nuevo?"
 
-#: app/templates/auth/reset_password.html:5
+#: app/templates/auth/reset_password.html:8
 #: app/templates/blog/reset_password.html:5
+#: app/templates/course/reset_password.html:5
 msgid "Reset Your Password"
 msgstr "Restable tu contraseña"
 
-#: app/templates/auth/validated_email.html:5
-msgid "Validate email"
-msgstr "Valida tu Corre"
+#: app/templates/course/cancel_enroll.html:12
+#: app/templates/course/pay_enroll.html:51
+#: app/templates/course/pay_enroll_with_bank.html:16
+msgid "Date"
+msgstr "Fecha"
 
-#: app/templates/auth/validated_email.html:15
-msgid "Main Page"
-msgstr "Página Principal"
+#: app/templates/course/cancel_enroll.html:13
+msgid "Service"
+msgstr "Membresía"
 
-#: app/templates/blog/detail.html:13
-msgid "Index Blog"
-msgstr "Índice"
+#: app/templates/course/cancel_enroll.html:14
+#: app/templates/course/pay_enroll.html:52
+#: app/templates/course/pay_enroll_with_bank.html:17
+msgid "Description"
+msgstr "Descripción"
 
-#: app/templates/errors/404.html:4
-msgid "Not Found"
-msgstr "Página No Encontrada"
+#: app/templates/course/cancel_enroll.html:34
+#: app/templates/course/pay_enroll.html:65
+#: app/templates/course/pay_enroll_with_bank.html:46
+msgid "Pay with Card"
+msgstr "Pago con tarjeta"
 
-#: app/templates/errors/404.html:5 app/templates/errors/500.html:6
-msgid "Back"
-msgstr "Regresa"
+#: app/templates/course/detail.html:9
+msgid "Available from"
+msgstr "Disponible desde la fecha"
+
+#: app/templates/course/detail.html:9
+msgid "To"
+msgstr "hasta la fecha"
+
+#: app/templates/course/enrol.html:7 app/templates/course/enroll.html:7
+msgid "Enroll"
+msgstr "Regístrate"
+
+#: app/templates/course/enroll.html:26
+msgid "MONTH"
+msgstr "MES"
+
+#: app/templates/course/enroll.html:32 app/templates/course/enroll.html:66
+msgid "in transport"
+msgstr "en transporte"
+
+#: app/templates/course/enroll.html:33 app/templates/course/enroll.html:67
+msgid "minuts in traffic"
+msgstr "minutos en tráfico"
+
+#: app/templates/course/enroll.html:34
+msgid "Professional certified"
+msgstr "Cursos certificados"
+
+#: app/templates/course/enroll.html:35
+msgid "Professional courses"
+msgstr "Cursos profesionales"
+
+#: app/templates/course/enroll.html:36
+msgid "Professional asks"
+msgstr "Presentadores capacitados"
+
+#: app/templates/course/enroll.html:37
+msgid "Develop your talent"
+msgstr "Desarrolla tu talento"
+
+#: app/templates/course/enroll.html:38 app/templates/course/enroll.html:72
+msgid "Acces and support"
+msgstr "Acceso y soporte"
+
+#: app/templates/course/enroll.html:42 app/templates/course/enroll.html:76
+msgid "Sign up"
+msgstr "INGRESA"
+
+#: app/templates/course/enroll.html:60
+msgid "YEAR"
+msgstr "AÑO"
+
+#: app/templates/course/enroll.html:68
+msgid "Professional Certified"
+msgstr "Certificados profesionales"
+
+#: app/templates/course/enroll.html:69
+msgid "Professional Courses"
+msgstr "Cursos certificados"
+
+#: app/templates/course/enroll.html:70
+msgid "Save the"
+msgstr "Ahorra el"
+
+#: app/templates/course/enroll.html:71
+msgid "Face-to-Face talks"
+msgstr "Charlas presenciales *"
+
+#: app/templates/course/lesson.html:24
+msgid "Programated date"
+msgstr "Fecha de publicación programada"
+
+#: app/templates/course/lesson.html:56
+msgid "No message yet.."
+msgstr "No hay mensajes todavía"
+
+#: app/templates/course/pay_enroll.html:48
+msgid "Payment Info"
+msgstr "Información de pago"
+
+#: app/templates/course/pay_enroll.html:88
+#: app/templates/course/pay_enroll_with_bank.html:30
+msgid "Pay with Bank"
+msgstr "Pago con el banco"
+
+#: app/templates/course/pay_enroll_with_bank.html:12
+msgid "Payment info"
+msgstr "Información de pago"
 
 #: app/templates/errors/500.html:4
 msgid "An unexpected error has occurred"
@@ -370,5 +946,105 @@ msgstr "Un error inesperado ha ocurrido"
 
 #: app/templates/errors/500.html:5
 msgid "The administrator has been notified. Sorry for the inconvenience!"
-msgstr ""
+msgstr "El administrador ha sido notificado. Disculpa por los inconvenientes!"
+
+#: app/templates/errors/500.html:6
+msgid "Back"
+msgstr "Regresa"
+
+#~ msgid "Repair"
+#~ msgstr "Reparación de Celulares"
+
+#~ msgid "Design"
+#~ msgstr "Diseño Publicitario"
+
+#~ msgid "English"
+#~ msgstr "Idioma Inglés"
+
+#~ msgid "Mikrotik"
+#~ msgstr "Mikrotik y Ubiquiti"
+
+#~ msgid "Computing"
+#~ msgstr "Computación, Ofimática y Cloud Apss"
+
+#~ msgid "Programming"
+#~ msgstr "Programación Básica y Web"
+
+#~ msgid "PowerPivot"
+#~ msgstr "Inteligencia de Negocios: PowerPivot"
+
+#~ msgid "Login with Facebook."
+#~ msgstr "Ingresa con Facebook."
+
+#~ msgid "Remember Me"
+#~ msgstr "Recuérdame"
+
+#~ msgid "Congratulations, you are now a registered user!"
+#~ msgstr "Felicitaciones, usted se ha registrado exitosamente!"
+
+#~ msgid "Not found"
+#~ msgstr "No encontrado"
+
+#~ msgid "Click to Register!"
+#~ msgstr "¡Haz click para Registrarte!"
+
+#~ msgid "Click to Reset It"
+#~ msgstr "Click para Restablecerla"
+
+#~ msgid "Main Page"
+#~ msgstr "Página Principal"
+
+#~ msgid "Login page"
+#~ msgstr "Página de ingreso"
+
+#~ msgid "Login"
+#~ msgstr "Ingresa"
+
+#~ msgid "Validate email"
+#~ msgstr "Valida tu Corre"
+
+#~ msgid "Index Blog"
+#~ msgstr "Índice"
+
+#~ msgid "Not Found"
+#~ msgstr "Página No Encontrada"
+
+#~ msgid "Ingresa"
+#~ msgstr "Ingresa"
+
+#~ msgid "Explore"
+#~ msgstr "Descubre"
+
+#~ msgid "User %(username)s not found."
+#~ msgstr "Usuario %(username) no encontrado."
+
+#~ msgid "You cannot follow yourself!"
+#~ msgstr ""
+
+#~ msgid "You are following %(username)s!"
+#~ msgstr ""
+
+#~ msgid "You cannot unfollow yourself!"
+#~ msgstr ""
+
+#~ msgid "You are not following %(username)s."
+#~ msgstr ""
+
+#~ msgid "An export task is currently in progress"
+#~ msgstr ""
+
+#~ msgid "Exporting posts..."
+#~ msgstr ""
+
+#~ msgid "Cancel Subscription"
+#~ msgstr "Cancelar membresía "
+
+#~ msgid "No amount to pay"
+#~ msgstr "No hay monto que pagar. Solicite soporte técnico para activación."
+
+#~ msgid "Username"
+#~ msgstr "Nombre"
+
+#~ msgid "Please use a different username."
+#~ msgstr "Por favor usa un nombre de usuario diferente"
 

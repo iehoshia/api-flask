@@ -26,7 +26,6 @@ from trytond.exceptions import UserError, UserWarning, ConcurrencyException
 __version__ = '0.7'
 __all__ = ['Tryton', 'tryton_transaction']
 
-
 class Tryton(object):
     "Control the Tryton integration to one or more Flask applications."
     def __init__(self, app=None):

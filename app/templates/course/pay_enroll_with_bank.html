@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet"
+      href="{{url_for('static', filename='css-minified/course.css')}}">
+{% endblock %}
+
+{% block app_content %}
+
+<script>
+
+</script>
+
+<div class="courses row">
+  <div class="internal-enroll-with-border">
+    <h1>{{ _('Payment info') }}</h1>
+    <div class="invoices">
+    	<table class="table">
+		  <tr>
+		    <th>{{ _('Date') }}</th>
+		    <th>{{ _('Description') }}</th>
+		    <th>{{ _('Amount') }}</th>
+		  </tr>
+		  	{% for invoice in invoices %}
+		  	<tr>
+	    		<td>{{ invoice.invoice_date }}</td>
+		  		<td>{{ invoice.description }}</td>
+	    		<td>{{ invoice.total_amount }}</td>
+	    	</tr>
+	    	{% endfor %}
+		</table>
+    </div>
+    <div id="enroll_form" class="form">
+    	<span class="title">{{ _('Pay with Bank') }}</span>
+    	{{ wtf.quick_form(enroll_form) }}
+    	<!--
+    	<form action="{{ url_for('course.pay_with_bank') }}" method="post">
+		    {{ enroll_form.invoice.label }}
+		    {{ enroll_form.invoice }}<br>
+		    {{ enroll_form.ticket.label }}
+		    {{ enroll_form.ticket }}<br>
+		    {{ enroll_form.amount.label }}
+		    {{ enroll_form.amount }}<br>
+		    {{ enroll_form.submit.label }}
+		    {{ enroll_form.submit }}
+		</form>
+	-->
+    </div>
+    <div class="buttons">
+    	<a href="{{url_for('course.payment')}}" id="cc_button" class="button"> {{ _('Pay with Card') }}</a>
+    </div>
+    <div>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="messages">
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    </div>
+
+  </div>
+</div>
+{% include "footer.html" %}
+{% endblock %}
+

@@ -4,21 +4,34 @@
 API Centro de Capacitación y Software
 {% endblock %}
 
+
+{% block custom_metas %}
+{{ super() }}
+{% endblock %}
+
 {% block styles %}
-{{super()}}
-<link rel="stylesheet" 
-      href="{{url_for('static', filename='css-minified/combined.css')}}"> 
-<link rel="stylesheet" 
-      href="{{url_for('static', filename='css/styles.css')}}"> 
+{{ super() }}
+
+<link rel="stylesheet"
+      href="{{url_for('static', filename='css-minified/combined.css')}}">
+<link rel="stylesheet"
+      href="{{url_for('static', filename='css-minified/not-found.css')}}">
+<link rel="stylesheet"
+      href="{{url_for('static', filename='css-minified/login.css')}}">
+
+
 <link rel="shortcut icon" type="image/png"
-      href="{{url_for('static', filename='img/favicon.ico')}}">  
- 
+      href="{{url_for('static', filename='img/favicon.ico')}}">
+
 {% endblock %}
 
 {% block scripts %}
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-{{super()}}
+{{ super() }}
+  <script src="https://apixela.net/static/js/fb-video.js"></script>
+  <script src="https://apixela.net/static/js/chat.js"></script>
+{% endblock %}
+
+{% block custom_scripts %}
 {% endblock %}
 
 {% block navbar %}
@@ -35,25 +48,28 @@ API Centro de Capacitación y Software
       </button>
       <a class="navbar-brand" href="/">
         <div class="logo-nav">
-          
         </div>
       </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right"> 
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{ url_for('blog.index') }}" class="contactanos btn btn-success btn-lg active" aria-pressed="true">Blog</a></li>
+        <li><a href="{{ url_for('course.index') }}" class="contactanos btn btn-success btn-lg active" aria-pressed="true">Cursos</a></li>
         <li><a href="https://apixela.net/#contact-us-form" class="contactanos btn btn-success btn-lg active" aria-pressed="true">Contáctanos</a></li>
-        {% if not session.username %}      
-        <li><a href="{{ url_for('auth.login') }}" style="background-color: #E8BEC7 !important" class="contactanos btn btn-success btn-lg active" aria-pressed="true">Ingresa</a></li>
+        {% if current_user.is_authenticated %}
+        <!--<li><img src="{{ user.web_picture_profile }}" > </li>-->
+        <li><a href="{{ url_for('main.edit_profile') }}" class="contactanos btn btn-success btn-lg active" aria-pressed="true">{{ user.party.name }}</a></li>
         {% else %}
-        <li><a href="{{ url_for('auth.logout') }}" style="background-color: #E8C8BE !important" class="contactanos btn btn-success btn-lg active" aria-pressed="true">Salir</a></li>
+        <li><a href="{{ url_for('auth.login') }}" class="login-button contactanos btn btn-success btn-lg active" aria-pressed="true">Ingresa</a></li>
         {% endif %}
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
- 
+
+
 <!-- Facebook Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -64,11 +80,11 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window,document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
- fbq('init', '1479430812358043'); 
+ fbq('init', '1479430812358043');
 fbq('track', 'PageView');
 </script>
 <noscript>
- <img height="1" width="1" 
+ <img height="1" width="1"
 src="https://www.facebook.com/tr?id=1479430812358043&ev=PageView
 &noscript=1"/>
 </noscript>
@@ -87,14 +103,19 @@ src="https://www.facebook.com/tr?id=1479430812358043&ev=PageView
     </script>
 <!-- end analytics -->
 
-{% endblock %}
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.3&appId=2137278692986045&autoLogAppEvents=1"></script>
 
+{% endblock %}
 
 {% block content %}
-<div style="margin-top:55px;">
+
+<div style="margin-top:40px;">
     {# application content needs to be provided in the app_content block #}
-    {% block app_content %}{% endblock %}  
+    {% block app_content %}{% endblock %}
 </div>
 
+
 {% endblock %}
+
 
