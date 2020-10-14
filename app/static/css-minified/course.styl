@@ -1,9 +1,177 @@
+input
+    -webkit-appearance none
+    -moz-appearance none
+    appearance none
+
+.chapter-title
+    width 100%
+    color #224961
+    background none !important
+    text-align left
+    background-image url('../img/plus-icon.png')
+    background-repeat no-repeat
+.chapter-title:hover,
+        .chapter-title:visited,
+        .chapter-title:active, .chapter-title:link
+    text-decoration none
+.plus-ultra
+    font-size 22px
+    font-weight bold
+.item-container
+    margin-bottom 0
+
+.contact-header-section
+    width 100%
+    overflow hidden
+    clear both
+    margin 0
+    padding 0
+
 .embed-responsive
     background-image url('../img/contenido-disponible-pronto.jpg')
     background-size cover
     color #f3f3f3
     font-weight bold
 
+.course-image
+    width 100%
+    margin-top 0
+    //border 1px solid #f5d5d5
+    img
+        min-width 100%
+        overflow hidden
+        height 210px
+        object-fit cover
+.course-content
+    padding 10px
+
+.right-side
+    float right
+    width 38%
+    margin-top 5px
+
+.left-side
+    float left
+    width 62%
+
+ol, ul
+    padding-inline-start 0
+
+#country, #country_us
+    overflow hidden
+    clear both
+    float right
+    top 0
+    cursor pointer
+    width 120px
+    height 35px
+    margin-top -95px
+    margin-right -15px
+    display none !important
+    .country_symbol
+        float left
+        width 80px
+        height 20px
+        margin-top 5px
+    .flag
+        float left
+    #country_div
+        float left
+
+.visible
+    display block
+
+.hidden
+    display none
+
+.btn
+    border 0
+    border-radius 0
+
+.cart-section
+    width 250px
+    float right
+    margin-right 5px
+    margin-top 10px
+
+.btn-plus
+    background rgb(77,225,137)
+    background linear-gradient(90deg, rgba(77,225,137,1) 0%, rgba(77,225,137,1) 31%, rgba(145,224,97,1) 100%)
+    font-size 35px
+    line-height 50px
+    font-weight bold
+    color #fff
+    float left
+    border-radius 0
+    text-align center
+    width 50px
+    height 50px
+    text-decoration none
+    cursor pointer
+    margin-bottom 5px
+    margin-right 15px
+    border-right 2px solid #fff
+.btn-plus:hover
+    color #f3f3f3
+    text-decoration none
+
+.btn-buy
+    background rgb(77,225,137)
+    background linear-gradient(90deg, rgba(77,225,137,1) 0%, rgba(77,225,137,1) 31%, rgba(145,224,97,1) 100%)
+    text-decoration none
+    cursor pointer
+    width 250px
+    height 50px
+.btn-buy:hover
+    color #f3f3f3
+    text-decoration none
+.shopping-cart-img, .contact-us-img
+    width 40px
+    height 40px
+    background-image url('https://www.apixela.net/static/img/cesta.png')
+    font-size 22px
+    line-height 50px
+    font-weight bold
+    color #fff
+    margin-right 5px
+    margin-bottom 5px
+    border-radius 0
+    text-align center
+    background-size 35px
+    background-repeat no-repeat
+    background-position 5px 10px
+    float left
+.contact-us-img
+    background-image url('https://www.apixela.net/static/img/phone.png')
+    background-size 75%
+    background-position 12px 10px
+.shopping-cart-buy
+    line-height 50px
+    font-size 22px
+    font-weight bold
+    color #fff
+    float left
+    margin 0
+    padding 0
+    border-radius 0
+    text-align center
+    margin-left 10px
+
+.card
+    margin 5px
+.profile-card, .skill-card
+    width 48%
+    float left
+
+.question-row
+    border 1px solid #f3f3f3
+    h2, h3
+        padding-top 10px
+        display block
+        width 100%
+        text-align center
+    h3
+        font-size 18px
 @media (min-width: 768px)
     /* */
     body ::-webkit-scrollbar {
@@ -18,6 +186,8 @@
     body ::-webkit-scrollbar-thumb:hover {
       background: #888;
     }
+    .flag
+        margin 0 auto
 
     /* */
 
@@ -34,14 +204,24 @@
       background: #888;
     }
 
+.novisible
+    display none !important
 
 .same-width
     display flex
+.courses-enroll
+    background-color #fff !important
+.courses-row-enroll
+    display inline-block
+
 .courses
     background-color #f0f0f0
     max-width 100%
+    width 100%
     margin-right 0
     margin-left 0
+    margin-top 0
+    margin-bottom 0
     background-size cover
     overflow hidden
     .internal-courses
@@ -53,7 +233,7 @@
             font-size 30px
             text-align: left;
             width: 100%;
-            color: #97c83e;
+            color: #91e061;
             font-weight: bold;
             padding-top: 10px;
             padding-bottom: 10px;
@@ -61,10 +241,10 @@
             font-size 28px
             text-align: left;
             width: 100%;
-            color: #97c83e;
+            color: #91e061;
             font-weight: bold;
-            padding-top: 15px;
-            padding-bottom: 10px;
+            //padding-top: 15px;
+            //padding-bottom: 10px;
         a
             font-size 14px
             text-align: right;
@@ -78,29 +258,34 @@
             padding-top 10px
             margin 5px
             background-color #fff
+            float left
     .internal-courses-detail
-        max-width 950px
         margin 0 auto
         padding-left 12px
         padding-right 12px
         padding-bottom 55px
         background-color #fff
+        width 100%
+        padding 5px
+        margin 0 auto
+
         h1
             font-size 30px
             text-align: left;
             width: 100%;
-            color: #97c83e;
+            color: #91e061;
             font-weight: bold;
             padding-top: 10px;
             padding-bottom: 10px;
         h5
-            font-size 28px
-            text-align: left;
+            font-size 22px
+            text-align: left !important;
             width: 100%;
-            color: #97c83e;
+            color: #91e061;
             font-weight: bold;
-            padding-top: 15px;
-            padding-bottom: 10px;
+            //padding-top: 15px;
+            text-align center
+            //padding-bottom: 10px;
         a
             font-size 18px
             text-align: left;
@@ -110,12 +295,14 @@
             padding-top: 10px;
             padding-bottom: 10px;
         .course-row
-            //border 1px solid #00f
             padding 5px
             padding-top 10px
             padding-bottom 10px
             margin 10px 0
             background-color #fff
+            overflow hidden
+            clear both
+            float left
         .summary
             margin-top 10px
             margin-bottom 10px
@@ -127,11 +314,13 @@
                     background-color #fff
         .index, a .index
             float right
-            border 1px solid #7ca435
+            //border 1px solid #7ca435
             border-radius 2px
-            background-color #a7d850
+            background #4de189
+            background linear-gradient(90deg,#4de189 0%,#4de189 31%,#91e061 100%)
             color #ffffff
             padding 12px
+            margin-top 10px
         .index:hover, a index:hover
             background-color #7a3232
 
@@ -140,29 +329,30 @@
                 list-style-type none
                 text-decoration none
             .free, .premium
-                border 1px solid #f3f3f3
+                //border 1px solid #f3f3f3
                 background-image url('../img/video-icon.png')
                 background-position 4px center
                 background-repeat no-repeat
                 background-size 30px 30px
                 min-height 40px
                 padding 5px
-                margin-top 12px
-                margin-bottom 12px
+                font-weight normal
+                //margin-top 12px
+                //margin-bottom 12px
                 padding-left 40px
                 background-color #fff
                 list-style-type: none;
                 text-decoration: none;
             .premium:hover,.free:hover, a .premiun:hover, a .free:hover
-                background-color #fffbe5
+                //background-color #fffbe5
                 text-decoration: none;
             .free
-                background-color #fbfbfb
+                //background-color #fbfbfb
             .premium
-                background-color #ededed
-                color #3ca9dc
+                //background-color #ededed
+                color #555
     .internal-courses-list
-        max-width 900px
+        max-width 1100px
         margin 0 auto
         padding-left 2px
         padding-right 2px
@@ -181,7 +371,7 @@
             color: #23378b;
             font-weight: bold;
             padding-top: 10px;
-            //padding-bottom: 10px;
+            padding-bottom: 10px;
             text-align center
         h5
             font-size 28px
@@ -191,7 +381,7 @@
             font-weight: bold;
             padding-top: 10px;
             padding-bottom: 10px;
-        a
+        .title-ref
             font-size 18px
             text-align: left;
             width: 100%;
@@ -199,18 +389,20 @@
             font-weight: bold;
             padding-top: 10px;
             padding-bottom: 10px;
-        a:hover
+        .title-ref:hover
             text-decoration none
         .course-row
             //border 1px solid #00f
             padding 5px
             padding-top 10px
             padding-bottom 10px
-            margin 10px
+            //margin 10px
             background-color #fff
+            //overflow hidden
+            //clear both
+            float left
             .title
-                border 1px solid #97c83e
-                color #97c83e
+                color #91e061
                 margin 5px auto
                 border-radius 2px
                 padding-top 10px
@@ -226,7 +418,7 @@
         .item-container
             .free, .premium
                 border 1px solid #f3f3f3
-                background-color #fbfbfb
+                //background-color #fbfbfb
                 background-image url('../img/video-icon.png')
                 background-position 4px 4px
                 background-repeat no-repeat
@@ -240,6 +432,8 @@
                 list-style-type: none;
         ul
             margin-left 20px
+            margin-bottom 0
+            padding 0
     .internal-courses-lesson
         //max-width 950px
         width 62%
@@ -259,7 +453,7 @@
             font-size 30px
             text-align: left;
             width: 100%;
-            color: #97c83e;
+            color: #91e061;
             font-weight: bold;
             padding-top: 15px;
             padding-bottom: 10px;
@@ -267,7 +461,7 @@
             font-size 28px
             text-align: left;
             width: 100%;
-            color: #97c83e;
+            color: #91e061;
             font-weight: bold;
             padding-top: 15px;
             padding-bottom: 10px;
@@ -289,9 +483,9 @@
             margin-bottom 10px
         .index, a .index
             float right
-            border 1px solid #7ca435
-            border-radius 2px
-            background-color #a7d850
+            border-radius 0px
+            background rgb(77,225,137)
+            background linear-gradient(90deg, rgba(77,225,137,1) 0%, rgba(77,225,137,1) 31%, rgba(145,224,97,1) 100%)
             color #ffffff
             padding 5px 8px
         .index:hover, a index:hover
@@ -343,14 +537,14 @@
                 list-style-type: none;
                 text-decoration: none;
             .premium:hover, a .premium:hover, .free:hover, a .free:hover
-                background-color #fffbe5
+                //background-color #fffbe5
                 text-decoration: none;
             li
                 padding-left 10px
             .free
-                background-color #fbfbfb
+                background-image url('../img/video-icon.png')
             .premium
-                background-color #899198
+                background-image url('../img/plus-icon.png')
     .internal-courses-lesson-right
         width 37.5%
         background-color #f3f3f3
@@ -358,7 +552,7 @@
         padding 5px
         background-color #fff
         float right
-        margin-top 10px
+        margin-top 0px
         height 100vh
         overflow-y scroll
         .comment_holder
@@ -419,13 +613,16 @@
           width: 350px
           margin 0 auto
           display block
+
           .table
               margin 0 auto
               width 90%
+              .tr-product
+                  width 95%
         .form-cancel
             margin-top 130px !important
         .form
-            margin-top 30px
+            margin-top 10px
             #submit
                 border-radius 2px !important
             .form-group
@@ -459,7 +656,7 @@
             .title
                 font-size 20px
                 font-weight bold
-                text-align left
+                text-align center
                 float left
                 width 100%
                 height 40px
@@ -515,6 +712,53 @@
     .create-enroll
         width 775px
 @media (max-width: 768px)
+    .right-side
+        float left
+        width 100%
+
+    .left-side
+        float left
+        width 100%
+
+    .profile-card, .skill-card
+        width 98%
+        margin 5px
+
+    .cart-section
+        width 250px
+        float none
+        //margin-right 5px
+        //margin-top 10px
+        margin 5px auto
+
+
+    .internal-courses-list
+        .course-row
+
+            overflow hidden
+            clear both
+    #country, #country_us
+        overflow hidden
+        clear both
+        float right
+        top 0
+        cursor pointer
+        width 120px
+        height 35px
+        margin-top -95px
+        margin-right -15px
+        display none !important
+        .country_symbol
+            float left
+            width 80px
+            height 20px
+            margin-top 5px
+        .flag
+            float left
+        #country_div
+            float left
+    .flag
+        margin 0 auto
     .same-width
         display block
     .courses
@@ -531,11 +775,11 @@
             .enroll-title
                 margin-top 20px
         .internal-courses-lesson, .internal-courses-lesson-right
-            width 100%
-            width auto
+            width 98%
+            //width auto
             overflow-y auto
             display inline-block
-            margin 5px
+            margin 5px auto
             padding 5px
             float left
             flex 1
@@ -562,6 +806,7 @@ body{background-color:#eee;}
 #generic_price_table
     background-color: #f0eded;
     .container
+        background-color #fff
         .row
             width 750px
             margin 0 auto
@@ -570,6 +815,7 @@ body{background-color:#eee;}
 /*PRICE COLOR CODE START*/
 #generic_price_table .generic_content{
     background-color: #fff;
+    border 1px solid #f3f3f3
 }
 
 #generic_price_table .generic_content .generic_head_price{
@@ -609,17 +855,17 @@ body{background-color:#eee;}
 }
 #generic_price_table .generic_content .generic_feature_list ul li:hover{
     background-color: #E4E4E4;
-    border-left: 5px solid #2ECC71;
+    border-left: 5px solid #4DE189;
 }
 
 #generic_price_table .generic_content .generic_price_btn a{
-    border: 1px solid #2ECC71;
-    color: #2ECC71;
+    border: 1px solid #4DE189;
+    color: #4DE189;
 }
 
 #generic_price_table .generic_content.active .generic_head_price .generic_head_content .head_bg,
 #generic_price_table .generic_content:hover .generic_head_price .generic_head_content .head_bg{
-    border-color: #2ECC71 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #2ECC71;
+    border-color: #4DE189 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #4DE189;
     color: #fff;
 }
 
@@ -630,7 +876,7 @@ body{background-color:#eee;}
 
 #generic_price_table .generic_content:hover .generic_price_btn a,
 #generic_price_table .generic_content.active .generic_price_btn a{
-    background-color: #2ECC71;
+    background-color: #4DE189;
     color: #fff;
 }
 #generic_price_table{
@@ -685,6 +931,12 @@ body{background-color:#eee;}
 
 #generic_price_table .generic_content .generic_head_price .generic_price_tag .price{
     display: block;
+    cursor pointer
+    background-image url('../img/change-currency.png')
+    background-position right bottom
+    background-size 40px 40px
+    background-repeat no-repeat
+
 }
 
 #generic_price_table .generic_content .generic_head_price .generic_price_tag .price .sign{
@@ -749,11 +1001,11 @@ body{background-color:#eee;}
 }
 
 #generic_price_table .generic_content .generic_price_btn a{
-    border-radius: 50px;
-    -moz-border-radius: 50px;
-    -ms-border-radius: 50px;
-    -o-border-radius: 50px;
-    -webkit-border-radius: 50px;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    -webkit-border-radius: 0px;
     display: inline-block;
     font-family: "Lato",sans-serif;
     font-size: 18px;
@@ -779,8 +1031,6 @@ body{background-color:#eee;}
     -o-transition: all 0.3s ease-in-out 0s;
     -webkit-transition: all 0.3s ease-in-out 0s;
 }
-@media (max-width: 320px) {
-}
 
 @media (max-width: 767px) {
     #generic_price_table .generic_content{
@@ -802,10 +1052,6 @@ body{background-color:#eee;}
     #generic_price_table .generic_content{
         margin-bottom:75px;
     }
-}
-@media (min-width: 992px) and (max-width: 1199px) {
-}
-@media (min-width: 1200px) {
 }
 #generic_price_table_home{
      font-family: 'Raleway', sans-serif;
@@ -849,7 +1095,7 @@ body{background-color:#eee;}
     transition: all 0.3s ease-in-out 0s;
 }
 #generic_price_table_home .emerald{
-    background: #2ECC71;
+    background: #4DE189;
     transition: all 0.3s ease-in-out 0s;
 }
 #generic_price_table_home .grey{

@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet"
+      href="{{url_for('static', filename='css-minified/course.css')}}">
+{% endblock %}
+
+{% block app_content %}
+<div class="courses row">
+  <div class="internal-courses-detail">
+    {% for subscription in subscriptions %}
+        <h5> {{ subscription.party.rec_name }}</h5>
+        <div class="summary">
+         <table>
+            <tr>
+                <td>Servicio:</td>
+                <td align="right">
+                    {% for line in subscription.lines %}
+                        <strong>{{ line.service.product.rec_name }}</strong>
+                    {% endfor %}
+                </td>
+              </tr>
+              <tr>
+                <td>Código interno de registro:</th>
+                <td align="right">{{ subscription.number }}</th>
+              </tr>
+              <tr>
+                <td>Modalidad de cobro:</td>
+                <td align="right">{{subscription.invoice_recurrence.rec_name}} </td>
+              </tr>
+            </table>
+            <p></p>
+            <table style="border-spacing: 10px;">
+              <tr>
+                <th style="width: 100px;">Fecha</th>
+                <th style="width: 250px;">Número de Cobro:</th>
+                <th style="width: 200px;">Descripción</th>
+                <th style="width: 200px;">Boleta</th>
+                <th style="width: 200px;">Factura</th>
+                <th style="width: 130px;">Estado</th>
+                <th style="width: 100px;">Total</th>
+              </tr>
+              {% for invoice in subscription.invoices %}
+                {% if invoice.state == 'paid' or invoice.state=='posted' %}
+                  {% if invoice.total_amount != 0 %}
+
+                  <tr>
+                    <td>{{ invoice.invoice_date }} </td>
+                    <td>{{ invoice.number }}</td>
+                    <td>{{ invoice.description }} </td>
+                    <td>{{ invoice.payment_ticket }} </td>
+                    <td>{{ invoice.payment_invoice }} </td>
+                    <td>
+                      {% if invoice.state == 'paid' %}
+                        PAGADA
+                      {% endif %}
+                      {% if invoice.state == 'posted' %}
+                        CONTABILIZADA
+                      {% endif %}
+                    </td>
+                    <td align="right">{{ invoice.total_amount }} </td>
+                  </tr>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            </table>
+        </div>
+    {% endfor %}
+
+  </div>
+</div>
+</div>
+{% include "footer.html" %}
+{% endblock %}
+

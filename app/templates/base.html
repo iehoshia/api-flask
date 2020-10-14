@@ -1,7 +1,7 @@
 {% extends 'bootstrap/base.html' %}
 
 {% block title %}
-API Centro de Capacitación y Software
+API Academia de Cursos en Línea
 {% endblock %}
 
 
@@ -10,15 +10,29 @@ API Centro de Capacitación y Software
 {% endblock %}
 
 {% block styles %}
-{{ super() }}
 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<!--<link rel="stylesheet"
+      href="{{url_for('static', filename='css-minified/combined.css')}}">
+
+    -->
+<!--<link rel="stylesheet"
+      href="{{url_for('static', filename='css/demo.css')}}">
+<link rel="stylesheet"
+      href="{{url_for('static', filename='css/footer-min.css')}}">
+<link rel="stylesheet"
+      href="{{url_for('static', filename='css/footer-distributed-with-address-and-phones.css')}}">
+<link rel="stylesheet"
+      href="{{url_for('static', filename='css/style.css')}}">
+    -->
 <link rel="stylesheet"
       href="{{url_for('static', filename='css-minified/combined.css')}}">
 <link rel="stylesheet"
       href="{{url_for('static', filename='css-minified/not-found.css')}}">
 <link rel="stylesheet"
       href="{{url_for('static', filename='css-minified/login.css')}}">
-
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css">
 
 <link rel="shortcut icon" type="image/png"
       href="{{url_for('static', filename='img/favicon.ico')}}">
@@ -26,91 +40,88 @@ API Centro de Capacitación y Software
 {% endblock %}
 
 {% block scripts %}
-{{ super() }}
-  <script src="https://apixela.net/static/js/fb-video.js"></script>
-  <script src="https://apixela.net/static/js/chat.js"></script>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 {% endblock %}
 
 {% block custom_scripts %}
 {% endblock %}
 
 {% block navbar %}
+<nav class="navbar navbar-expand-md navbar-light bg-light no-margin">
+    <a class="navbar-brand" href="/">
+      <div class="logo-nav">
+      </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
 
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+            <li class="nav-item active">
+                <a href="{{ url_for('course.index') }}" aria-pressed="true" class="btn button-course no-mobile">
+                  <div>Cursos</div>
+                </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item display-only-mobile">
+              <a class="nav-link" href="{{ url_for('course.index') }}">Cursos</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('blog.index') }}">Blog</a>
+          </li>
+          {% if current_user.is_authenticated %}
+            <li><a href="{{ url_for('main.edit_profile') }}" class="nav-link" aria-pressed="true">{{ user.party.name }}</a></li>
+          {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('auth.login') }}">Ingresa</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link contactanos" href="{{ url_for('auth.register') }}">Registro</a>
+            </li>
+          {% endif %}
+        </ul>
+    </div>
+</nav>
+    <!--<div class="navbar-header">
       <a class="navbar-brand" href="/">
         <div class="logo-nav">
         </div>
       </a>
-    </div>
+      <a href="{{ url_for('course.index') }}" aria-pressed="true" class="btn button-course no-mobile">
+        <div>Cursos</div>
+      </a>
+    </div>-->
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <!--
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="{{ url_for('blog.index') }}" class="contactanos btn btn-success btn-lg active" aria-pressed="true">Blog</a></li>
-        <li><a href="{{ url_for('course.index') }}" class="contactanos btn btn-success btn-lg active" aria-pressed="true">Cursos</a></li>
-        <li><a href="https://apixela.net/#contact-us-form" class="contactanos btn btn-success btn-lg active" aria-pressed="true">Contáctanos</a></li>
+        <li><a href="{{ url_for('blog.index') }}" class="contactanos" aria-pressed="true">Blog</a></li>
         {% if current_user.is_authenticated %}
-        <!--<li><img src="{{ user.web_picture_profile }}" > </li>-->
-        <li><a href="{{ url_for('main.edit_profile') }}" class="contactanos btn btn-success btn-lg active" aria-pressed="true">{{ user.party.name }}</a></li>
+        <li><a href="{{ url_for('main.edit_profile') }}" class="contactanos" aria-pressed="true">{{ user.party.name }}</a></li>
         {% else %}
-        <li><a href="{{ url_for('auth.login') }}" class="login-button contactanos btn btn-success btn-lg active" aria-pressed="true">Ingresa</a></li>
+        <li><a href="{{ url_for('auth.login') }}" class="contactanos" aria-pressed="true">Ingresa</a></li>
+        <li class="login-button"><a href="{{ url_for('auth.register') }}" class="contactanos" aria-pressed="true">Regístrate</a></li>
         {% endif %}
+        <li class="mobile"><a href="{{ url_for('course.index') }}" aria-pressed="true" class="btn button-course no-mobile">
+        <div>Cursos</div>
+      </a></li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+    </div>
+  -->
 
-
-<!-- Facebook Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window,document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
- fbq('init', '1479430812358043');
-fbq('track', 'PageView');
-</script>
-<noscript>
- <img height="1" width="1"
-src="https://www.facebook.com/tr?id=1479430812358043&ev=PageView
-&noscript=1"/>
-</noscript>
-<!-- End Facebook Pixel Code -->
-
-<!-- analytics -->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-52894814-1', 'auto');
-      ga('send', 'pageview');
-
-    </script>
-<!-- end analytics -->
-
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.3&appId=2137278692986045&autoLogAppEvents=1"></script>
 
 {% endblock %}
 
 {% block content %}
 
-<div style="margin-top:40px;">
+<div>
     {# application content needs to be provided in the app_content block #}
     {% block app_content %}{% endblock %}
 </div>
@@ -119,3 +130,16 @@ src="https://www.facebook.com/tr?id=1479430812358043&ev=PageView
 {% endblock %}
 
 
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

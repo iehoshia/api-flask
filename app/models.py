@@ -23,6 +23,8 @@ PaymentGroup = tryton.pool.get('account.payment.group')
 SaleSubscriptionLine = tryton.pool.get('sale.subscription.line')
 PaymentTerm = tryton.pool.get('account.invoice.payment_term')
 LessonComment = tryton.pool.get('lesson.comment')
+Currency = tryton.pool.get('currency.currency')
+Question = tryton.pool.get('web.question')
 
 User = WebUser
 

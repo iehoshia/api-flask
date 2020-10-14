@@ -5,90 +5,191 @@
 {{ super() }}
 <link rel="stylesheet"
       href="{{url_for('static', filename='css-minified/course.css')}}">
+<link rel="stylesheet"
+      href="{{url_for('static', filename='css-minified/country-flag.css')}}">
 {% endblock %}
 
 {% block app_content %}
-<div class="courses row">
+<div class="courses row courses-row-enroll">
   <div class="internal-enroll create-enroll">
-  	<h1 class="enroll-title">{{ _('Enroll') }}</h1>
-		<div id="generic_price_table">
-			<section>
-		        <div class="container" >
-		            <div class="row">
-		                <div class="col-md-6">
-		                    <div class="generic_content active clearfix">
-		                        <div class="generic_head_price clearfix">
-		                            <div class="generic_head_content clearfix">
-		                                <div class="head_bg"></div>
-		                                <div class="head">
-		                                    <span>{{ _('Monthly') }}</span>
-		                                </div>
-		                            </div>
-		                            <div class="generic_price_tag clearfix">
-		                                <span class="price">
-		                                    <span class="sign">Q</span>
-		                                    <span class="currency">275</span>
-		                                    <span class="cent">.00</span>
-		                                    <span class="month">/{{ _('MONTH') }}</span>
-		                                </span>
-		                            </div>
-		                        </div>
-		                        <div class="generic_feature_list">
-		                        	<ul>
-		                            	<li><span>Q 0.00</span> {{ _('in transport') }} </li>
-		                                <li><span>00:00</span> {{ _('minuts in traffic') }}</li>
-		                                <li><span>1</span> {{ _('Professional certified') }} </li>
-		                                <li><span>4+</span> {{ _('Professional courses') }} </li>
-		                                <li><span>16%</span> {{ _('Professional asks') }} </li>
-		                                <li><span>16%</span> {{ _('Develop your talent') }} </li>
-		                                <li><span>24/7</span> {{ _('Acces and support') }} </li>
-		                            </ul>
-		                        </div>
-		                        <div class="generic_price_btn clearfix">
-		                        	<a class="" href="{{ url_for('course.monthly_enroll') }}">{{ _('Sign up') }}</a>
-		                        </div>
-		                    </div>
-		                </div>
-		                <div class="col-md-6">
-		                    <div class="generic_content clearfix">
-		                        <div class="generic_head_price clearfix">
-		                            <div class="generic_head_content clearfix">
-		                                <div class="head_bg"></div>
-		                                <div class="head">
-		                                    <span>{{ _('Yearly') }}</span>
-		                                </div>
-		                            </div>
-		                            <div class="generic_price_tag clearfix">
-		                                <span class="price">
-		                                    <span class="sign">Q</span>
-		                                    <span class="currency">2500</span>
-		                                    <span class="cent">.00</span>
-		                                    <span class="month">/{{ _('YEAR') }}</span>
-		                                </span>
-		                            </div>
-		                        </div>
-		                        <div class="generic_feature_list">
-		                        	<ul>
-		                            	<li><span>Q 0.00</span> {{ _('in transport') }} </li>
-		                                <li><span>00:00</span> {{ _('minuts in traffic') }}</li>
-		                                <li><span>2</span> {{ _('Professional Certified') }} </li>
-		                                <li><span>4+</span> {{ _('Professional Courses') }} </li>
-		                                <li><span>16%</span> {{ _('Save the') }} </li>
-		                                <li><span>16%</span> {{ _('Face-to-Face talks') }} </li>
-		                                <li><span>24/7</span> {{ _('Acces and support') }} </li>
-		                            </ul>
-		                        </div>
-		                        <div class="generic_price_btn clearfix">
-		                        	<a class="" href="{{ url_for('course.yearly_enroll') }}">{{ _('Sign up') }}</a>
-		                        </div>
-		                    </div>
-		                </div>
-		            </div>
-		        </div>
-		    </section>
-		</div>
+    <h1 class="enroll-title">Regístrate al curso de:</h1>
+    <h2 class="couse_name">{{ web_course.name }}</h2>
+    <div id="country">
+        <div id="country_div"></div>
+        <h3 class="country_symbol">{{ currency.code }}</h3>
+    </div>
+    <div id="country_us">
+        <div id="country_us_div"></div>
+        <h3 class="country_symbol">US $</h3>
+    </div>
+    <div id="generic_price_table">
+        <section>
+            <div class="container" >
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="generic_content active clearfix">
+                            <div class="generic_head_price clearfix">
+                                <div class="generic_head_content clearfix">
+                                    <div class="head_bg"></div>
+                                    <div class="head">
+                                        <span>{{ _('Monthly') }}</span>
+                                    </div>
+                                </div>
+                                <div class="generic_price_tag clearfix">
+                                    <span class="price" id="monthly_country_flag">
+                                        <span class="sign">{{ currency.symbol }}</span>
+                                        <span class="currency">{{ price_monthly }}</span>
+                                        <span class="month">/{{ country_code }}</span>
+                                    </span>
+                                    <span class="price" id="monthly_us_flag">
+                                        <span class="sign">$</span>
+                                        <span class="currency">{{ dollar_price_monthly }}</span>
+                                        <span id="us_flag" class="month">/US</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="generic_feature_list">
+                                <ul>
+                                    <li>+ {{ web_course.total_lessons }} lecciones</li>
+                                    <li>Pagos más cómodos</li>
+                                    <li>Clase quincenal en <span>Zoom</span></li>
+                                    <li>Soporte <span>24/6</span> </li>
+                                    <li>Acceso <span>24/7</span> </li>
+                                </ul>
+                            </div>
+                            <div class="generic_price_btn clearfix" id="price-mark">
+                                <a class="" onclick="selectMonth()" href="#bank-form">{{ _('Sign up') }}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="generic_content clearfix">
+                            <div class="generic_head_price clearfix">
+                                <div class="generic_head_content clearfix">
+                                    <div class="head_bg"></div>
+                                    <div class="head">
+                                        <span>CONTADO</span>
+                                    </div>
+                                </div>
+                                <div class="generic_price_tag clearfix">
+                                    <span class="price" id="yearly_country_flag">
+                                        <span class="sign">{{ currency.symbol }}</span>
+                                        <span class="currency">{{ price_yearly }}</span>
+                                        <span class="month">/{{ country_code }}</span>
+                                    </span>
+                                    <span class="price" id="yearly_us_flag">
+                                        <span class="sign">$</span>
+                                        <span class="currency">{{ dollar_price_yearly }}</span>
+                                        <span id="us_flag" class="month">/US</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="generic_feature_list">
+                                <ul>
+                                    <li>+ {{ web_course.total_lessons }} lecciones</li>
+                                    <li>Ahorras hasta un 25%</li>
+                                    <li>Clase semanal en <span>Zoom</span> </li>
+                                    <li>Soporte <span>24/6</span> </li>
+                                    <li>Acceso <span>24/7</span> </li>
+                                </ul>
+                            </div>
+                            <div class="generic_price_btn clearfix" id="price-mark">
+                                <a class="" onclick="selectYear()" href="#bank-form">{{ _('Sign up') }}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div style="clear: both;overflow: hidden;" id="bank-form"></div>
+
+    <div class="internal-enroll-with-border" id="cc_form_container" style="display: none !important;">
+      <div id="cc_form" class="form">
+        <span class="title" >{{ _('Pay with Card') }}</span>
+        <form action="{{ url_for('course.buy_with_card', course=course) }}" method="post" class="form" role="form">
+          {{ cc_form.hidden_tag() }}
+          <div class="form-group required">
+              {{ cc_form.cc_membership.label(class='control-label') }}
+              {{ cc_form.cc_membership }}
+          </div>
+          <div class="form-group required">
+              {{ cc_form.name.label(class='control-label') }}
+              {{ cc_form.name }}
+          </div>
+          <div class="form-group required">
+              {{ cc_form.card_number.label(class='control-label') }}
+              {{ cc_form.card_number }}
+          </div>
+          <div class="form-group required" style="width: 49%;float: left;">
+              {{ cc_form.expiration_date.label(class='control-label') }}
+              {{ cc_form.expiration_date }}
+          </div>
+          <div class="form-group required" style="width: 49%; float: left;">
+              {{ cc_form.code.label(class='control-label')}}
+              {{ cc_form.code }}
+          </div>
+          <p>{{ cc_form.submit() }}</p>
+        </form>
+      </div>
+      <div class="buttons">
+        <a href="#bank_form" onclick="showBankForm()" id="enroll_button" class="button"> {{ _('Pay with Bank') }}</a>
+      </div>
+    </div>
+
+  <div style="clear: both;overflow: hidden;" id="bank-form"></div>
+
+  <div class="internal-enroll-with-border" id="bank_form_container" style="display: block !important;">
+    <div id="bank_form" class="form">
+      <span class="title" >{{ _('Pay with Bank') }}</span>
+      <form action="{{ url_for('course.buy_with_bank', course=course) }}" method="post" class="form" role="form">
+          {{ bank_form.hidden_tag() }}
+          <div class="form-group required">
+              {{ bank_form.bank_membership.label(class='control-label') }}
+              {{ bank_form.bank_membership }}
+          </div>
+          <div class="form-group required">
+              {{ bank_form.bank.label(class='control-label') }}
+              {{ bank_form.bank }}
+          </div>
+          <div class="form-group required">
+              {{ bank_form.account_name.label(class='control-label') }}
+              {{ bank_form.account_name }}
+          </div>
+          <div class="form-group required">
+              {{ bank_form.account.label(class='control-label') }}
+              {{ bank_form.account }}
+          </div>
+          <div class="form-group required">
+              {{ bank_form.ticket.label(class='control-label') }}
+              {{ bank_form.ticket }}
+          </div>
+          <div class="form-group required">
+              {{ bank_form.submit.label(class='control-label') }}
+              {{ bank_form.submit }}
+          </div>
+        </form>
+    </div>
+    <!--
+    <div class="buttons">
+      <a href="#bank-form" onclick="showCCForm()" id="cc_button" class="button"> {{ _('Pay with Card') }}</a>
+    </div>
+  -->
+    <div>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="messages">
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    </div>
   </div>
 </div>
+
+<script src="{{url_for('static', filename='js/country-flag.js')}}"></script>
+<script src="{{url_for('static', filename='js/enroll.js')}}"></script>
 {% include "footer.html" %}
 {% endblock %}
-

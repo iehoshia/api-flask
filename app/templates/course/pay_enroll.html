@@ -55,21 +55,28 @@ window.onload = function(){
     	<table class="table">
 		  <tr>
 		    <th>{{ _('Date') }}</th>
+		    <!--<th>{{ _('Membership') }}</th>-->
 		    <th>{{ _('Description') }}</th>
 		    <th>{{ _('Amount') }}</th>
 		  </tr>
 		  	{% for invoice in invoices %}
 		  	<tr>
+		  		{% for line in invoice.lines %}
+	    			<td colspan="3" >{{ line.product.name }}</td>
+		  		{% endfor %}
+		  	</tr>
+
+		  	<tr>
 	    		<td>{{ invoice.invoice_date }}</td>
 	    		<td>{{ invoice.description }}</td>
-	    		<td>{{ invoice.total_amount }}</td>
+	    		<td>{{ currency.symbol }} {{ invoice.webshop_total_amount }}</td>
 	    	</tr>
 	    	{% endfor %}
 		</table>
     </div>
     <div id="cc_form" class="form">
     	<span class="title">{{ _('Pay with Card') }}</span>
-		<form action="" method="post" class="form" role="form">
+		<form action="{{ url_for('course.payment') }}" method="post" class="form" role="form">
 			{{ cc_form.hidden_tag() }}
 			<div class="form-group required">
 			    {{ cc_form.name.label(class='control-label') }}
@@ -90,9 +97,6 @@ window.onload = function(){
 			<p>{{ cc_form.submit() }}</p>
 		</form>
     </div>
-    <div class="buttons">
-    	<a href="{{ url_for('course.pay_with_bank') }}" id="enroll_button" class="button"> {{ _('Pay with Bank') }}</a>
-    </div>
     <div>
     {% with messages = get_flashed_messages() %}
       {% if messages %}
@@ -104,7 +108,9 @@ window.onload = function(){
       {% endif %}
     {% endwith %}
     </div>
-
+    <div class="buttons">
+    	<a href="{{ url_for('course.pay_with_bank') }}" id="enroll_button" class="button"> {{ _('Pay with Bank') }}</a>
+    </div>
   </div>
 </div>
 {% include "footer.html" %}

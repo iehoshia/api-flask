@@ -1,0 +1,125 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+Ich Bin Josías
+{% endblock %}
+
+
+{% block custom_metas %}
+{{ super() }}
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+
+<link rel="stylesheet"
+      href="{{url_for('static', filename='css-minified/combined.css')}}">
+<link rel="stylesheet"
+      href="{{url_for('static', filename='css-minified/not-found.css')}}">
+<link rel="stylesheet"
+      href="{{url_for('static', filename='css-minified/login.css')}}">
+<link rel="stylesheet"
+      href="{{url_for('static', filename='css-minified/personal.css')}}">
+
+
+<link rel="shortcut icon" type="image/png"
+      href="{{url_for('static', filename='img/favicon.ico')}}">
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+  <script src="https://apixela.net/static/js/fb-video.js"></script>
+  <script src="https://apixela.net/static/js/chat.js"></script>
+{% endblock %}
+
+{% block custom_scripts %}
+{% endblock %}
+
+{% block navbar %}
+
+<nav class="navbar navbar-default navbar-fixed-top personal-nav">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand personal-brand" href="/blog/iehoshia">
+        <div class="logo-nav-personal">
+        </div>
+      </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <!--
+        <li><a href="{{ url_for('blog.index') }}" class="contactanos btn btn-success btn-lg active" aria-pressed="true">Blog</a></li>
+        <li><a href="{{ url_for('course.index') }}" class="contactanos btn btn-success btn-lg active" aria-pressed="true">Cursos</a></li>
+        <li><a href="https://apixela.net/#contact-us-form" class="contactanos btn btn-success btn-lg active" aria-pressed="true">Contáctanos</a></li>
+        {% if current_user.is_authenticated %}
+        <li><img src="{{ user.web_picture_profile }}" > </li>
+        <li><a href="{{ url_for('main.edit_profile') }}" class="contactanos btn btn-success btn-lg active" aria-pressed="true">{{ user.party.name }}</a></li>
+        {% else %}
+        <li><a href="{{ url_for('auth.login') }}" class="login-button contactanos btn btn-success btn-lg active" aria-pressed="true">Ingresa</a></li>
+        {% endif %}
+        -->
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+ fbq('init', '1479430812358043');
+fbq('track', 'PageView');
+</script>
+<noscript>
+ <img height="1" width="1"
+src="https://www.facebook.com/tr?id=1479430812358043&ev=PageView
+&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->
+
+<!-- analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-52894814-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+<!-- end analytics -->
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.3&appId=2137278692986045&autoLogAppEvents=1"></script>
+
+{% endblock %}
+
+{% block content %}
+
+<div style="margin-top:40px;">
+    {# application content needs to be provided in the app_content block #}
+    {% block app_content %}{% endblock %}
+</div>
+
+
+{% endblock %}
+
+

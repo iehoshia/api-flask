@@ -1,6 +1,18 @@
 {% extends 'base.html' %}
 {% import 'bootstrap/wtf.html' as wtf %}
 
+{% block metas %}
+{% for course in courses %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:url" content="{{ request.base_url }}" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{{ course.name }}" />
+<meta property="og:description" content="{{ course.meta_content }} " />
+<meta property="og:image" itemprop="image primaryImageOfPage" content="{{ course.thumbnail|safe }}" />
+{% endfor %}
+{% endblock %}
+
+
 {% block styles %}
 {{ super() }}
 <link rel="stylesheet"
@@ -12,23 +24,106 @@
   <div class="internal-courses-detail">
     {% for course in courses %}
         <h5>{{ course.name }}</h5>
-        <h6>{{ _('Available from') }} {{ course.start_date }} {% if course.end_date is not none %} {{ _('To') }} {{ course.end_date }} {% endif %} </h6>
-        <div class="embed-responsive embed-responsive-16by9">
-            {{ course.video|safe  }}
-        </div>
-        <div class="summary">
-            {{ course.content | safe }}
-        </div>
-        {% if course.lessons %}
-        <ul class="item-container">
-        {% for lesson in course.lessons %}
-            {% if lesson.membership_type == 'free' %}
-            <a href="{{base_url}}/cursos/{{course.slug}}/{{lesson.slug}}/"><li class="free">{{lesson.name}}</li></a>
+        <!--<h6>{{ _('Available from') }} {{ course.start_date }} {% if course.end_date is not none %} {{ _('To') }} {{ course.end_date }} {% endif %} </h6>-->
+        <div class="summary left-side">
+            <div class="embed-responsive embed-responsive-16by9">
+                {{ course.video|safe  }}
+            </div>
+            {% if current_user.is_authenticated %}
+                {% if not user.active_membership %}
+                    <div class="cart-section">
+                        <a href="{{ url_for('course.enroll',
+                        course=courses[0].id) }}">
+                        <div class="btn-buy">
+                            <div class="shopping-cart-img">
+                            </div>
+                            <div class="shopping-cart-buy">
+                                Comprálo hoy
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                    <div class="cart-section">
+                      <a href="{{ url_for('main.contact') }}">
+                        <div class="btn-buy">
+                            <div class="contact-us-img">
+                            </div>
+                            <div class="shopping-cart-buy">
+                                Solicita más info
+                            </div>
+                        </div>
+                      </a>
+                    </div>
+                {% endif %}
             {% else %}
-            <a href="{{base_url}}/cursos/{{course.slug}}/{{lesson.slug}}/"><li class="premium">{{lesson.name}}</li></a>
+            <div class="contact-header-section">
+                <div class="cart-section">
+                    <a href="{{ url_for('course.enroll',
+                    course=courses[0].id) }}">
+                    <div class="btn-buy">
+                        <div class="shopping-cart-img">
+                        </div>
+                        <div class="shopping-cart-buy">
+                            Comprálo hoy
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <div class="cart-section">
+                  <a href="{{ url_for('main.contact') }}">
+                    <div class="btn-buy">
+                        <div class="contact-us-img">
+                        </div>
+                        <div class="shopping-cart-buy">
+                            Solicita más info
+                        </div>
+                    </div>
+                  </a>
+                </div>
+            </div>
             {% endif %}
-        {% endfor %}
-        </ul>
+            <div class="course-content">
+                {{ course.content|safe }}
+            </div>
+            <div class="card skill-card">
+              <div class="card-body">
+                <h5 class="card-title">Perfil de salida</h5>
+                <p class="card-text">{{ course.profile|safe }}</p>
+              </div>
+            </div>
+            <div class="card profile-card">
+              <div class="card-body">
+                <h5 class="card-title ">Competencias adquiridas  </h5>
+                <p class="card-text">{{ course.requirements|safe }}</p>
+              </div>
+            </div>
+        </div>
+        <div id="accordion" class="right-side">
+        {% if course.chapters %}
+            {% for chapter in course.chapters %}
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link chapter-title" data-toggle="collapse" data-target="#{{chapter.slug}}" aria-expanded="true" aria-controls="{{chapter.slug}}">
+                          <span class="plus-ultra">+</span> {{ chapter.name }}
+                        </button>
+                      </h5>
+                    </div>
+                    <div id="{{chapter.slug}}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+                            {% for lesson in chapter.lessons %}
+                            <ul class="item-container">
+                            {% if lesson.membership_type == 'free' %}
+                                <a href="{{base_url}}/cursos/{{course.slug}}/{{lesson.slug}}/"><li class="free">{{lesson.name}}</li></a>
+                            {% else %}
+                                <a href="{{base_url}}/cursos/{{course.slug}}/{{lesson.slug}}/"><li class="premium">{{lesson.name}}</li></a>
+                            {% endif %}
+                            </ul>
+                        {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
         {% endif %}
         <a href="{{base_url}}/cursos/">
             <p class="index"> Índice de cursos

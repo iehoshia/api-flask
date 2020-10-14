@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block metas %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:url" content="{{ request.base_url }}" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Preguntas frecuentes" />
+<meta property="og:description" content="Preguntas frecuentes API " />
+<meta property="og:image" itemprop="image primaryImageOfPage" content="https://www.apixela.net/static/img/write-frequently-asked-questions.png" />
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet"
+      href="{{url_for('static', filename='css-minified/course.css')}}">
+{% endblock %}
+
+{% block app_content %}
+<div class="question-row row">
+  <h2>¿Tienes alguna pregunta antes de inscribirte?</h2>
+  <h3>Consulta nuestras preguntas frecuentes</h3>
+    {% for question in questions %}
+      <div class="col-sm-6">
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link chapter-title" data-toggle="collapse" data-target="#{{question.slug}}" aria-expanded="true" aria-controls="{{question.slug}}">
+                      <span class="plus-ultra">+</span> {{ question.name }}
+                    </button>
+                  </h5>
+                </div>
+                <div id="{{question.slug}}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        {{ question.answer|safe }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% include "footer.html" %}
+{% endblock %}
+
+

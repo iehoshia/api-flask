@@ -10,6 +10,10 @@
 <meta property="og:title" content="{{ entry.name }}" />
 <meta property="og:description" content="{{ entry.summary }} " />
 <meta property="og:image" itemprop="image primaryImageOfPage" content="{{ entry.image|safe }}" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="{{ request.base_url }}" />
+<meta name="twitter:creator" content="@iehoshia_" />
+
 {% endfor %}
 {% endblock %}
 
@@ -64,7 +68,6 @@
 
     <!--<script id="dsq-count-scr" src="//orionstereo.disqus.com/count.js" async></script>-->
   </div>
-{% include "courses.html" %}
 </div>
 {% include "footer.html" %}
 {% endblock %}

@@ -1,1 +1,75 @@
-.navbar{width:100%;background-color:#23378b}.navbar-brand{padding-left:0;padding-right:0;padding-top:0;padding-bottom:0}
+.comment_form {
+  width: 98%;
+}
+.logo-nav {
+  margin-top: -18px;
+  background-size: 75%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.contactanos {
+  margin-top: 5px;
+}
+.navbar-nav {
+  float: right;
+}
+.mr-auto {
+  display: none;
+}
+/*
+.loginBtn
+    display block
+    //padding 0 15px 0 46px
+    border none
+    text-align center
+    line-height 34px
+    white-space nowrap
+    border-radius 0.2em
+    font-size 16px
+    color #FFF
+    width 90%
+    margin 5px auto
+    height 38px
+    text-decoration none
+    */
+/*
+.login-button
+    //background-color #f02d00
+    color #fff !important
+    height 45px
+    width 180px
+    text-align center
+    font-size 20px
+    line-height 22px
+    font-weight bold
+    a, .contactanos
+        color #f02d00 !important
+        //background-color #f02d00 !important
+    a:hover
+        color #c32501 !important
+        //background-color #c32501 !important
+*/
+/*
+.button-course
+    margin-top 10px
+    padding 12px
+    background: rgb(77,225,137)
+    background: linear-gradient(90deg, rgba(77,225,137,1) 0%, rgba(77,225,137,1) 31%, rgba(145,224,97,1) 100%) 
+    text-align center
+    div
+        width 200px
+        height 30px
+        line-height 30px
+        font-size 20px
+        font-weight normal
+        text-align center
+
+*/
+.button-course:hover {
+  color: #f3f3f3;
+}
+@media (max-width: 767px) {
+  .button-course {
+    display: none;
+  }
+}

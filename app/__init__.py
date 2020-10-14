@@ -16,6 +16,7 @@ from flask_tryton import Tryton
 from flask_session import Session
 from flask_disqus import Disqus
 from flask_socketio import SocketIO
+from flask_cors import CORS
 
 from . import config
 
@@ -29,8 +30,9 @@ moment = Moment()
 babel = Babel()
 mail = Mail()
 tryton = Tryton()
-socketio = SocketIO()
+#socketio = SocketIO()
 db = SQLAlchemy()
+cors = CORS()
 
 def create_app(config_class=config.Config):
     app = Flask(__name__)
@@ -42,7 +44,8 @@ def create_app(config_class=config.Config):
     moment.init_app(app)
     babel.init_app(app)
     tryton.init_app(app)
-    socketio.init_app(app)
+    cors.init_app(app)
+    #socketio.init_app(app)
     #cache.init_app(app)
 
     from app.errors import bp as errors_bp

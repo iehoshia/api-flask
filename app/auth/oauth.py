@@ -92,7 +92,7 @@ class FacebookSignIn(OAuthSignIn):
                                             # username, so the email's user
                                             # is used instead
             me.get('email'),
-            me.get('picture'),
+            me.get('picture') or None,      # trying it
         )
 
 

@@ -12,20 +12,41 @@
   <div class="internal-courses-list">
     <h2>{{ title }}</h2>
     {% for course in courses %}
-    <a href="{{base_url}}/cursos/{{course.slug}}/">
-        <div class="course-row">
-            <img class="image-blog" src="{{ course.thumbnail | safe }}">
+        <div class="course-row col-lg-6 col-md-6 col-sm-12 course-row">
+            <a href="{{base_url}}/cursos/{{course.slug}}/" class="title-ref">
             <div class="title">
                     <strong> {{ course.name }} </strong>
             </div>
+            </a>
+            {% if course.video %}
+                <div class="embed-responsive embed-responsive-16by9">
+                    {{ course.video|safe  }}
+                </div>
+            {% else %}
+                <img class="image-blog" src="{{ course.thumbnail|safe }}">
+            {% endif %}
+            <div class="cart-section">
+              <a class="btn-plus" href="{{ base_url }}/cursos/{{course.slug}}">+</a>
+              <a href="{{ url_for('course.enroll',
+            course=course.id) }}">
+                <div class="btn-buy">
+                    <div class="shopping-cart-img">
+                    </div>
+                    <div class="shopping-cart-buy">
+                        Comprar
+                    </div>
+                </div>
+              </a>
+            </div>
+            <!--
             <div class="summary">
                 {{ course.summary | safe }}
-            </div>
+            </div>-->
         </div>
-    </a>
     {% endfor %}
   </div>
 </div>
+
 
 </div>
 {% include "footer.html" %}

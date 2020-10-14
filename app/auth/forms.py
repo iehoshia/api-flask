@@ -20,8 +20,9 @@ class RegistrationForm(FlaskForm):
     password2 = PasswordField(
         '', validators=[DataRequired(),
                                            EqualTo('password')], render_kw={"placeholder": _l("Repeat Password")})
-    course = SelectField(
     #course = SelectMultipleField(
+    '''
+    course = SelectField(
         ('Curso'),
         choices=[
                   ('1', 'Reparacion de Computadoras y Celulares'),
@@ -35,11 +36,13 @@ class RegistrationForm(FlaskForm):
                   ],
         validators=[DataRequired()],
         render_kw={"placeholder": "Curso *"} )
+    '''
     submit = SubmitField(_l('Register'))
 
     def validate_password(self, password):
         password = password.data
-        if not re.match(r"^(?=.*[\d])(?=.*[A-Z])(?=.*[a-z])(?=.*[@#$])[\w\d@#$]{6,12}$", password):
+        #if not re.match(r"^(?=.*[\d])(?=.*[A-Z])(?=.*[a-z])(?=.*[@#$])[\w\d@#$]{6,12}$", password):
+        if not re.match(r"[A-Za-z0-9@#$%^&+=]{6,12}", password):
             raise ValidationError(_('Password must contain special characters, number and uppercase letters.'))
 
     def validate_email(self, email):
@@ -59,8 +62,9 @@ class CompleteRegistrationForm(FlaskForm):
     #                                       EqualTo('password')])
     phone = StringField('', validators=[DataRequired()], render_kw={"placeholder": _l("Phone Number")})
     city = StringField('', validators=[DataRequired()], render_kw={"placeholder": _l("City")})
-    course = SelectField(
     #course = SelectMultipleField(
+    '''
+    course = SelectField(
         ('Curso'),
         choices=[
                   ('1', 'Reparacion de Computadoras y Celulares'),
@@ -74,6 +78,7 @@ class CompleteRegistrationForm(FlaskForm):
                   ],
         validators=[DataRequired()],
         render_kw={"placeholder": "Curso *"} )
+    '''
     submit = SubmitField(_l('Register'))
 
 

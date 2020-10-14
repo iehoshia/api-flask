@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+
+{% block metas %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta property="og:url" content="https://www.apixela.net" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="API Centro de Capacitación" />
+<meta property="og:description" content="Curso en Línea " />
+<meta property="og:image" itemprop="image primaryImageOfPage" content="https://www.apixela.net/static/img/slide02.jpg" />
+
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet"
+      href="{{url_for('static', filename='css-minified/index.css')}}">
+{% endblock %}
+
+{% block content %}
+<div class="external-contact-us row container" id="myForm">
+	<div class="row contact-us-row">
+		<div class="col-sm contact-us-image">
+		</div>
+		<div class="col-sm line line-whatsapp">
+			<a href="https://wa.me/50230050240?text=Hola.+Me+gustar%c3%ada+informaci%c3%b3n+de+la+academ%c3%ada+y+de+los+cursos." style="text-decoration:none;" target="_blank">
+			  	<div class="call-to-action">¿Dudas? Wasapiemos ;-)</div>
+			</a>
+			<!--
+			<a href="https://m.me/apixela" style="text-decoration:none;" target="_blank">
+			  	<div class="call-to-action">¿Prefieres Fb? Escríbenos :-)</div>
+			</a>
+			-->
+			<a href="#" style="text-decoration:none;">
+			  	<div class="call-to-action">¿Hablamos? (+502) 2296 2574 </div>
+			</a>
+		</div>
+		<div class="col-sm internal-form row">
+			<div class="formulario" >
+				<div class="titulo_form">Escríbenos</div>
+
+				{{ wtf.quick_form(form) }}
+			</div>
+		</div>
+	</div>
+</div>
+
+{% include "footer.html" %}
+{% endblock %}
+
+

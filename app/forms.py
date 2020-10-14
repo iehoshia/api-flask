@@ -30,4 +30,7 @@ class ContactForm(FlaskForm):
     	validators=[DataRequired()],
     	render_kw={"placeholder": "Curso *"} )
 
-    submit = SubmitField('Comienza AHORA')
+    submit = SubmitField('Comienza AHORA',
+      render_kw={"placeholder": "Curso *",},
+      class_:"call-to-us",
+      )

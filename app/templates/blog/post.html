@@ -16,14 +16,16 @@
     <div class="entry">
         <a href="{{base_url}}/blog/{{entry.slug}}/">
             <div class="image"><img class="image-blog" src="{{ entry.image|safe }}"></div>
-            <div class="title"><strong> {{ entry.name }} </strong></div>
+            <div class="title"><strong> {{ entry.name }}</strong></div>
+            <div class="date"> {{ entry.date }} </div>
         </a>
-        {{ entry.summary }}
+        {{ entry.summary | safe }}
     </div>
     <div class="line"></div>
     {% endfor %}
+    {{ pagination.info }}
+    {{ pagination.links }}
   </div>
-{% include "courses.html" %}
 </div>
 {% include "footer.html" %}
 {% endblock %}

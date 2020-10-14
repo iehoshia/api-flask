@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet"
+      href="{{url_for('static', filename='css-minified/course.css')}}">
+{% endblock %}
+
+{% block app_content %}
+<div class="courses row">
+  <div class="internal-courses-detail">
+    {% for course in courses %}
+        <h5 style="text-align: center;">{{ course.name }}</h5>
+
+        {% if course.large_image is defined %}
+            <div class="course-image">
+                <img src="{{ course.large_image | safe }}">
+            </div>
+        {% endif %}
+        {% if course.video is defined %}
+            <div class="embed-responsive embed-responsive-16by9">
+                {{ course.video | safe  }}
+            </div>
+        {% endif %}
+        <div class="summary">
+            {{ course.content | safe }}
+        </div>
+        <a href="{{base_url}}/">
+            <p class="index">Inicio</p>
+        </a>
+    {% endfor %}
+
+  </div>
+</div>
+</div>
+{% include "footer.html" %}
+{% endblock %}
+

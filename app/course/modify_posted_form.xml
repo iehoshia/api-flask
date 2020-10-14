@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<form cursor="journal">
+    <label name="company"/>
+    <field name="company" readonly="1"/>
+    <newline/>
+    <label name="number"/>
+    <field name="number" readonly="1"/>
+    <label name="post_number"/>
+    <field name="post_number" readonly="1"/>
+    <label name="journal"/>
+    <field name="journal" readonly="1"/>
+    <label name="period"/>
+    <field name="period" readonly="1"/>
+    <label name="date"/>
+    <field name="date" readonly="1"/>
+    <label name="post_date"/>
+    <field name="post_date" readonly="1"/>
+    <label name="origin"/>
+    <field name="origin" colspan="3" readonly="1"/>
+    <label name="description"/>
+    <field name="description" colspan="3" />
+    <field name="lines" colspan="4"
+        view_ids="account.move_line_view_tree_move,account.move_line_view_form_move"/>
+    <label name="state"/>
+    <field name="state"/>
+    <button name="post" icon="tryton-ok" colspan="2"/>
+</form>

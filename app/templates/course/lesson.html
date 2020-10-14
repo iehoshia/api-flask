@@ -25,13 +25,10 @@
   <div class="internal-courses-lesson">
     {% for lesson in lessons %}
         <h1>{{ lesson.name }}</h1>
-        <h6>{{ _('Programated date') }} : {{ lesson.date }}</h6>
+        <!--<h6>{{ _('Programated date') }} : {{ lesson.date }}</h6>-->
         <div class="row-lesson">
             <div class="embed-responsive embed-responsive-16by9">
                 {{ lesson.custom_video|safe  }}
-            </div>
-            <div class="summary">
-                {{ lesson.custom_content|safe  }}
             </div>
             <div class="previous-next">
                 {% if lesson.previous_url %}
@@ -41,6 +38,10 @@
                 <a href="{{base_url}}/cursos/{{lesson.course.slug}}/{{lesson.next_url}}/"><div class="next">Siguiente</div></a>
                 {% endif %}
             </div>
+            <div class="summary">
+                {{ lesson.custom_content|safe  }}
+            </div>
+
         </div>
     <a href="{{base_url}}/cursos/{{course}}/"><p class="index">Índice de Curso: {{ lesson.course.name }} </p></a>
     {% endfor %}

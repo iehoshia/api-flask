@@ -8,6 +8,7 @@ from app import tryton
 
 Service = tryton.pool.get('sale.subscription.service')
 
+
 @tryton.transaction(readonly=False, user=1)
 def default_services():
     choices = []
@@ -28,27 +29,39 @@ class ContactForm(FlaskForm):
         validators=[DataRequired(), Email()],
         render_kw={"placeholder": "Correo electronico *"})
     phone = StringField('',
-        validators=[DataRequired()],
-        render_kw={"placeholder": "Telefono *"})
+        validators=[],
+        render_kw={"placeholder": "Teléfono (opcional)"})
     city = StringField('',
+        validators=[],
+        render_kw={"placeholder": "Ciudad (opcional)"})
+    method = SelectField(
+        ('Método de contacto'),
+        choices=[
+                  ('1', _l('Teléfono')),
+                  ('2', _l('Correo')),
+                  ],
         validators=[DataRequired()],
-        render_kw={"placeholder": "Ciudad *"})
+        default=2,
+        render_kw={"placeholder": "Forma de contacto preferido"} )
     course = SelectField(
         ('Curso'),
         choices=[
-                  ('1', _l('Reparacion de Computadoras y Celulares')),
-                  ('2', _l('Diseno Publicitario')),
-                  ('3', _l('Ingles')),
-                  ('4', _l('Mikrotik y Ubiquiti')),
-                  ('5', _l('Computacion, Ofimatica y Cloud Computing')),
-                  ('6', _l('Programacion Basica y Web')),
-                  ('7', _l('Power Pivot: Inteligencia de Negocios')),
+                  ('1', _l('Reparación de Software de Celulares')),
+                  ('8', _l('Reparación de Computadoras')),
+                  ('2', _l('Diseño Publicitario')),
+                  ('3', _l('Idioma Ingles')),
+                  ('4', _l('Redes informáticas')),
+                  ('5', _l('Computacion, Ofimática y Cloud Computing')),
+                  ('6', _l('Programación Basica y Web')),
+                  ('7', _l('Inteligencia de Negocios en Excel')),
                   ],
         validators=[DataRequired()],
         render_kw={"placeholder": "Curso *"} )
 
     #course = SelectMultipleField( choices = default_services )
-    submit = SubmitField('Comienza AHORA')
+    submit = SubmitField('ENVIAR',
+        render_kw={"class":"call-to-us"},
+        )
 
 
 class EditProfileForm(FlaskForm):

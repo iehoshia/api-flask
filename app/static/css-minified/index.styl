@@ -1,13 +1,106 @@
+/*input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.row.display-flex
+    display flex
+    flex-wrap wrap
+.row.display-flex > [class*='col-']
+    display flex
+    flex-direction column
+**/
+
+.container-fluid
+    padding-right 0
+    padding-left 0
+.contact-us-row
+    width 100%
+    padding-top 10px
+.course-row
+    float left
 .external
-    background-image url('../img/slide05.jpg')
-    background-position center left
+    background rgb(17,64,108)
+    background linear-gradient(90deg, rgba(17,64,108,1) 0%, rgba(2,109,165,1) 100%)
     background-repeat no-repeat
-.general-title
+    .internal
+        padding-bottom 0px
+        background-image url('../img/home-api.png')
+        background-size 350px
+        height 450px
+        background-repeat no-repeat
+        background-position 750px 50px
+        width 1200px
+        margin 0 auto
+    .internal-form
+        padding-bottom 0px
+        padding-top 10px
+        background-image url('../img/home-api.png')
+        background-size 350px
+        height 450px
+        background-repeat no-repeat
+        background-position right center
+
+.external-contact-us
+    background rgb(17,64,108)
+    background linear-gradient(90deg, rgba(17,64,108,1) 0%, rgba(2,109,165,1) 100%)
+    background-repeat no-repeat
+    max-width 100%
+    border-radius 0px
+    margin 0
+    padding-left 2px
+    padding-right 2px
+    .internal
+        padding-bottom 0px
+        background-size 350px
+        height 450px
+        background-repeat no-repeat
+        background-position 750px 50px
+    .internal-form
+        padding-bottom: 0
+        //padding-top: 30px
+        //padding-left: 10px
+        //height: 450px
+        //width: 1120px
+        //display: block
+        margin: 0 auto
+
+.general-title, .general-subtitle, .general-href
+    font-size 52px
+    color #fff
+    font-weight bold
+    text-shadow 1px 1px #28282B
+    width 650px
+    float left
+    text-align center
     background-image none
-.internal
-    padding-bottom 10px
-.mobile
-    display none !important
+
+.general-subtitle
+    font-size 32px
+    margin-top 10px
+    font-weight normal
+.general-href
+    text-align center
+    background-color #f3f3f3
+    margin-top 10px
+    font-size 28px
+    background none
+    a
+        color #fff
+    a:hover
+        color #f3f3f3 !important
+        text-decoration none
+    .inner-general-href
+        width 62%
+        height 55px
+        line-height 50px
+        border 1px solid #C70074
+        margin 0 auto
+        color #fff
+        background-color #C70074
+        font-weight bold
+    .inner-general-href:hover
+        color #f3f3f3 !important
 .no-mobile
     display block
 
@@ -29,18 +122,35 @@
                     font-size 65px
                     height 70px
                     line-height 75px
+
+.logo-footer
+    width 80%
 .index-title
     font-size 27px
     line-height 50px
-    color #97c83e
+    color #888485
+    font-size bold
     text-align center
-    border 2px solid #97c83e
-    border-radius 2px
+    border-radius 0px
     margin 10px
     padding 5px
     background-color #f4f4f4
+
+.index-title-gradient
+    font-size 72px
+    line-height 74px
+    color #888485
+    font-size bold
+    text-align center
+    border-radius 0px
+    margin 10px
+    padding 5px
+    background -webkit-linear-gradient(#1be3a5, #91e061)
+    -webkit-background-clip text
+    -webkit-text-fill-color transparent
+
 .line
-    //border 1px solid #000
+    float left
     .form
         width 350px
         margin 0 auto
@@ -61,8 +171,10 @@
         background #f0f0f0
         border 1px solid #f0f0f0
 
+
 .courses
-    width 1200px
+    //width 1200px
+    width 100%
     margin 0 auto
     margin-bottom 0
     margin-top 0
@@ -72,9 +184,11 @@
         clear both
         overflow hidden
         background-color #f0f0f0
+        width 100%
         .row-eq-height
             margin-left 0px
             margin-right 0px
+            margin-top 5px
         .col-md-4
             padding-left 5px
             padding-right 5px
@@ -82,14 +196,15 @@
             border 1px solid #999999
             background-color #fff
         h5
-            font-size 30px
-            color #97c83e
+            font-size 32px
+            font-weight bold
+            color #878381
             text-align center
     .internal-courses .index
         background-color #00ff33
         h5
             font-size 30px
-            color #97c83e
+            color #878381
             text-align center
 .projects
     margin 0
@@ -129,15 +244,19 @@
 .control-label
     display block
 
+
 .call-to-action
     width 350px
     display block
-    line-height 20px !important
     padding-top 10px
-    margin 5px auto !important
+    line-height 20px !important
     text-align center
-    border-radius 2px
+    border-radius 0px
     float none
+    //overflow hidden
+    //clear both
+    background #4de189
+    background linear-gradient(90deg,#4de189 0%,#4de189 31%,#91e061 100%)
 .line-mobile, .line-mobile:after
     width 60%
     margin 0
@@ -148,60 +267,718 @@
     display block
     height 0
     clear both
+.line-whatsapp
+    margin-top 150px
 
 .messenger
     border-radius 2px !important
 
-#submit
+.footer-distributed
+    background-color: #1B2554;
+
+.btn
+    border 0
+
+.cart-section
+    width 300px
+    //margin 0 auto
+    float right
+    margin-right 25px
+
+.btn-plus
+    background rgb(77,225,137)
+    background linear-gradient(90deg, rgba(77,225,137,1) 0%, rgba(77,225,137,1) 31%, rgba(145,224,97,1) 100%)
+    font-size 35px
+    line-height 50px
+    font-weight bold
+    color #fff
+    float left
+    margin-bottom 5px
+    border-radius 0
+    text-align center
+    width 50px
+    height 50px
+    text-decoration none
+    cursor pointer
+    margin-right 10px
+.btn-plus:hover
+    color #f3f3f3
+    text-decoration none
+
+.btn-buy
+    background rgb(77,225,137)
+    background linear-gradient(90deg, rgba(77,225,137,1) 0%, rgba(77,225,137,1) 31%, rgba(145,224,97,1) 100%)
+    text-decoration none
+    cursor pointer
+    width 250px
+    height 50px
+    margin-left 65px
+.btn-buy:hover
+    color #f3f3f3
+    text-decoration none
+.shopping-cart-img
+    width 40px
+    height 40px
+    background-image url('https://www.apixela.net/static/img/cesta.png')
+    font-size 22px
+    line-height 50px
+    font-weight bold
+    color #fff
+    margin-right 5px
+    margin-bottom 5px
+    border-radius 0
+    text-align center
+    background-size 35px
+    background-repeat no-repeat
+    background-position 5px 10px
+    float left
+.shopping-cart-buy
+    line-height 50px
+    font-size 22px
+    font-weight bold
+    color #fff
+    float left
+    margin 0
+    padding 0
+    border-radius 0
+    text-align center
+    margin-left 10px
+
+#submit, .call-to-us, .btn .btn-default
+    width 95%
+    text-decoration none
+    text-align center
+    height 38px
+    margin 10px auto
+    color #fff
+    background-color #c3540d !important
+    border 0
+    border-radius 0px
+    margin-bottom 12px
+    margin-left 9px
+    font-weight bold
+    float left
     border-radius 2px !important
 
-.navbar, .navbar-collapse, .navbar-header
-    background-color #23378b
+#generic_price_table
+    background-color: #fff;
+    .container
+        flex none
+        float none
+        .row
+            width 750px
+            margin 0 auto
+.student-widget
+    text-align center
+    h1
+        font-size 60px
+        padding-top 20px
 
-.footer-distributed
-    background-color: #0A1440;
 
-.contactanos
-    background-color #c3540d !important
+/*PRICE COLOR CODE START*/
+#generic_price_table .generic_content{
+    background-color: #f7f7f7;
+}
 
-.contactanos:hover
-    background-color #9f4811 !important
+#generic_price_table .generic_content .generic_head_price{
+    background-color: #f6f6f6;
+}
 
-.login-button
-    background-color #778BD9 !important
+#generic_price_table .generic_content .generic_head_price .generic_head_content .head_bg{
+    border-color: #e4e4e4 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #e4e4e4;
+}
 
-#submit
-    border-radius 2px
-    width 99%
-    margin 0 auto
+#generic_price_table .generic_content .generic_head_price .generic_head_content .head span{
+    color: #525252;
+}
+
+#generic_price_table .generic_content .generic_head_price .generic_price_tag .price .sign{
+    color: #414141;
+}
+
+#generic_price_table .generic_content .generic_head_price .generic_price_tag .price .currency{
+    color: #414141;
+}
+
+#generic_price_table .generic_content .generic_head_price .generic_price_tag .price .cent{
+    color: #414141;
+}
+
+#generic_price_table .generic_content .generic_head_price .generic_price_tag .month{
+    color: #414141;
+}
+
+#generic_price_table .generic_content .generic_feature_list ul li{
+    color: #a7a7a7;
+    //width: 300px;
+    text-align: center;
+}
+
+#generic_price_table .generic_content .generic_feature_list ul li span{
+    color: #414141;
+}
+#generic_price_table .generic_content .generic_feature_list ul li:hover{
+    background-color: #E4E4E4;
+    border-left: 5px solid #2ECC71;
+}
+
+#generic_price_table .generic_content .generic_price_btn a{
+    border: 1px solid #2ECC71;
+    color: #2ECC71;
+}
+
+#generic_price_table .generic_content.active .generic_head_price .generic_head_content .head_bg,
+#generic_price_table .generic_content:hover .generic_head_price .generic_head_content .head_bg{
+    border-color: #2ECC71 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #2ECC71;
+    color: #fff;
+}
+
+#generic_price_table .generic_content:hover .generic_head_price .generic_head_content .head span,
+#generic_price_table .generic_content.active .generic_head_price .generic_head_content .head span{
+    color: #fff;
+}
+
+#generic_price_table .generic_content:hover .generic_price_btn a,
+#generic_price_table .generic_content.active .generic_price_btn a{
+    background-color: #2ECC71;
+    color: #fff;
+}
+#generic_price_table{
+    margin: 10px 0 10px 0;
+    font-family: 'Raleway', sans-serif;
+}
+.row .table{
+    padding: 28px 0;
+}
+
+/*PRICE BODY CODE START*/
+
+#generic_price_table .generic_content{
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+#generic_price_table .generic_content .generic_head_price {
+    margin: 0 0 20px 0;
+}
+
+#generic_price_table .generic_content .generic_head_price .generic_head_content{
+    margin: 0 0 50px 0;
+}
+
+#generic_price_table .generic_content .generic_head_price .generic_head_content .head_bg{
+    border-style: solid;
+    border-width: 90px 1411px 23px 399px;
+    position: absolute;
+}
+
+#generic_price_table .generic_content .generic_head_price .generic_head_content .head{
+    padding-top: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+#generic_price_table .generic_content .generic_head_price .generic_head_content .head span{
+    font-family: "Raleway",sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+#generic_price_table .generic_content .generic_head_price .generic_price_tag{
+    padding: 0 0 20px;
+}
+
+#generic_price_table .generic_content .generic_head_price .generic_price_tag .price{
+    display: block;
+}
+
+#generic_price_table .generic_content .generic_head_price .generic_price_tag .price .sign{
+    display: inline-block;
+    font-family: "Lato",sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    vertical-align: middle;
+}
+
+#generic_price_table .generic_content .generic_head_price .generic_price_tag .price .currency{
+    font-family: "Lato",sans-serif;
+    font-size: 60px;
+    font-weight: 300;
+    letter-spacing: -2px;
+    line-height: 60px;
+    padding: 0;
+    vertical-align: middle;
+}
+
+#generic_price_table .generic_content .generic_head_price .generic_price_tag .price .cent{
+    display: inline-block;
+    font-family: "Lato",sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    vertical-align: bottom;
+}
+
+#generic_price_table .generic_content .generic_head_price .generic_price_tag .month{
+    font-family: "Lato",sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    vertical-align: bottom;
+}
+
+#generic_price_table .generic_content .generic_feature_list ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#generic_price_table .generic_content .generic_feature_list ul li{
+    font-family: "Lato",sans-serif;
+    font-size: 18px;
+    padding: 15px 0;
+    transition: all 0.3s ease-in-out 0s;
+}
+#generic_price_table .generic_content .generic_feature_list ul li:hover{
+    transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -ms-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+
+}
+#generic_price_table .generic_content .generic_feature_list ul li .fa{
+    padding: 0 10px;
+}
+#generic_price_table .generic_content .generic_price_btn{
+    margin: 20px 0 32px;
+}
+
+#generic_price_table .generic_content .generic_price_btn a{
+    border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    display: inline-block;
+    font-family: "Lato",sans-serif;
+    font-size: 18px;
+    outline: medium none;
+    padding: 12px 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#generic_price_table .generic_content,
+#generic_price_table .generic_content:hover,
+#generic_price_table .generic_content .generic_head_price .generic_head_content .head_bg,
+#generic_price_table .generic_content:hover .generic_head_price .generic_head_content .head_bg,
+#generic_price_table .generic_content .generic_head_price .generic_head_content .head h2,
+#generic_price_table .generic_content:hover .generic_head_price .generic_head_content .head h2,
+#generic_price_table .generic_content .price,
+#generic_price_table .generic_content:hover .price,
+#generic_price_table .generic_content .generic_price_btn a,
+#generic_price_table .generic_content:hover .generic_price_btn a{
+    transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -ms-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+}
+
+.course-widget
+    //border-radius 4px !important
+    //border 1px solid #f3f3f3
+    padding 0
+    margin 0
+    margin-bottom 10px
+    overflow hidden
+    background-color #fff
+    .img
+        width 100%
+        margin-top 0
+        img
+            min-width 100%
+            overflow hidden
+            height 520px
+            object-fit cover
+            background-size cover
+    h2
+        font-size 28px
+        font-weight bold
+        text-align center
+        color #878381
+        padding-top 5px
+    p
+        padding-left 18px
+
+.advantage-widget
+    padding 0
+    margin 0
+    margin-bottom 10px
+    overflow hidden
+    background-color #fff
+    .img
+        margin-top 0
+        float left
+        overflow hidden
+        clear both
+        img
+            min-width 100%
+            overflow hidden
+            height 100px
+            height 100px
+            object-fit cover
+    .content
+        float left
+        overflow hidden
+        clear both
+        h2
+            font-size 28px
+            font-weight bold
+            text-align center
+            color #878381
+        p
+            padding-left 18px
+
+.come-in
+    transform: translateY(150px)
+    animation: come-in 0.8s ease forwards
+
+.come-in:nth-child(odd)
+    animation-duration: 0.6s
+
+.formulario
+    margin-top 0
+    border-radius 0
+
+@keyframes come-in
+    to { transform: translateY(0) }
+
+
+
+@media (max-width: 767px)
+    #generic_price_table .generic_content
+        margin-bottom:10px;
+        margin-top:10px;
+    .course-widget
+        h2
+            text-align center
+        .img
+            img
+                height 210px
+    .index-title-gradient
+        line-height 34px
+    .external-contact-us
+        .internal-form
+            padding-bottom 0
+            background-size 40%
+            background-repeat no-repeat
+            background-position center 90px
+            float left
+            padding-top 30px
+            height auto
+            width auto
+            margin 0 auto
+            padding-right 0
+            .formulario
+                margin-top 0
+                border-radius 0
+                margin-left 2px
+                margin-right 2px
+
+@media (min-width: 768px)
+    .places-row
+        .internal-places
+            max-width 1200px
+            background-color #fff
+            padding-top 5px
+    .col-md-6
+        padding-left 5px
+        padding-right 5px
+    .row
+        .equal
+            display: flex
+            flex-wrap: wrap
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+    #generic_price_table .col-md-3{
+        float:left;
+        width:50%;
+    }
+
+    #generic_price_table .col-md-4{
+        float:left;
+        width:50%;
+    }
+
+    #generic_price_table .generic_content{
+        margin-bottom:75px;
+    }
+}
+
+#generic_price_table_home{
+     font-family: 'Raleway', sans-serif;
+}
+
+.text-center h1,
+.text-center h1 a{
+    color: #7885CB;
+    font-size: 30px;
+    font-weight: 300;
+    text-decoration: none;
+}
+.demo-pic{
+    margin: 0 auto;
+}
+.demo-pic:hover{
+    opacity: 0.7;
+}
+
+#generic_price_table_home ul{
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    display: table;
+}
+#generic_price_table_home li{
+    float: left;
+}
+#generic_price_table_home li + li{
+    margin-left: 10px;
+    padding-bottom: 10px;
+}
+#generic_price_table_home li a{
+    display: block;
+    width: 50px;
+    height: 50px;
+    font-size: 0px;
+}
+#generic_price_table_home .blue{
+    background: #3498DB;
+    transition: all 0.3s ease-in-out 0s;
+}
+#generic_price_table_home .emerald{
+    background: #2ECC71;
+    transition: all 0.3s ease-in-out 0s;
+}
+#generic_price_table_home .grey{
+    background: #7F8C8D;
+    transition: all 0.3s ease-in-out 0s;
+}
+#generic_price_table_home .midnight{
+    background: #34495E;
+    transition: all 0.3s ease-in-out 0s;
+}
+#generic_price_table_home .orange{
+    background: #E67E22;
+    transition: all 0.3s ease-in-out 0s;
+}
+#generic_price_table_home .purple{
+    background: #9B59B6;
+    transition: all 0.3s ease-in-out 0s;
+}
+#generic_price_table_home .red{
+    background: #E74C3C;
+    transition:all 0.3s ease-in-out 0s;
+}
+#generic_price_table_home .turquoise{
+    background: #1ABC9C;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+#generic_price_table_home .blue:hover,
+#generic_price_table_home .emerald:hover,
+#generic_price_table_home .grey:hover,
+#generic_price_table_home .midnight:hover,
+#generic_price_table_home .orange:hover,
+#generic_price_table_home .purple:hover,
+#generic_price_table_home .red:hover,
+#generic_price_table_home .turquoise:hover{
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    transition: all 0.3s ease-in-out 0s;
+}
+#generic_price_table_home .divider{
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+#generic_price_table_home .divider span{
+    width: 100%;
+    display: table;
+    height: 2px;
+    background: #ddd;
+    margin: 50px auto;
+    line-height: 2px;
+}
+#generic_price_table_home .itemname{
+    text-align: center;
+    font-size: 50px ;
+    padding: 50px 0 20px ;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 40px;
+    text-decoration: none;
+    font-weight: 300;
+}
+#generic_price_table_home .itemnametext{
+    text-align: center;
+    font-size: 20px;
+    padding-top: 5px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+#generic_price_table_home .footer{
+    padding:40px 0;
+}
+
+.price-heading{
+    text-align: center;
+}
+.price-heading h1{
+    color: #666;
+    margin: 0;
+    padding: 0 0 50px 0;
+}
+.demo-button {
+    background-color: #333333;
+    color: #ffffff;
+    display: table;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    outline-color: -moz-use-text-color;
+    outline-style: none;
+    outline-width: medium ;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.bottom_btn{
+    background-color: #333333;
+    color: #ffffff;
+    display: table;
+    font-size: 28px;
+    margin: 60px auto 20px;
+    padding: 10px 25px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.demo-button:hover{
+    background-color: #666;
+    color: #FFF;
+    text-decoration:none;
+
+}
+.bottom_btn:hover{
+    background-color: #666;
+    color: #FFF;
+    text-decoration:none;
+}
+
+.contact-us-image
+    background-image url('../img/contact-us-image.png')
+    background-size 90%
+    background-position center center
+    padding-top 250px
+    margin-top 0
+    background-repeat no-repeat
+
+.button-course-general
+    display none
+    div
+        display none
 
 @media (max-width: 768px)
-    .call-to-action
-        //width auto
+    .col-md-6
+        padding-left 5px
+        padding-right 5px
+    .container .info
+        width auto
+    .container .course-icon
+        margin-left 0
+        margin-top 0
+    .container .info
         display block
-        width 370px !important
-        margin 10px !important
         float none
+    .container .info .title
+        display inline-block
+        width 170px
+    .container .info .text_title
+        float none
+        display inline-block
+    .container .info .text_tablet
+        display none
+    .line-whatsapp
+        width 98%
+        display block
+        float left
+        margin-left 0
+        padding-left 2px
+        padding-right 2px
+        margin-top 0px
+    .call-to-action
+        width auto
+        display block
+        margin 10px
+        height 50px
+        font-weight normal
+        padding 2px
     .mobile
         display block
     .no-mobile
         display none
-        width 100%
-        min-height 40px;
     .external
-        background-position center top
-        background-size 100%
-        background-image url('../img/slide09.jpg')
+        background rgb(17,64,108)
+        background linear-gradient(90deg, rgba(17,64,108,1) 0%, rgba(2,109,165,1) 100%)
+        .internal
+            background-size 90%
+            background-position center 35px
+            background-image url('../img/home-api.png')
+            width 100%
+            height auto
+        .general-title
+            margin-top 320px
+            font-size 30px
+            text-align center
+            width 100%
+            float none
+            display none
+        .general-subtitle
+            font-size 18px
+            width 100%
+            text-align center
+            margin-top 520px
+        .general-href
+            width 97%
+            margin 10px auto
+            margin-left 5px
+            .inner-general-href
+                width 100%
+                text-align center
+                margin-top 0px
 
     .internal-courses, .internal-places, .why-internal, .hourly-container
         width auto
         max-width auto
+        line-height 30px
     .index-title
         width auto
+        line-height 30px
     .courses
         width auto
     .container
         background-color #8eb444
+        width auto
     .projects
         .internal-projects
             width auto
@@ -217,3 +994,40 @@
     .why-external
         .hourly-container
             background-position center 20px
+    #generic_price_table .generic_content .generic_feature_list ul li
+        float left
+        width 100%
+    #generic_price_table
+        .container
+            background-color #f0f0f0
+            float left
+            .row
+                width auto !important
+                margin 0 auto
+                .col-md-6
+                    padding-right 0px
+                    padding-left 0px
+    .general-title, .general-subtitle, .general-href
+        width auto
+    .button-course-general
+        padding 12px
+        background: rgb(77,225,137)
+        background: linear-gradient(90deg, rgba(77,225,137,1) 0%, rgba(77,225,137,1) 31%, rgba(145,224,97,1) 100%)
+        text-align left
+        border-radius 0
+        color #f6f6f6
+        width 95%
+        margin 0 auto
+        margin-bottom 10px
+        overflow hidden
+        clear both
+        display block
+        div
+            width 100%
+            height 35px
+            line-height 30px
+            font-size 20px
+            font-weight bold
+            font-size 30px
+            text-align center
+            display block

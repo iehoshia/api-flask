@@ -20,207 +20,264 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid" >
+<div class="container-fluid">
 	<div class="external row" id="contact-us-form">
 		<div class="internal row">
-			<!--
-				<div class="link-courses">
-				</div>
-			-->
-			<a href="/cursos">
-				<div class="general-title">
-				¡Cursos en línea!
-				</div>
-			</a>
-			<div class="formulario" >
-				<div class="titulo_form">EMPIEZA A <strong>APRENDER</strong> HOY</div>
-
-				{{ wtf.quick_form(form) }}
+			<div class="general-title">
+			{{ firstpage.name }}
 			</div>
-			<div class="line">
-				<a href="whatsapp://send?text=&amp;Hola, necesito información acerca de los cursos:&amp;&phone=+50230050240&abid=+50230050240" style="text-decoration:none;" class="mobile" target="_blank">
-				  	<div class="call-to-action">WhatsAppea</div>
+			<div class="general-subtitle">
+			{{ firstpage.subtitle }}
+			</div>
+			<div class="general-href">
+				<a href="{{ firstpage.href }}">
+					<div class="inner-general-href">
+						{{ firstpage.href_text }}
+					</div>
 				</a>
 			</div>
+			<a href="{{ url_for('course.index') }}" aria-pressed="true" class="btn button-course-general">
+                <div>Cursos</div>
+            </a>
+
 		</div>
 	</div>
-	<!-- EVENTOS -->
-	<a href="/cursos" style="text-decoration:none;" class="aevent">
-		<div class="events row">
-			<div class="internal-events">
-				<div class="container">
-					<div class="course-icon-mini"></div>
-					<div class="date">
-						<div class="date_number">29</div>
-						<div class="date_month">Agosto</div>
-					</div>
-					<div class="course-icon">
-					</div>
-					<div class="info">
-						<span class="title">Próximo Evento</span>
-						<div class="text_title">Network Administration Specialist <strong>MIKROTIK</strong>
-							<!--<div class="clock"></div>-->
-						</div>
-						<span class="text_tablet">Regístrate y descrubre promociones especiales.</span>
-		        	</div>
-		        	<span class="text_tablet_mini">Regístrate y descrubre promociones especiales.</span>
-				</div>
-			</div>
-		</div>
-	</a>
 
 	<div class="courses row">
 		<div class="internal-courses index">
-			<h5 class="index-title">
-				¿Qué cursos te ofrecemos?
-			</h5>
-			<div class="row-eq-height col-md-4">
-				<div class="reparacion col-md-12">
-					<div class="img">
-
+			<h5 class="index-title">Aprende con nosotros:</h5>
+			{% for course in courses %}
+				<div class="col-lg-6 col-md-6 col-sm-6 course-row">
+					<div class="course-widget">
+						<div class="embed-responsive embed-responsive-16by9">
+							{{ course.web_course.video|safe }}
+						</div>
+						<!--<div class="img">
+							<img src="{{ course.web_course.video | safe }}">
+						</div>-->
+						<h2>{{ course.name }}</h2>
+						<p>
+							{{ course.short_content }}
+						</p>
+						<div class="cart-section">
+						  <a class="btn-plus" href="{{ base_url }}/cursos/{{course.web_course.slug}}">+</a>
+						  <a href="{{ url_for('course.enroll',
+                        course=course.web_course.id) }}">
+                        	<div class="btn-buy">
+		                        <div class="shopping-cart-img">
+		                        </div>
+		                        <div class="shopping-cart-buy">
+		                        	Comprar ahora
+		                        </div>
+	                      	</div>
+                    	  </a>
+						</div>
 					</div>
-					<h2>Reparación de Computadoras y Celulares</h2>
-					<p>
-						Aprende a reparar computadoras y laptops. También aprende a reparar celulares, desde cero, sin requisitos.
-					</p>
-					<p>
-						<a class="btn" href="/reparacion">Ver más »</a>
-					</p>
 				</div>
-			</div>
-			<div class="row-eq-height col-md-4">
-				<div class="ingles col-md-12">
-					<div class="img">
+			{% endfor %}
 
-					</div>
-					<h2>
-						PowerPivot: Inteligencia de Negocios
-					</h2>
-					<p>
-						Análisis de datos eficaz y modelado de datos en Excel. Gráficas dinámicas en tiempo real y accesibles.
-					</p>
-					<p>
-						<a class="btn" href="/powerpivot">Ver más...</a>
-					</p>
-				</div>
-			</div>
-			<div class="row-eq-height col-md-4">
-				<div class="diseno col-md-12">
-	        		<div class="img">
-
-					</div>
-					<h2>
-						Diseño Publicitario y Marketing Digital
-					</h2>
-					<p>
-						Aprende las herramientas necesarias para trabajar en agencias de publicidad y/o agencias de medios.
-					</p>
-					<p>
-						<a class="btn" href="/diseno">Ver más...</a>
-					</p>
-				</div>
-			</div>
-			<div class="row-eq-height col-md-4">
-				<div class="computacion col-md-12">
-					<div class="img">
-
-					</div>
-					<h2>Computación, Ofimática y Cloud Computing</h2>
-					<p>
-						Aprende a operar y utilizar tu computadora. Aprovecha al máximo las facilidades que brinda el uso correcto de la tecnología. Aprende a trabajar también con las tecnologías en la nube y todos sus beneficios. Además aprender a sincronizar PC, tablet y teléfono. Da un salto cualitativo en tus conocimientos. Aprende, comprende, emprende.
-					</p>
-					<p>
-						<a class="btn" href="/computacion">Ver más...</a>
-					</p>
-				</div>
-			</div>
-
-			<div class="row-eq-height col-md-4">
-				<div class="redes col-md-12">
-	        		<div class="img">
-
-					</div>
-					<h2>
-						Mikrotik y Ubiquiti
-					</h2>
-					<p>
-						MikroTik proporciona routers y software para la conectividad a Internet, utilizando el sistema de software RouterOS.
-						Ubiquiti provee de tecnología disruptiva para la creación de redes inalámbricas, tanto para la comunicación a largas distancias, como para el despliegue de pequeñas redes Wi-Fi. Ideal para proveedores WISP.
-
-					</p>
-					<p>
-						<a class="btn" href="/mikrotik">Ver más...</a>
-					</p>
-				</div>
-			</div>
-			<div class="row-eq-height col-md-4">
-				<div class="programacion col-md-12">
-					<div class="img">
-
-					</div>
-					<h2>Programación Básica y Web</h2>
-					<p>
-						Programar es tan esencial como leer. Te enseñamos desde cero a entender, leer y escribir código. A pensar como desarrollador, y ser también un programador. Aprenderás los elementos clásicos de programación, a la vez usando la Programación Orientada a Objetos (POO), entre otros paradigmas modernos de programación. Programar es una nueva forma de pensar.
-
-					</p>
-					<p>
-						<a class="btn" href="/programacion">Ver más...</a>
-					</p>
-				</div>
-			</div>
 		</div>
 	</div>
 
-	<div class="projects">
-		<div class="internal-projects">
-			<h5 class="index-title">¿Quieres conocer algunos de los proyectos que podrás realizar?</h5>
-	        <!-- Your embedded video player code -->
-	        <div class="video bbfb-video" id="10153885783491991" data-link="https://business.facebook.com/apixela/videos/10153885783491991/">
-			    <img class="bbfb-thumb" src="https://apixela.net/static/img/course-9.jpg"/>
+	<div class="courses row">
+		<div class="internal-courses index">
+			<h5 class="index-title">Conecta con líderes y profesionales</h5>
+			<div class="col-lg-6 col-md-6 col-sm-12 course-row">
+				<div class="advantage-widget">
+					<div class="img">
+						<img src="https://www.apixela.net/static/img/advantage-1.jpg">
+					</div>
+					<h2>Aprende a tu ritmo</h2>
+					<p>
+						Organiza tus propios horarios. Aprende sin salir de casa.
+					</p>
+				</div>
 			</div>
-			<div class="play-button"></div>
+			<div class="col-lg-6 col-md-6 col-sm-12 course-row">
+				<div class="advantage-widget">
+					<div class="img">
+						<img src="https://www.apixela.net/static/img/advantage-2.jpg">
+					</div>
+					<h2>Aplica tu conocimiento</h2>
+					<p>
+						Sé un emprendedor. Aplica tus conocimientos para brindar un servicio de calidad.
+					</p>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-12 course-row">
+				<div class="advantage-widget">
+					<div class="img">
+						<img src="https://www.apixela.net/static/img/advantage-3.jpg">
+					</div>
+						<h2>Conectado con tus profesores</h2>
+						<p>
+							Tu profesor estará disponible para resolver cualquier duda.
+						</p>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-12 course-row">
+				<div class="advantage-widget">
+					<div class="img">
+						<img src="https://www.apixela.net/static/img/advantage-4.jpg">
+					</div>
+					<h2>Profesores expertos</h2>
+					<p>
+						Dispuestos a compartir su pasión y excelencia profesional.
+					</p>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-12 course-row">
+				<div class="advantage-widget">
+					<div class="img">
+						<img src="https://www.apixela.net/static/img/advantage-5.jpg">
+					</div>
+					<h2>Certificado</h2>
+					<p>
+						Al finalizar el curso obtendrás un certificado firmado por tu profesor.
+					</p>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-12 course-row">
+				<div class="advantage-widget">
+					<div class="img">
+						<img src="https://www.apixela.net/static/img/advantage-6.jpg">
+					</div>
+					<h2>Aumenta tus ingresos</h2>
+					<p>
+						Es tiempo de emprender y aprender las herramientas necesarias para sobresalir.
+					</p>
+				</div>
+			</div>
+			<div class="col-lg-12 col-md-12 col-sm-12 course-row">
+				<div class="advantage-widget student-widget">
+					<h1 id="student-number">{{ number_of_students }}</h1>
+					<h2>estudiantes desde 2014</h2>
+					<p>
+						Nuestra experiencia y calidad humana garantizan tu aprendizaje.
+					</p>
+				</div>
+			</div>
+			<h5 class="index-title-gradient">Empieza con la meta que conecta tus sueños</h5>
 		</div>
 	</div>
-	<div class="places row">
-		<div class="internal-places ">
-			<h5 class="index-title">
-				¿Dónde nos puedes ubicar?
-			</h5>
-			<div class="content-places">
+	<div class="contact-us-section">
+
+	</div>
+	<!--
+	<div class="places-row ">
+
+		<div class="internal-places">
+
+			<h5 class="index-title">{{ _('Enroll') }}</h5>
+			<div id="generic_price_table">
+				<section>
+			        <div class="container" >
+			            <div class="row">
+			                <div class="col-md-6">
+			                    <div class="generic_content active clearfix">
+			                        <div class="generic_head_price clearfix">
+			                            <div class="generic_head_content clearfix">
+			                                <div class="head_bg"></div>
+			                                <div class="head">
+			                                    <span>{{ _('Monthly') }}</span>
+			                                </div>
+			                            </div>
+			                            <div class="generic_price_tag clearfix">
+			                                <span class="price">
+			                                    <span class="sign">Q</span>
+			                                    <span class="currency">300</span>
+			                                    <span class="cent">.00</span>
+			                                    <span class="month">/{{ _('MONTH') }}</span>
+			                                </span>
+			                            </div>
+			                        </div>
+			                        <div class="generic_feature_list">
+			                        	<ul>
+			                            	<li><span>Q 0.00</span> {{ _('in transport') }} </li>
+			                                <li><span>00:00</span> {{ _('minuts in traffic') }}</li>
+			                                <li><span>+4</span> {{ _('Professional certified') }} </li>
+			                                <li><span>+4</span> {{ _('Professional courses') }} </li>
+			                                <li><span>24/7</span> {{ _('Acces and support') }} </li>
+			                            </ul>
+			                        </div>
+			                        <div class="generic_price_btn clearfix">
+			                        	<a class="" href="{{ url_for('course.monthly_enroll') }}">{{ _('Sign up') }}</a>
+			                        </div>
+			                    </div>
+			                </div>
+			                <div class="col-md-6">
+			                    <div class="generic_content clearfix">
+			                        <div class="generic_head_price clearfix">
+			                            <div class="generic_head_content clearfix">
+			                                <div class="head_bg"></div>
+			                                <div class="head">
+			                                    <span>{{ _('Yearly') }}</span>
+			                                </div>
+			                            </div>
+			                            <div class="generic_price_tag clearfix">
+			                                <span class="price">
+			                                    <span class="sign">Q</span>
+			                                    <span class="currency">200</span>
+			                                    <span class="cent">.00</span>
+			                                    <span class="month">/{{ _('YEAR') }}</span>
+			                                </span>
+			                            </div>
+			                        </div>
+			                        <div class="generic_feature_list">
+			                        	<ul>
+			                            	<li><span>Q 0.00</span> {{ _('in transport') }} </li>
+			                                <li><span>00:00</span> {{ _('minuts in traffic') }}</li>
+			                                <li><span>+6</span> {{ _('Professional Certified') }} </li>
+			                                <li><span>+4</span> {{ _('Professional courses') }} </li>
+			                                <li><span>24/7</span> {{ _('Acces and support') }} </li>
+			                            </ul>
+			                        </div>
+			                        <div class="generic_price_btn clearfix">
+			                        	<a class="" href="{{ url_for('course.yearly_enroll') }}">{{ _('Sign up') }}</a>
+			                        </div>
+			                    </div>
+			                </div>
+			            </div>
+			        </div>
+			    </section>
 			</div>
 		</div>
 	</div>
-	<div class="why-external row">
-		<!-- Hourly -->
-		<div class="hourly-container">
-			<div class="title">
-				Horarios de atención
-			</div>
-			<div class="hourly">
-				<ul>
-					<li>Domingo 		07.00 - 14.00 horas</li>
-					<li>Lunes a jueves 	08.00 - 18.30 horas</li>
-					<li>Viernes 		08.00 - 13.00 horas</li>
-					<li>Sábado			CERRADO</li>
-				</ul>
-			</div>
+	-->
+
+</div>
+
+<div class="external-contact-us row container" id="myForm">
+	<div class="row contact-us-row">
+		<div class="col-sm contact-us-image">
 		</div>
-		<!-- Hourly -->
-		<div class="why-internal ">
-			<h5>¿Dudas?, ¡platiquemos!</h5>
-			<a href="https://m.me/apixela" style="" class="a-messenger" target="_blank">
-		    	<div class="messenger">Escríbemos en Messenger</div>
+		<div class="col-sm line line-whatsapp">
+			<a href="https://wa.me/50230050240?text=Hola.+Me+gustar%c3%ada+informaci%c3%b3n+de+la+academ%c3%ada+y+de+los+cursos." style="text-decoration:none;" target="_blank">
+			  	<div class="call-to-action">¿Dudas? Wasapiemos ;-)</div>
+			</a>
+			<!--
+			<a href="https://m.me/apixela" style="text-decoration:none;" target="_blank">
+			  	<div class="call-to-action">¿Prefieres Fb? Escríbenos :-)</div>
+			</a>-->
+			<a href="#" style="text-decoration:none;">
+			  	<div class="call-to-action">¿Hablamos? (+502) 2296 2574 </div>
 			</a>
 		</div>
-		<div class="why-internal">
-			<div class="line-mobile"></div>
-			<a href="whatsapp://send?text=&amp;Hola, necesito información acerca de los cursos:&amp;&phone=+50230050240&abid=+50230050240" style="text-decoration:none;" class="mobile" target="_blank">
-	      		<div class="call-to-action">WhatsAppea</div>
-			</a>
-			<div class="line mobile"></div>
+		<div class="col-sm internal-form row">
+			<div class="formulario" >
+				<div class="titulo_form">Escríbenos</div>
+
+				{{ wtf.quick_form(form) }}
+			</div>
 		</div>
 	</div>
 </div>
+
+
 {% include "footer.html" %}
 {% endblock %}
 
+{% block scripts %}
+	{{ super() }}
+	<script src="{{url_for('static', filename='js/animate.js')}}"></script>
+{% endblock %}

@@ -1,3 +1,5 @@
+import requests
+import urllib3
 from datetime import datetime, date
 import datetime
 from flask import render_template, redirect, url_for, flash, request, session
@@ -24,10 +26,6 @@ ContactMechanism = tryton.pool.get('party.contact_mechanism')
 Address = tryton.pool.get('party.address')
 Opportunity = tryton.pool.get('sale.opportunity')
 OpportunityLine = tryton.pool.get('sale.opportunity.line')
-
-@tryton.default_context
-def default_context():
-    return User.get_preferences(context_only=True)
 
 def randomStringwithDigitsAndSymbols(stringLength=10):
     """Generate a random string of letters, digits and special characters """
@@ -70,6 +68,7 @@ def logout():
     return redirect(url_for('main.index'))
 
 @bp.route('/register', methods=['GET', 'POST'])
+@bp.route('/registro', methods=['GET', 'POST'])
 @tryton.transaction(readonly=False,user=1)
 def register():
     if current_user.is_authenticated:
@@ -81,30 +80,37 @@ def register():
             return redirect(url_for('main.index'))
     form = RegistrationForm()
     if form.validate_on_submit():
-        username = form.username.data
+        username = str(form.username.data)
         email = str(form.email.data)
-        phone = form.phone.data
+        phone = str(form.phone.data)
         city = form.city.data
         password = form.password.data
-        service = form.course.data
+        #service = form.course.data
         today = date.today()
-        service = int(service)
-        product = functions.get_product(service)
+        #service = int(service)
+        #product = functions.get_product(service)
 
-        party, = Party.create([{
-            'name':username,
-            'is_subscriber':False,
-            'is_student':False,
-            }])
-        user, = User.create([
-                {'email':email,
-                'password':password,
-                'party':party.id,
-                }]
-            )
-        #user.party = party
-        #user.save()
-        User.validate_email([user])
+        try:
+            party, = Party.create([{
+                'name':username,
+                'is_subscriber':False,
+                'is_student':False,
+                }])
+        except:
+            flash('Algo salió mal, por favor intenta de nuevo')
+            pass
+        try:
+            user, = User.create([
+                    {'email':email,
+                    'password':password,
+                    'party':party.id,
+                    }]
+                )
+            User.validate_email([user])
+        except:
+            flash('Algo salió mal, por favor intenta de nuevo')
+            pass
+
         ContactMechanism.create([{
             'party': party.id,
             'type': 'phone',
@@ -115,43 +121,54 @@ def register():
             'city': city,
             }])
 
-        opportunity, = Opportunity.create([{
-            'party':party.id,
-            'address':address.id,
-            'description':'Contacto apixela.net: '+ party.name + ' Tel: ' + phone,
-            'company':1,
-            'start_date':today,
-            'conversion_probability':0.5,
-            'medio':'Facebook',
-            }])
-        OpportunityLine.create([{
-            'opportunity':opportunity.id,
-            'service':service,
-            'product':product,
-            'unit':1,
-            'quantity':1,
-            }])
-
-        curso = dict(form.course.choices).get(form.course.data)
         body = "Hemos recibido la siguiente informacion: " + \
-            "Nombre: "+ party.name + "\n Email: "+ email + " \n Telefono: " + phone + \
-            " \n  Ciudad: " + city + " \n  Curso: " + curso
+            "Nombre: "+ username + "\n Email: "+ email + " \n Telefono: " + phone + \
+            " \n  Ciudad: " + city #+ " \n  Curso: " + curso
 
-        msg = Message('Contacto APIXela: '+party.name, sender = 'info@apixela.net', recipients = [email, 'info@apixela.net'])
-        msg.body = "Contacto Fb Ads " + body
+        msg = Message('Registro de Usuario API: '+username, sender = 'info@apixela.net', recipients = [email, 'info@apixela.net'])
+        msg.body = "Registro de Usuario API " + body
         mail.send(msg)
 
-        #flash(_('Congratulations, you are now a registered user!'))
+        try:
+            url = "https://app.verify-email.org/api/v1/BHCgLkl5zWE5txaMR2HJBg1OoJourpTumiNflw40wYQc4na0rw/verify/"#support@verify-email.org"
+            url = url + email
+            response = requests.get(url=url)
+            response_content = response.json()
+
+            if response_content['status'] == 1:
+                params = {}
+                params['api_key'] = current_app.config['NEWSLETTER_API']
+                params['list'] = current_app.config['NEWSLETTER_LIST']
+                params['boolean'] = 'true'
+                params['name'] = username
+                params['email'] = email
+                headers  = {'Content-type':'application/x-www-form-urlencoded',
+                'charset':'UTF-8'}
+
+                subscribe_url = current_app.config['NEWSLETTER_URL']
+                subscribe_response = requests.post( url=subscribe_url,
+                    data=params, headers=headers)
+        except:
+            pass
+
+        flash(_('Felicitaciones, registro completado exitósamente!'))
         return redirect(url_for('auth.login'))
     return render_template('auth/register.html', title=_('Register'),
                            form=form)
 
 @bp.route('/complete', methods=['GET', 'POST'])
+@bp.route('/completar', methods=['GET', 'POST'])
 @tryton.transaction(readonly=False,user=1)
 def complete(next=None):
     if current_user.is_authenticated:
-        username_id = current_user.get_id()
-        user, = User.search([('id','=',username_id)])
+        #username_id = current_user.get_id()
+        #user, = User.search([('id','=',username_id)])
+        user = User(current_user)
+        if not user.email_valid:
+            User.validate_email([user])
+            logout_user()
+            return render_template('bienvenido.html',
+                    flash_message='Debe verificar su correo antes de continuar. Revise la bandeja de entrada de su correo y confirme o consulte con su asesor.')
         if user.party.city and user.party.phone:
             if 'next' in request.args:
                 return redirect(request.args['next'])
@@ -162,11 +179,9 @@ def complete(next=None):
                 phone = form.phone.data
                 city = form.city.data
                 today = date.today()
-                service = form.course.data
-                service = int(service)
-                product = functions.get_product(service)
 
                 party = user.party
+                email = user.email
                 ContactMechanism.create([{
                     'party': party.id,
                     'type': 'phone',
@@ -177,31 +192,36 @@ def complete(next=None):
                     'city': city,
                     }])
 
-                opportunity, = Opportunity.create([{
-                    'party':party.id,
-                    'address':address.id,
-                    'description':'Contacto apixela.net: '+ party.name + ' Tel: ' + phone,
-                    'company':1,
-                    'start_date':today,
-                    'conversion_probability':0.5,
-                    'medio':'Facebook',
-                    }])
-                OpportunityLine.create([{
-                    'opportunity':opportunity.id,
-                    'service':service,
-                    'product':product,
-                    'unit':1,
-                    'quantity':1,
-                    }])
-
-                curso = dict(form.course.choices).get(form.course.data)
-                body = "Hemos recibido la siguiente informacion: " + \
+                body = "Nuevo registro de usuario completo: \n " + \
                     "Nombre: "+ party.name + "\n Email: "+ party.email + " \n Telefono: " + phone + \
-                    " \n  Ciudad: " + city + " \n  Curso: " + curso
+                    " \n  Ciudad: " + city #+ " \n  Curso: " + curso
 
                 msg = Message('Contacto APIXela: '+party.name, sender = 'info@apixela.net', recipients = ['info@apixela.net'])
                 msg.body = "Contacto Fb Ads " + body
                 mail.send(msg)
+
+                try:
+                    url = "https://app.verify-email.org/api/v1/BHCgLkl5zWE5txaMR2HJBg1OoJourpTumiNflw40wYQc4na0rw/verify/"#support@verify-email.org"
+                    url = url + email
+                    header = {'User-Agent': 'Mozilla/5.0',}
+                    response = requests.get( url=url, params=header)
+
+                    response_content = response.json()
+                    if response_content['status'] == 1:
+                        params = {}
+                        params['api_key'] = current_app.config['NEWSLETTER_API']
+                        params['list'] = current_app.config['NEWSLETTER_LIST']
+                        params['boolean'] = 'true'
+                        params['name'] = party.name
+                        params['email'] = email
+                        headers  = {'Content-type':'application/x-www-form-urlencoded',
+                        'charset':'UTF-8'}
+                        subscribe_url = current_app.config['NEWSLETTER_URL']
+                        subscribe_response = requests.post( url=subscribe_url,
+                            data=params, headers=headers)
+                except:
+                    pass
+
                 flash(_('Congratulations, you are now a finished the register!'))
                 if 'next' in request.args:
                     return redirect(request.args['next'])
@@ -234,8 +254,8 @@ def reset_password_request():
 def reset_password():
     if current_user.is_authenticated:
         return redirect(url_for('main.index'))
-    token = request.args.get('token')
-    email = request.args.get('email')
+    token = request.args.get('x_token') or request.args.get('token')
+    email = request.args.get('x_email') or request.args.get('email')
     form = ResetPasswordForm()
     if form.validate_on_submit():
         User.set_password_token(email, token, form.password.data)
@@ -271,6 +291,8 @@ def oauth_callback(provider):
     social_id, name, email, picture = oauth.callback()
     if picture is not None:
         picture = picture['data']['url']
+    if email is None:
+        email = social_id + '@apixela.net'
     if social_id is None:
         flash('Authentication failed.')
         return redirect(url_for('auth.login'))
@@ -301,10 +323,9 @@ def oauth_callback(provider):
                 'email':email,
                 'password':password,
                 'email_valid':True,
-                'party':party.id
+                'party':party.id,
                 }])
-        #user.party = party
-        #user.save()
+
         login_user(user, True)
         if 'state' in request.args:
             return redirect(url_for('auth.complete', next=request.args['state']))

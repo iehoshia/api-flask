@@ -24,10 +24,15 @@
 		    <th>{{ _('Amount') }}</th>
 		  </tr>
 		  	{% for invoice in invoices %}
+        <tr>
+          {% for line in invoice.lines %}
+            <td colspan="3" >{{ line.product.name }}</td>
+          {% endfor %}
+        </tr>
 		  	<tr>
 	    		<td>{{ invoice.invoice_date }}</td>
 		  		<td>{{ invoice.description }}</td>
-	    		<td>{{ invoice.total_amount }}</td>
+	    		<td>{{ currency.symbol }} {{ invoice.webshop_total_amount }}</td>
 	    	</tr>
 	    	{% endfor %}
 		</table>
@@ -35,18 +40,6 @@
     <div id="enroll_form" class="form">
     	<span class="title">{{ _('Pay with Bank') }}</span>
     	{{ wtf.quick_form(enroll_form) }}
-    	<!--
-    	<form action="{{ url_for('course.pay_with_bank') }}" method="post">
-		    {{ enroll_form.invoice.label }}
-		    {{ enroll_form.invoice }}<br>
-		    {{ enroll_form.ticket.label }}
-		    {{ enroll_form.ticket }}<br>
-		    {{ enroll_form.amount.label }}
-		    {{ enroll_form.amount }}<br>
-		    {{ enroll_form.submit.label }}
-		    {{ enroll_form.submit }}
-		</form>
-	-->
     </div>
     <div class="buttons">
     	<a href="{{url_for('course.payment')}}" id="cc_button" class="button"> {{ _('Pay with Card') }}</a>

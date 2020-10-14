@@ -655,9 +655,13 @@ msgstr ""
 msgid "Course"
 msgstr "Regístrate (es gratis) y conoce nuestros cursos"
 
+#: app/main/forms.py:38
+msgid "Reparacion de Celulares"
+msgstr "Reparación de Celulares"
+
 #: app/main/forms.py:39
-msgid "Reparacion de Computadoras y Celulares"
-msgstr "Reparación de Computadoras y Celulares"
+msgid "Reparacion de Computadoras"
+msgstr "Reparación de Computadoras"
 
 #: app/main/forms.py:40
 msgid "Diseno Publicitario"
@@ -901,7 +905,7 @@ msgstr "INGRESA"
 
 #: app/templates/course/enroll.html:60
 msgid "YEAR"
-msgstr "AÑO"
+msgstr "PAGO ANUAL"
 
 #: app/templates/course/enroll.html:68
 msgid "Professional Certified"

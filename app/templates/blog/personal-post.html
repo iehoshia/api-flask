@@ -1,0 +1,39 @@
+{% extends 'personal-base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block metas %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:url" content="{{ request.base_url }}" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Ich bin Josiah" />
+<meta property="og:description" content="Un hombre con una pluma es más poderoso que con una espada." />
+<meta property="og:image" itemprop="image primaryImageOfPage" content="https://i.ibb.co/YPS8Hr1/me.jpg" />
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet"
+      href="{{url_for('static', filename='css-minified/blog.css')}}">
+{% endblock %}
+
+{% block app_content %}
+<div class="external-blog row">
+  <div class="internal-blog">
+    <h1>{{ _('Mi blog, mi historia') }}</h1>
+
+    {% for entry in entries %}
+    <div class="entry">
+        <a href="{{base_url}}/blog/iehoshia/{{entry.slug}}/">
+            <div class="image"><img class="image-blog" src="{{ entry.image|safe }}"></div>
+            <div class="title"><strong> {{ entry.name | safe }} </strong></div>
+        </a>
+        {{ entry.summary | safe }}
+    </div>
+    <div class="line"></div>
+    {% endfor %}
+    {{ pagination.info }}
+    {{ pagination.links }}
+  </div>
+</div>
+{% endblock %}
+

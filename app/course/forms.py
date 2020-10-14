@@ -41,7 +41,65 @@ class CreditCardForm(FlaskForm):
         render_kw={'placeholder': _('mm/aa'),'autocomplete':'off',
         'maxlength':5,
         'class':'form-control',})
-    code = IntegerField(_l('CVV'), validators=[DataRequired()],
+    code = IntegerField('CVV', validators=[DataRequired()],
+        render_kw={'placeholder': _('123'),'autocomplete':'off',
+        'maxlength':4,
+        'class':'form-control',})
+    submit = SubmitField(_l('Submit'))
+
+class EnrollBankForm(FlaskForm):
+    bank_membership = SelectField(
+        (_l('Membership')),
+        choices=[
+                  ('MONTHLY', _l('Monthly')),
+                  ('YEARLY', _l('Yearly')),
+                  ],
+        validators=[DataRequired()],
+        )
+    bank = StringField(_l('Bank'), validators=[],
+        render_kw={'placeholder':_l('BANRURAL'),
+        'readonly':True,
+        'class':'form-control',})
+    account_name = StringField(_l('Account Name'),
+        validators=[],
+        render_kw={'placeholder':_l('API CENTRO DE CAPACITACION'),
+        'readonly':True,
+        'class':'form-control',})
+    account = StringField(_l('Account'),
+        validators=[],
+        render_kw={'placeholder':_l('3313010396'),
+        'readonly':True,
+        'class':'form-control',})
+    ticket = StringField('# de Boleta',
+        validators=[DataRequired()],
+        render_kw={'autofocus': True,
+            'placeholder':_l('Ticket'),
+            'class':'form-control',
+            })
+    submit = SubmitField(_l('Submit'))
+
+class EnrollCreditCardForm(FlaskForm):
+    cc_membership = SelectField(
+        (_l('Membership')),
+        choices=[
+                  ('MONTHLY', _l('Monthly')),
+                  ('YEARLY', _l('Yearly')),
+                  ],
+        validators=[DataRequired()],
+        )
+    name = StringField(_l('Credit Card Name'), validators=[DataRequired()],
+        render_kw={'placeholder': _('JUAN RAMOS'),
+        'maxlength':40,
+        'class':'form-control',})
+    card_number = StringField(_l('Credit Card Number'), validators=[DataRequired()],
+        render_kw={'placeholder': _('4000 0000 0000 0002'),'autocomplete':'off',
+        'maxlength':19,
+        'class':'form-control',})
+    expiration_date = StringField(_l('Expiry Date'), validators=[DataRequired()],
+        render_kw={'placeholder': _('mm/aa'),'autocomplete':'off',
+        'maxlength':5,
+        'class':'form-control',})
+    code = IntegerField('CVV', validators=[DataRequired()],
         render_kw={'placeholder': _('123'),'autocomplete':'off',
         'maxlength':4,
         'class':'form-control',})

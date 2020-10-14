@@ -1,1 +1,82 @@
-.external-profile{background-color:#f0f0f0;max-width:450px;margin:0 auto;margin-top:60px;margin-bottom:10px;padding:5px;background-size:cover;overflow:hidden;}.external-profile .internal-profile{max-width:1200px;margin:0 auto;padding-bottom:10px;background-color:#fff}.external-profile .buttons{margin:10px auto;}.external-profile .buttons .button{background-color:#e1e1e1;color:#424242;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;border:1px solid #d1d1d1;display:block;cursor:pointer;font-size:15px;padding:5px 31px;text-decoration:none;width:60%;margin:0 auto;text-align:center}.external-profile .buttons .button:hover{background-color:#e1e1e1}.external-profile .buttons .button:active{position:relative;top:1px}@media (max-width:768px){.courses{background-color:#e8ecee;}.courses .internal-courses{background-color:#fff;padding:5px;width:auto;}.courses .internal-courses .title-course{color:#3e9a46}}
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+#submit,
+.call-to-us,
+.btn .btn-default {
+  width: 95%;
+  text-decoration: none;
+  text-align: center;
+  height: 38px;
+  margin: 10px auto;
+  color: #fff;
+  background-color: #c3540d !important;
+  border: 0;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  margin-left: 9px;
+  font-weight: bold;
+  float: left;
+  border-radius: 2px !important;
+}
+.external-profile {
+  background-color: #f0f0f0;
+  max-width: 450px;
+  margin: 0 auto;
+  margin-top: 60px;
+  margin-bottom: 10px;
+  padding: 5px;
+  background-size: cover;
+  overflow: hidden;
+}
+.external-profile .internal-profile {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  background-color: #fff;
+}
+.external-profile .internal-profile h1,
+.external-profile .internal-profile .form {
+  width: 100%;
+}
+.external-profile .buttons {
+  margin: 10px auto;
+}
+.external-profile .buttons .button {
+  background-color: #e1e1e1;
+  color: #424242;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid #d1d1d1;
+  display: block;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 5px 31px;
+  text-decoration: none;
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
+.external-profile .buttons .button:hover {
+  background-color: #e1e1e1;
+}
+.external-profile .buttons .button:active {
+  position: relative;
+  top: 1px;
+}
+@media (max-width: 768px) {
+  .courses {
+    background-color: #e8ecee;
+  }
+  .courses .internal-courses {
+    background-color: #fff;
+    padding: 5px;
+    width: auto;
+  }
+  .courses .internal-courses .title-course {
+    color: #3e9a46;
+  }
+}
